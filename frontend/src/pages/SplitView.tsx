@@ -261,6 +261,66 @@ function SettingsPanel({
               )}
             </div>
           </div>
+
+          {/* RAG 知识库配置 */}
+          <div className="pt-4 border-t border-[rgba(0,0,0,0.08)]">
+            <h3 className="text-sm font-semibold text-[#1d1d1f] mb-4 flex items-center gap-2">
+              🧠 RAG 知识库
+              <span className="text-xs font-normal text-[#86868b]">(提示词工程知识检索)</span>
+            </h3>
+            
+            <div className="space-y-4">
+              <div className="p-3 bg-[#f5f5f7] rounded-xl">
+                <p className="text-xs text-[#86868b] mb-3">
+                  RAG 知识库包含提示词工程最佳实践、框架模板、安全规则等内容。
+                  首次使用需要初始化索引。
+                </p>
+                <div className="flex gap-2">
+                  <button
+                    onClick={async () => {
+                      if (!localSettings.ocrApiKey) {
+                        alert('请先配置 OCR API Key（用于 Embedding）');
+                        return;
+                      }
+                      try {
+                        const formData = new FormData();
+                        formData.append('api_key', localSettings.ocrApiKey);
+                        const res = await fetch('/api/rag/index-builtin', {
+                          method: 'POST',
+                          body: formData
+                        });
+                        const data = await res.json();
+                        if (res.ok) {
+                          alert(`✅ ${data.message}`);
+                        } else {
+                          alert(`❌ 索引失败: ${data.detail}`);
+                        }
+                      } catch (e) {
+                        alert(`❌ 请求失败: ${e}`);
+                      }
+                    }}
+                    className="flex-1 px-3 py-2 text-xs font-medium text-white bg-[#0071e3] rounded-lg hover:bg-[#0077ed] transition-colors"
+                  >
+                    初始化内置知识
+                  </button>
+                  <button
+                    onClick={async () => {
+                      try {
+                        const res = await fetch('/api/rag/stats');
+                        const data = await res.json();
+                        alert(`📊 知识库状态\n文档数: ${data.count}\n存储路径: ${data.persist_directory}`);
+                      } catch (e) {
+                        alert(`❌ 请求失败: ${e}`);
+                      }
+                    }}
+                    className="px-3 py-2 text-xs font-medium text-[#0071e3] bg-[#0071e3]/10 rounded-lg hover:bg-[#0071e3]/20 transition-colors"
+                  >
+                    查看状态
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="flex justify-end gap-3 px-6 py-4 border-t border-[rgba(0,0,0,0.08)] bg-[#f5f5f7]">
