@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Plus, PanelLeftClose, PanelLeft, Settings, X, Save } from 'lucide-react';
+import { Plus, PanelLeftClose, PanelLeft, Settings, X, Save, Wrench } from 'lucide-react';
 import { ChatPanel, PromptPreview, HistoryList } from '../components';
+import { AdvancedSettings } from '../components/AdvancedSettings';
 import { useConversation } from '../hooks/useConversation';
 import { usePromptHistory } from '../hooks/usePromptHistory';
 import type { QuestionResponse, GeneratedPromptResponse, Prompt } from '../types';
@@ -323,20 +324,33 @@ function SettingsPanel({
           </div>
         </div>
 
-        <div className="flex justify-end gap-3 px-6 py-4 border-t border-[rgba(0,0,0,0.08)] bg-[#f5f5f7]">
+        <div className="flex justify-between items-center px-6 py-4 border-t border-[rgba(0,0,0,0.08)] bg-[#f5f5f7]">
           <button
-            onClick={onClose}
-            className="btn-secondary"
+            onClick={() => {
+              onClose();
+              // 触发高级设置打开（通过自定义事件）
+              window.dispatchEvent(new CustomEvent('openAdvancedSettings'));
+            }}
+            className="text-xs text-[#0071e3] hover:underline flex items-center gap-1"
           >
-            取消
+            <Wrench className="w-3 h-3" />
+            高级设置
           </button>
-          <button
-            onClick={handleSave}
-            className="btn-primary flex items-center gap-2"
-          >
-            <Save className="w-4 h-4" />
-            保存
-          </button>
+          <div className="flex gap-3">
+            <button
+              onClick={onClose}
+              className="btn-secondary"
+            >
+              取消
+            </button>
+            <button
+              onClick={handleSave}
+              className="btn-primary flex items-center gap-2"
+            >
+              <Save className="w-4 h-4" />
+              保存
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -355,6 +369,7 @@ interface UploadedFile {
 export function SplitView() {
   const [showHistory, setShowHistory] = useState(true);
   const [showSettings, setShowSettings] = useState(false);
+  const [showAdvancedSettings, setShowAdvancedSettings] = useState(false);
   const [uploadedFiles, setUploadedFiles] = useState<UploadedFile[]>([]);
   const [settings, setSettings] = useState<SettingsData>(() => {
     const defaultSettings: SettingsData = { 
@@ -385,6 +400,13 @@ export function SplitView() {
 
   const conversation = useConversation();
   const history = usePromptHistory();
+
+  // 监听高级设置打开事件
+  useEffect(() => {
+    const handleOpenAdvanced = () => setShowAdvancedSettings(true);
+    window.addEventListener('openAdvancedSettings', handleOpenAdvanced);
+    return () => window.removeEventListener('openAdvancedSettings', handleOpenAdvanced);
+  }, []);
 
   const currentQuestion = conversation.currentResponse?.type === 'question'
     ? conversation.currentResponse as QuestionResponse
@@ -651,6 +673,11 @@ export function SplitView() {
         onClose={() => setShowSettings(false)}
         settings={settings}
         onSave={setSettings}
+      />
+
+      <AdvancedSettings
+        isOpen={showAdvancedSettings}
+        onClose={() => setShowAdvancedSettings(false)}
       />
 
       {conversation.error && (

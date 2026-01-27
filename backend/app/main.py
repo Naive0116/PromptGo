@@ -7,6 +7,7 @@ from .database.db import init_db
 from .routers import conversations_router, prompts_router
 from .routers.documents import router as documents_router
 from .routers.rag import router as rag_router
+from .routers.system import router as system_router
 from .config import get_settings
 
 
@@ -48,6 +49,7 @@ app.include_router(conversations_router)
 app.include_router(prompts_router)
 app.include_router(documents_router)
 app.include_router(rag_router)
+app.include_router(system_router)
 
 
 @app.get("/")
