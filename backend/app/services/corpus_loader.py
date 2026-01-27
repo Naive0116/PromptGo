@@ -457,17 +457,44 @@ PromptSpec 是将用户模糊需求转化为结构化提示词规格的标准格
         
         return documents
     
-    async def load_all(self, include_urls: bool = True) -> List[Dict[str, Any]]:
+    def load_cached_corpus(self) -> List[Dict[str, Any]]:
+        """加载已爬取并缓存的语料库"""
+        import json
+        
+        cache_dir = Path(__file__).parent.parent.parent / "data" / "corpus_cache"
+        all_docs_file = cache_dir / "_all_documents.json"
+        
+        if not all_docs_file.exists():
+            print(f"未找到缓存的语料库: {all_docs_file}")
+            return []
+        
+        try:
+            with open(all_docs_file, "r", encoding="utf-8") as f:
+                documents = json.load(f)
+            print(f"从缓存加载了 {len(documents)} 个语料库文档块")
+            return documents
+        except Exception as e:
+            print(f"加载缓存语料库失败: {e}")
+            return []
+    
+    async def load_all(self, include_urls: bool = True, include_cached: bool = True) -> List[Dict[str, Any]]:
         """加载所有内容"""
         documents = []
         
-        # 加载内置知识
+        # 1. 加载内置知识（核心）
         builtin_docs = self.load_builtin_knowledge()
         documents.extend(builtin_docs)
         print(f"Loaded {len(builtin_docs)} builtin documents")
         
-        # 加载 URL 内容
-        if include_urls:
+        # 2. 加载已爬取的语料库缓存（优先）
+        if include_cached:
+            cached_docs = self.load_cached_corpus()
+            if cached_docs:
+                documents.extend(cached_docs)
+                print(f"Loaded {len(cached_docs)} cached corpus documents")
+        
+        # 3. 如果没有缓存，尝试实时爬取 URL
+        if include_urls and not documents:
             try:
                 url_docs = await self.load_from_urls()
                 documents.extend(url_docs)

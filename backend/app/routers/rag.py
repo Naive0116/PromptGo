@@ -124,14 +124,19 @@ async def index_builtin_only(
     api_key: str = Form(...)
 ):
     """
-    仅索引内置知识（不爬取 URL）
+    索引内置知识 + 已爬取的语料库缓存
     
     Args:
         api_key: Embedding API Key（必需）
     """
     try:
         loader = CorpusLoader()
+        # 加载内置知识
         documents = loader.load_builtin_knowledge()
+        # 加载已爬取的语料库缓存
+        cached_docs = loader.load_cached_corpus()
+        if cached_docs:
+            documents.extend(cached_docs)
         
         if not documents:
             return IndexResponse(

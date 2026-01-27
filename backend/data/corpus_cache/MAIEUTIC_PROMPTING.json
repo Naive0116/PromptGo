@@ -1,0 +1,20 @@
+{
+  "id": "MAIEUTIC_PROMPTING",
+  "url": "https://arxiv.org/abs/2205.11822",
+  "type": "paper",
+  "priority": "P0",
+  "topic": "prompting",
+  "tags": [
+    "socratic",
+    "maieutic",
+    "clarify",
+    "consistency"
+  ],
+  "notes": "关键价值：从不完美解释中做一致性归纳（适合追问→自证→收敛）",
+  "content": "# [2205.11822] Maieutic Prompting: Logically Consistent Reasoning with Recursive Explanations\n\n## Abstract\nDespite their impressive capabilities, large pre-trained language models (LMs) struggle with consistent reasoning; recently, prompting LMs to generate explanations that self-guide the inference has emerged as a promising direction to amend this. However, these approaches are fundamentally bounded by the correctness of explanations, which themselves are often noisy and inconsistent. In this work, we develop Maieutic Prompting, which infers a correct answer to a question even from the noisy and inconsistent generations of LM. Maieutic Prompting induces a tree of explanations abductively (e.g. X is true, because ...) and recursively, then frames the inference as a satisfiability problem over these explanations and their logical relations. We test Maieutic Prompting for true/false QA on three challenging benchmarks that require complex commonsense reasoning. Maieutic Prompting achieves up to 20% better accuracy than state-of-the-art prompting methods, and as a fully unsupervised approach, performs competitively with supervised models. We also show that Maieutic Prompting improves robustness in inference while providing interpretable rationales.\n\n## Notes\n关键价值：从不完美解释中做一致性归纳（适合追问→自证→收敛）",
+  "chunks": [
+    "# [2205.11822] Maieutic Prompting: Logically Consistent Reasoning with Recursive Explanations\n\n## Abstract\nDespite their impressive capabilities, large pre-trained language models (LMs) struggle with consistent reasoning; recently, prompting LMs to generate explanations that self-guide the inference has emerged as a promising direction to amend this. However, these approaches are fundamentally bounded by the correctness of explanations, which themselves are often noisy and inconsistent. In this work, we develop Maieutic Prompting, which infers a correct answer to a question even from the noisy and inconsistent generations of LM. Maieutic Prompting induces a tree of explanations abductively (e.g. X is true, because ...",
+    "ns of LM. Maieutic Prompting induces a tree of explanations abductively (e.g. X is true, because ...) and recursively, then frames the inference as a satisfiability problem over these explanations and their logical relations. We test Maieutic Prompting for true/false QA on three challenging benchmarks that require complex commonsense reasoning. Maieutic Prompting achieves up to 20% better accuracy than state-of-the-art prompting methods, and as a fully unsupervised approach, performs competitively with supervised models. We also show that Maieutic Prompting improves robustness in inference while providing interpretable rationales.\n\n## Notes\n关键价值：从不完美解释中做一致性归纳（适合追问→自证→收敛）"
+  ],
+  "fetched_at": "2026-01-27T18:24:50.520676"
+}

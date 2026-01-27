@@ -1,0 +1,19 @@
+{
+  "id": "PROTEGI",
+  "url": "https://arxiv.org/abs/2305.03495",
+  "type": "paper",
+  "priority": "P1",
+  "topic": "prompt_optimization",
+  "tags": [
+    "protegi",
+    "textual_gradients",
+    "optimization"
+  ],
+  "notes": "用文本梯度/批评→局部修复迭代改 prompt",
+  "content": "# [2305.03495] Automatic Prompt Optimization with &#34;Gradient Descent&#34; and Beam Search\n\n## Abstract\nLarge Language Models (LLMs) have shown impressive performance as general purpose agents, but their abilities remain highly dependent on prompts which are hand written with onerous trial-and-error effort. We propose a simple and nonparametric solution to this problem, Automatic Prompt Optimization (APO), which is inspired by numerical gradient descent to automatically improve prompts, assuming access to training data and an LLM API. The algorithm uses minibatches of data to form natural language &#34;gradients&#34; that criticize the current prompt. The gradients are then &#34;propagated&#34; into the prompt by editing the prompt in the opposite semantic direction of the gradient. These gradient descent steps are guided by a beam search and bandit selection procedure which significantly improves algorithmic efficiency. Preliminary results across three benchmark NLP tasks and the novel problem of LLM jailbreak detection suggest that Automatic Prompt Optimization can outperform prior prompt editing techniques and improve an initial prompt&#39;s performance by up to 31%, by using data to rewrite vague task descriptions into more precise annotation instructions.\n\n## Notes\n用文本梯度/批评→局部修复迭代改 prompt",
+  "chunks": [
+    "# [2305.03495] Automatic Prompt Optimization with &#34;Gradient Descent&#34; and Beam Search\n\n## Abstract\nLarge Language Models (LLMs) have shown impressive performance as general purpose agents, but their abilities remain highly dependent on prompts which are hand written with onerous trial-and-error effort. We propose a simple and nonparametric solution to this problem, Automatic Prompt Optimization (APO), which is inspired by numerical gradient descent to automatically improve prompts, assuming access to training data and an LLM API. The algorithm uses minibatches of data to form natural language &#34;gradients&#34; that criticize the current prompt. The gradients are then &#34;propagated&#34; into the prompt by editing the prompt in the opposite semantic direction of the gradient.",
+    "gated&#34; into the prompt by editing the prompt in the opposite semantic direction of the gradient. These gradient descent steps are guided by a beam search and bandit selection procedure which significantly improves algorithmic efficiency. Preliminary results across three benchmark NLP tasks and the novel problem of LLM jailbreak detection suggest that Automatic Prompt Optimization can outperform prior prompt editing techniques and improve an initial prompt&#39;s performance by up to 31%, by using data to rewrite vague task descriptions into more precise annotation instructions.\n\n## Notes\n用文本梯度/批评→局部修复迭代改 prompt"
+  ],
+  "fetched_at": "2026-01-27T18:24:54.962046"
+}

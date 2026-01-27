@@ -1,0 +1,20 @@
+{
+  "id": "OPRO",
+  "url": "https://arxiv.org/abs/2309.03409",
+  "type": "paper",
+  "priority": "P0",
+  "topic": "prompt_optimization",
+  "tags": [
+    "opro",
+    "optimization",
+    "iteration",
+    "evaluate_loop"
+  ],
+  "notes": "把提示词改写变成迭代优化：候选→评估→反馈→再生成",
+  "content": "# [2309.03409] Large Language Models as Optimizers\n\n## Abstract\nOptimization is ubiquitous. While derivative-based algorithms have been powerful tools for various problems, the absence of gradient imposes challenges on many real-world applications. In this work, we propose Optimization by PROmpting (OPRO), a simple and effective approach to leverage large language models (LLMs) as optimizers, where the optimization task is described in natural language. In each optimization step, the LLM generates new solutions from the prompt that contains previously generated solutions with their values, then the new solutions are evaluated and added to the prompt for the next optimization step. We first showcase OPRO on linear regression and traveling salesman problems, then move on to our main application in prompt optimization, where the goal is to find instructions that maximize the task accuracy. With a variety of LLMs, we demonstrate that the best prompts optimized by OPRO outperform human-designed prompts by up to 8% on GSM8K, and by up to 50% on Big-Bench Hard tasks. Code at this https URL.\n\n## Notes\n把提示词改写变成迭代优化：候选→评估→反馈→再生成",
+  "chunks": [
+    "# [2309.03409] Large Language Models as Optimizers\n\n## Abstract\nOptimization is ubiquitous. While derivative-based algorithms have been powerful tools for various problems, the absence of gradient imposes challenges on many real-world applications. In this work, we propose Optimization by PROmpting (OPRO), a simple and effective approach to leverage large language models (LLMs) as optimizers, where the optimization task is described in natural language. In each optimization step, the LLM generates new solutions from the prompt that contains previously generated solutions with their values, then the new solutions are evaluated and added to the prompt for the next optimization step.",
+    "values, then the new solutions are evaluated and added to the prompt for the next optimization step. We first showcase OPRO on linear regression and traveling salesman problems, then move on to our main application in prompt optimization, where the goal is to find instructions that maximize the task accuracy. With a variety of LLMs, we demonstrate that the best prompts optimized by OPRO outperform human-designed prompts by up to 8% on GSM8K, and by up to 50% on Big-Bench Hard tasks. Code at this https URL.\n\n## Notes\n把提示词改写变成迭代优化：候选→评估→反馈→再生成"
+  ],
+  "fetched_at": "2026-01-27T18:24:54.335950"
+}

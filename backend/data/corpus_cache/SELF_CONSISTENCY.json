@@ -1,0 +1,19 @@
+{
+  "id": "SELF_CONSISTENCY",
+  "url": "https://arxiv.org/abs/2203.11171",
+  "type": "paper",
+  "priority": "P1",
+  "topic": "prompting",
+  "tags": [
+    "self_consistency",
+    "sampling",
+    "selection"
+  ],
+  "notes": "多次采样→选最一致结果：适合生成多个 prompt 草案后投票择优",
+  "content": "# [2203.11171] Self-Consistency Improves Chain of Thought Reasoning in Language Models\n\n## Abstract\nChain-of-thought prompting combined with pre-trained large language models has achieved encouraging results on complex reasoning tasks. In this paper, we propose a new decoding strategy, self-consistency, to replace the naive greedy decoding used in chain-of-thought prompting. It first samples a diverse set of reasoning paths instead of only taking the greedy one, and then selects the most consistent answer by marginalizing out the sampled reasoning paths. Self-consistency leverages the intuition that a complex reasoning problem typically admits multiple different ways of thinking leading to its unique correct answer. Our extensive empirical evaluation shows that self-consistency boosts the performance of chain-of-thought prompting with a striking margin on a range of popular arithmetic and commonsense reasoning benchmarks, including GSM8K (+17.9%), SVAMP (+11.0%), AQuA (+12.2%), StrategyQA (+6.4%) and ARC-challenge (+3.9%).\n\n## Notes\n多次采样→选最一致结果：适合生成多个 prompt 草案后投票择优",
+  "chunks": [
+    "# [2203.11171] Self-Consistency Improves Chain of Thought Reasoning in Language Models\n\n## Abstract\nChain-of-thought prompting combined with pre-trained large language models has achieved encouraging results on complex reasoning tasks. In this paper, we propose a new decoding strategy, self-consistency, to replace the naive greedy decoding used in chain-of-thought prompting. It first samples a diverse set of reasoning paths instead of only taking the greedy one, and then selects the most consistent answer by marginalizing out the sampled reasoning paths. Self-consistency leverages the intuition that a complex reasoning problem typically admits multiple different ways of thinking leading to its unique correct answer.",
+    "g problem typically admits multiple different ways of thinking leading to its unique correct answer. Our extensive empirical evaluation shows that self-consistency boosts the performance of chain-of-thought prompting with a striking margin on a range of popular arithmetic and commonsense reasoning benchmarks, including GSM8K (+17.9%), SVAMP (+11.0%), AQuA (+12.2%), StrategyQA (+6.4%) and ARC-challenge (+3.9%).\n\n## Notes\n多次采样→选最一致结果：适合生成多个 prompt 草案后投票择优"
+  ],
+  "fetched_at": "2026-01-27T18:24:51.824884"
+}
