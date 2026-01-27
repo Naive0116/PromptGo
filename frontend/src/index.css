@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* PromptGo 品牌色系 - 科技感蓝紫渐变 */
+  --pg-primary: #0071e3;
+  --pg-primary-hover: #0077ed;
+  --pg-secondary: #6e6e73;
+  --pg-accent: #bf5af2;
+  --pg-success: #30d158;
+  --pg-warning: #ff9f0a;
+  --pg-error: #ff453a;
+  
+  /* 背景色 */
+  --pg-bg-primary: #ffffff;
+  --pg-bg-secondary: #f5f5f7;
+  --pg-bg-tertiary: #fbfbfd;
+  
+  /* 文字色 */
+  --pg-text-primary: #1d1d1f;
+  --pg-text-secondary: #86868b;
+  --pg-text-tertiary: #6e6e73;
+  
+  /* 边框与阴影 */
+  --pg-border: rgba(0, 0, 0, 0.08);
+  --pg-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --pg-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --pg-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  
+  /* 圆角 */
+  --pg-radius-sm: 8px;
+  --pg-radius-md: 12px;
+  --pg-radius-lg: 18px;
+  --pg-radius-xl: 24px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--pg-bg-secondary);
+  color: var(--pg-text-primary);
+}
+
+/* 苹果风格按钮 */
+.btn-primary {
+  @apply px-5 py-2.5 bg-[#0071e3] text-white font-medium rounded-full 
+         hover:bg-[#0077ed] active:scale-[0.98] transition-all duration-200
+         disabled:bg-gray-300 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply px-5 py-2.5 bg-white/80 backdrop-blur-sm text-[#1d1d1f] font-medium rounded-full 
+         border border-[rgba(0,0,0,0.08)] hover:bg-white active:scale-[0.98] 
+         transition-all duration-200;
+}
+
+.btn-ghost {
+  @apply px-4 py-2 text-[#0071e3] font-medium rounded-lg 
+         hover:bg-[#0071e3]/10 active:scale-[0.98] transition-all duration-200;
+}
+
+/* 卡片样式 */
+.card {
+  @apply bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] 
+         shadow-[0_2px_8px_rgba(0,0,0,0.04)];
+}
+
+.card-elevated {
+  @apply bg-white rounded-2xl 
+         shadow-[0_4px_16px_rgba(0,0,0,0.08)];
+}
+
+/* 输入框样式 */
+.input-field {
+  @apply w-full px-4 py-3 bg-[#f5f5f7] border-0 rounded-xl 
+         text-[#1d1d1f] placeholder-[#86868b]
+         focus:outline-none focus:ring-2 focus:ring-[#0071e3]/30 focus:bg-white
+         transition-all duration-200;
+}
+
+/* 玻璃态效果 */
+.glass {
+  @apply bg-white/70 backdrop-blur-xl border border-white/20;
+}
+
+/* 渐变文字 */
+.gradient-text {
+  @apply bg-gradient-to-r from-[#0071e3] to-[#bf5af2] bg-clip-text text-transparent;
+}
+
+/* 滚动条 */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* 动画 */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* 选项标签样式 */
+.option-tag {
+  @apply px-4 py-2.5 rounded-full text-sm font-medium cursor-pointer
+         transition-all duration-200 select-none;
+}
+
+.option-tag-default {
+  @apply bg-[#f5f5f7] text-[#1d1d1f] border-2 border-transparent
+         hover:bg-[#e8e8ed] hover:border-[#0071e3]/20;
+}
+
+.option-tag-selected {
+  @apply bg-[#0071e3] text-white border-2 border-[#0071e3];
+}
+
+/* 消息气泡 */
+.message-bubble {
+  @apply max-w-[85%] rounded-2xl px-4 py-3;
+}
+
+.message-user {
+  @apply bg-[#0071e3] text-white;
+}
+
+.message-assistant {
+  @apply bg-[#f5f5f7] text-[#1d1d1f];
+}
