@@ -307,9 +307,9 @@ function SettingsPanel({
                   <button
                     onClick={async () => {
                       try {
-                        const res = await fetch('/api/rag/stats');
+                        const res = await fetch('/api/rag/stats/all');
                         const data = await res.json();
-                        alert(`📊 知识库状态\n文档数: ${data.count}\n存储路径: ${data.persist_directory}`);
+                        alert(`📊 知识库状态\n\n📚 内置知识: ${data.builtin.count} 条\n📄 用户文档: ${data.user_documents.count} 条\n━━━━━━━━━━━━\n📦 总计: ${data.total_count} 条`);
                       } catch (e) {
                         alert(`❌ 请求失败: ${e}`);
                       }

@@ -157,13 +157,40 @@ async def index_builtin_only(
         raise HTTPException(status_code=500, detail=str(e))
 
 
+class AllStatsResponse(BaseModel):
+    builtin: StatsResponse
+    user_documents: StatsResponse
+    total_count: int
+
+
 @router.get("/stats", response_model=StatsResponse)
 async def get_stats():
-    """获取知识库统计信息"""
+    """获取内置知识库统计信息"""
     try:
         rag_service = get_rag_service()
         stats = rag_service.get_collection_stats()
         return StatsResponse(**stats)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/stats/all", response_model=AllStatsResponse)
+async def get_all_stats():
+    """获取所有知识库统计信息（内置 + 用户文档）"""
+    try:
+        # 内置知识库
+        builtin_rag = get_rag_service()
+        builtin_stats = builtin_rag.get_collection_stats()
+        
+        # 用户文档库
+        user_rag = RAGService(collection_name="user_documents")
+        user_stats = user_rag.get_collection_stats()
+        
+        return AllStatsResponse(
+            builtin=StatsResponse(**builtin_stats),
+            user_documents=StatsResponse(**user_stats),
+            total_count=builtin_stats["count"] + user_stats["count"]
+        )
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
