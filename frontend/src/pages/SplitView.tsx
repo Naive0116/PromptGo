@@ -225,6 +225,7 @@ interface UploadedFile {
   type: string;
   parsing?: boolean;
   content?: string;
+  chunksCount?: number;
   indexed?: boolean;      // 是否已索引到向量库
   documentId?: string;    // 向量库中的文档 ID
 }
@@ -401,10 +402,10 @@ export function SplitView() {
       
       if (response.ok) {
         const data = await response.json();
-        // 适配两种响应格式：简单解析 vs 完整 RAG
-        const contentText = data.content_preview || data.content || '';
+        const contentText = data.content || '解析成功，但无内容';
+        
         const statusText = data.chunks_count 
-          ? `✅ 已索引 ${data.chunks_count} 个片段\n${contentText}`
+          ? `已索引 ${data.chunks_count} 个片段\n${contentText}`
           : contentText;
         setUploadedFiles(prev => 
           prev.map(f => 
@@ -412,8 +413,7 @@ export function SplitView() {
               ...f, 
               parsing: false, 
               content: statusText,
-              indexed: !!data.chunks_count,
-              documentId: data.document_id
+              chunksCount: typeof data.chunks_count === 'number' ? data.chunks_count : undefined,
             } : f
           )
         );
@@ -421,7 +421,7 @@ export function SplitView() {
         const errorData = await response.json().catch(() => ({ detail: '解析失败' }));
         setUploadedFiles(prev => 
           prev.map(f => 
-            f.name === file.name ? { ...f, parsing: false, content: `❌ ${errorData.detail || '解析失败'}` } : f
+            f.name === file.name ? { ...f, parsing: false, content: `${errorData.detail || '解析失败'}` } : f
           )
         );
       }
@@ -429,7 +429,7 @@ export function SplitView() {
       console.error('File upload failed:', error);
       setUploadedFiles(prev => 
         prev.map(f => 
-          f.name === file.name ? { ...f, parsing: false, content: '❌ 上传失败' } : f
+          f.name === file.name ? { ...f, parsing: false, content: '上传失败' } : f
         )
       );
     }

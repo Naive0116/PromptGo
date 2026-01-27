@@ -98,6 +98,8 @@ export function ChatPanel({
 }: ChatPanelProps) {
   const [ragStatus, setRagStatus] = useState<{ builtin: number; user: number } | null>(null);
   const [isIndexing, setIsIndexing] = useState(false);
+  const uploadedFilesCount = uploadedFiles.length;
+  const uploadedChunksTotal = uploadedFiles.reduce((sum, f) => sum + (typeof (f as any).chunksCount === 'number' ? (f as any).chunksCount : 0), 0);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [input, setInput] = useState('');
   const [selectedOptions, setSelectedOptions] = useState<Set<string>>(new Set());
@@ -280,7 +282,7 @@ export function ChatPanel({
                     {ragStatus ? (
                       <span>
                         <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#34c759] mr-1"></span>
-                        内置 {ragStatus.builtin} 条 · 文档 {ragStatus.user} 条
+                        内置 {ragStatus.builtin} 向量 · 文档片段 {ragStatus.user} 向量
                       </span>
                     ) : (
                       <span>
@@ -340,6 +342,9 @@ export function ChatPanel({
                     </button>
                   </div>
                 </div>
+                <div className="text-xs text-[#86868b]">
+                  已上传 {uploadedFilesCount} 个文件 · 累计 {uploadedChunksTotal} 个片段
+                </div>
               </div>
 
               {/* 文件上传 */}
@@ -382,7 +387,13 @@ export function ChatPanel({
                       <div className="flex-1 min-w-0">
                         <p className="text-sm font-medium text-[#1d1d1f] truncate">{file.name}</p>
                         <p className="text-xs text-[#86868b]">
-                          {file.parsing ? '解析中...' : file.content ? '已解析' : '待解析'}
+                          {file.parsing
+                            ? '解析中...'
+                            : typeof (file as any).chunksCount === 'number'
+                            ? `已索引 ${(file as any).chunksCount} 个片段`
+                            : file.content
+                            ? '已解析'
+                            : '待解析'}
                         </p>
                       </div>
                       {file.parsing ? (
