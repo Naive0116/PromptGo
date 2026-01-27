@@ -348,6 +348,8 @@ interface UploadedFile {
   type: string;
   parsing?: boolean;
   content?: string;
+  indexed?: boolean;      // 是否已索引到向量库
+  documentId?: string;    // 向量库中的文档 ID
 }
 
 export function SplitView() {
@@ -483,11 +485,13 @@ export function SplitView() {
     try {
       const formData = new FormData();
       formData.append('file', file);
-      // 传递 OCR 配置用于多模态解析
-      if (settings.ocrProvider !== 'none') {
-        if (settings.ocrApiKey) {
-          formData.append('api_key', settings.ocrApiKey);
-        }
+      
+      // 检查是否配置了 OCR API Key（用于完整 RAG 流程）
+      const hasApiKey = settings.ocrApiKey && settings.ocrProvider !== 'none';
+      
+      if (hasApiKey) {
+        // 使用完整 RAG 流程：解析 + 切块 + Embedding + 向量库
+        formData.append('api_key', settings.ocrApiKey);
         if (settings.ocrBaseUrl) {
           formData.append('base_url', settings.ocrBaseUrl);
         } else if (settings.ocrProvider === 'qwen-vl') {
@@ -502,23 +506,37 @@ export function SplitView() {
         }
       }
       
-      const response = await fetch('/api/documents/parse', {
+      // 根据是否有 API Key 选择不同的端点
+      const endpoint = hasApiKey ? '/api/documents/parse-and-index' : '/api/documents/parse';
+      
+      const response = await fetch(endpoint, {
         method: 'POST',
         body: formData,
       });
       
       if (response.ok) {
         const data = await response.json();
+        // 适配两种响应格式：简单解析 vs 完整 RAG
+        const contentText = data.content_preview || data.content || '';
+        const statusText = data.chunks_count 
+          ? `✅ 已索引 ${data.chunks_count} 个片段\n${contentText}`
+          : contentText;
         setUploadedFiles(prev => 
           prev.map(f => 
-            f.name === file.name ? { ...f, parsing: false, content: data.content } : f
+            f.name === file.name ? { 
+              ...f, 
+              parsing: false, 
+              content: statusText,
+              indexed: !!data.chunks_count,
+              documentId: data.document_id
+            } : f
           )
         );
       } else {
         const errorData = await response.json().catch(() => ({ detail: '解析失败' }));
         setUploadedFiles(prev => 
           prev.map(f => 
-            f.name === file.name ? { ...f, parsing: false, content: errorData.detail || '解析失败' } : f
+            f.name === file.name ? { ...f, parsing: false, content: `❌ ${errorData.detail || '解析失败'}` } : f
           )
         );
       }
@@ -526,7 +544,7 @@ export function SplitView() {
       console.error('File upload failed:', error);
       setUploadedFiles(prev => 
         prev.map(f => 
-          f.name === file.name ? { ...f, parsing: false, content: '上传失败' } : f
+          f.name === file.name ? { ...f, parsing: false, content: '❌ 上传失败' } : f
         )
       );
     }
