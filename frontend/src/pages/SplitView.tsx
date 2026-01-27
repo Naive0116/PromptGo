@@ -27,6 +27,11 @@ interface SettingsData {
   model: string;
   maxTurns: number;
   promptFramework: string;
+  // OCR 解析配置
+  ocrProvider: string;
+  ocrBaseUrl: string;
+  ocrApiKey: string;
+  ocrModel: string;
 }
 
 function SettingsPanel({ 
@@ -178,6 +183,84 @@ function SettingsPanel({
               {localSettings.promptFramework === 'structured' && '适合技术场景，便于程序解析'}
             </p>
           </div>
+
+          {/* OCR 文档解析配置 */}
+          <div className="pt-4 border-t border-[rgba(0,0,0,0.08)]">
+            <h3 className="text-sm font-semibold text-[#1d1d1f] mb-4 flex items-center gap-2">
+              📄 文档解析配置
+              <span className="text-xs font-normal text-[#86868b]">(用于 RAG 文件上传)</span>
+            </h3>
+            
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-[#1d1d1f] mb-2">
+                  OCR 提供商
+                </label>
+                <select
+                  value={localSettings.ocrProvider || 'qwen-vl'}
+                  onChange={(e) => setLocalSettings({ ...localSettings, ocrProvider: e.target.value })}
+                  className="input-field cursor-pointer"
+                >
+                  <option value="qwen-vl">通义千问 Qwen-VL（推荐）</option>
+                  <option value="openai">OpenAI GPT-4 Vision</option>
+                  <option value="none">不使用 OCR（仅解析文本）</option>
+                </select>
+                <p className="mt-2 text-xs text-[#86868b]">
+                  图片和扫描件 PDF 需要 OCR 才能提取文字
+                </p>
+              </div>
+
+              {localSettings.ocrProvider !== 'none' && (
+                <>
+                  <div>
+                    <label className="block text-sm font-medium text-[#1d1d1f] mb-2">
+                      OCR API Key <span className="text-[#ff453a]">*</span>
+                    </label>
+                    <input
+                      type="password"
+                      value={localSettings.ocrApiKey || ''}
+                      onChange={(e) => setLocalSettings({ ...localSettings, ocrApiKey: e.target.value })}
+                      placeholder={localSettings.ocrProvider === 'qwen-vl' ? '通义千问 API Key' : 'OpenAI API Key'}
+                      className="input-field"
+                    />
+                    <p className="mt-2 text-xs text-[#86868b]">
+                      {localSettings.ocrProvider === 'qwen-vl' 
+                        ? '从阿里云 DashScope 获取：https://dashscope.console.aliyun.com/' 
+                        : '从 OpenAI 获取：https://platform.openai.com/api-keys'}
+                    </p>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-[#1d1d1f] mb-2">
+                      OCR Base URL <span className="text-[#86868b] font-normal">(可选)</span>
+                    </label>
+                    <input
+                      type="text"
+                      value={localSettings.ocrBaseUrl || ''}
+                      onChange={(e) => setLocalSettings({ ...localSettings, ocrBaseUrl: e.target.value })}
+                      placeholder={localSettings.ocrProvider === 'qwen-vl' 
+                        ? 'https://dashscope.aliyuncs.com/compatible-mode/v1' 
+                        : 'https://api.openai.com/v1'}
+                      className="input-field"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-[#1d1d1f] mb-2">
+                      OCR 模型
+                    </label>
+                    <input
+                      type="text"
+                      value={localSettings.ocrModel || ''}
+                      onChange={(e) => setLocalSettings({ ...localSettings, ocrModel: e.target.value })}
+                      placeholder={localSettings.ocrProvider === 'qwen-vl' ? 'qwen-vl-max' : 'gpt-4o'}
+                      className="input-field"
+                    />
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
         </div>
 
         <div className="flex justify-end gap-3 px-6 py-4 border-t border-[rgba(0,0,0,0.08)] bg-[#f5f5f7]">
@@ -218,7 +301,12 @@ export function SplitView() {
       apiKey: '', 
       model: 'claude-sonnet-4-5-20250929', 
       maxTurns: 5, 
-      promptFramework: 'standard' 
+      promptFramework: 'standard',
+      // OCR 默认配置
+      ocrProvider: 'qwen-vl',
+      ocrBaseUrl: '',
+      ocrApiKey: '',
+      ocrModel: 'qwen-vl-max'
     };
     const saved = localStorage.getItem('promptforge_settings');
     if (saved) {
@@ -335,12 +423,23 @@ export function SplitView() {
     try {
       const formData = new FormData();
       formData.append('file', file);
-      // 传递 API 配置用于多模态解析
-      if (settings.apiKey) {
-        formData.append('api_key', settings.apiKey);
-      }
-      if (settings.baseUrl) {
-        formData.append('base_url', settings.baseUrl);
+      // 传递 OCR 配置用于多模态解析
+      if (settings.ocrProvider !== 'none') {
+        if (settings.ocrApiKey) {
+          formData.append('api_key', settings.ocrApiKey);
+        }
+        if (settings.ocrBaseUrl) {
+          formData.append('base_url', settings.ocrBaseUrl);
+        } else if (settings.ocrProvider === 'qwen-vl') {
+          formData.append('base_url', 'https://dashscope.aliyuncs.com/compatible-mode/v1');
+        }
+        if (settings.ocrModel) {
+          formData.append('model', settings.ocrModel);
+        } else if (settings.ocrProvider === 'qwen-vl') {
+          formData.append('model', 'qwen-vl-max');
+        } else if (settings.ocrProvider === 'openai') {
+          formData.append('model', 'gpt-4o');
+        }
       }
       
       const response = await fetch('/api/documents/parse', {

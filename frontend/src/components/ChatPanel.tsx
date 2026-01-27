@@ -272,6 +272,10 @@ export function ChatPanel({
                 <p className="text-sm text-[#1d1d1f] font-medium">点击上传文档</p>
                 <p className="text-xs text-[#86868b] mt-1">支持 PDF、Word、图片、TXT</p>
               </div>
+              <p className="mt-2 text-xs text-[#ff9500] flex items-center gap-1">
+                <span>⚠️</span>
+                图片/扫描件需在设置中配置 OCR API Key
+              </p>
               
               {/* 已上传文件列表 */}
               {uploadedFiles.length > 0 && (
