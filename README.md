@@ -8,7 +8,9 @@
 
 - **🧠 苏格拉底式引导**：通过 3-5 轮智能提问，帮助你理清思路
 - **📋 多框架支持**：Standard / LangGPT / CO-STAR / XML 结构化
-- **📄 RAG 文件上传**：支持 PDF、Word、图片 OCR，学习专业术语
+- **📄 RAG 文件上传**：支持 PDF、Word、图片 OCR，完整向量化检索
+- **📚 知识库增强**：327 个权威语料块（论文/框架/官方文档）自动检索
+- **⚙️ 高级设置面板**：API 端点一览、系统提示词可视化、框架模板查看
 - **🎨 苹果风格 UI**：现代化设计，流畅交互体验
 - **🔒 指令层级安全**：内置注入防护和质量标准
 - **🤖 多模型支持**：Anthropic Claude、OpenAI、DeepSeek、通义千问等
@@ -17,9 +19,18 @@
 
 ```
 prompt-forge/
-├── frontend/          # React + TypeScript 前端
-├── backend/           # FastAPI Python 后端
-├── docs/              # 文档（RAG 语料库索引）
+├── frontend/                    # React + TypeScript 前端
+│   └── src/
+│       ├── components/          # UI 组件（AdvancedSettings 等）
+│       └── pages/               # 页面（SplitView 主界面）
+├── backend/                     # FastAPI Python 后端
+│   ├── app/
+│   │   ├── routers/             # API 路由（conversations, rag, system）
+│   │   └── services/            # 核心服务（SocraticEngine, RAGService）
+│   ├── data/
+│   │   └── corpus_cache/        # 已爬取的语料库缓存（327 个文档块）
+│   └── scripts/                 # 工具脚本（crawl_corpus, index_corpus）
+├── docs/                        # 文档（RAG 语料库索引清单）
 └── README.md
 ```
 
@@ -185,10 +196,61 @@ LLM_MODEL=claude-sonnet-4-5-20250929
 - SQLite + SQLAlchemy
 - 多 LLM Provider 抽象层
 - 文档解析（PyMuPDF + python-docx + 多模态 OCR）
+- **ChromaDB 向量数据库**
+- **RAG 语义检索服务**
+
+---
+
+## 📚 RAG 知识库
+
+### 已集成的语料来源（25 个权威来源，327 个文档块）
+
+| 类型 | 来源 | 说明 |
+|------|------|------|
+| **官方文档** | Anthropic Prompt Engineering | Claude 官方提示词指南 |
+| **框架** | LangGPT、DSPy、LlamaIndex | 结构化提示词框架 |
+| **论文** | CoT、ReAct、OPRO、Maieutic | 推理与优化方法论 |
+| **安全** | Prompt Injection、IHEval | 注入防护与指令层级 |
+| **工具** | promptfoo、Guardrails、Guidance | 评测与结构化输出 |
+
+### 使用方式
+
+1. 在设置中配置 **OCR API Key**（通义千问）
+2. 点击 **"初始化内置知识"** 索引语料库
+3. 对话时自动检索相关知识增强生成
+
+---
+
+## ⚙️ 高级设置
+
+点击设置面板左下角 **"高级设置"** 可查看：
+
+- **API 端点列表**：12 个 REST API 端点详情
+- **框架模板**：4 种提示词框架的完整模板（可复制）
+- **系统提示词**：苏格拉底引导提示词全文（可复制）
+- **内置知识库**：6 条核心知识条目
+- **RAG 状态**：向量库统计信息
 
 ---
 
 ## 📝 更新日志
+
+### v1.3 (2026-01-27)
+- 📚 **RAG 知识库完整实现**
+  - 爬取 25 个权威来源（论文/框架/官方文档）
+  - 327 个文档块本地缓存
+  - ChromaDB 向量存储与语义检索
+- 📄 **用户文件完整 RAG**
+  - 上传文件自动切块 + Embedding + 向量存储
+  - 对话时语义检索用户文档
+- ⚙️ **高级设置面板**
+  - API 端点一览表
+  - 系统提示词可视化
+  - 框架模板查看与复制
+- 🔍 **RAG 检索策略优化**
+  - 首轮普通检索（3 条）
+  - 生成阶段增强检索（5 条）
+  - 区分核心知识/语料库/用户文档
 
 ### v1.2 (2026-01-27)
 - 🎨 品牌升级：PromptGo 普提狗
