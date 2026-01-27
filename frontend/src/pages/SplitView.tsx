@@ -185,181 +185,6 @@ function SettingsPanel({
             </p>
           </div>
 
-          {/* 📄 文档与知识库 - 合并区域 */}
-          <div className="pt-4 border-t border-[rgba(0,0,0,0.08)]">
-            <h3 className="text-sm font-semibold text-[#1d1d1f] mb-4 flex items-center gap-2">
-              📚 文档与知识库
-              <span className="text-xs font-normal text-[#86868b]">(文件上传 + RAG 检索)</span>
-            </h3>
-            
-            {/* 知识库状态卡片 */}
-            <div className="mb-4 p-4 bg-gradient-to-r from-[#f5f5f7] to-[#e8e8ed] rounded-xl">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-sm font-medium text-[#1d1d1f]">🧠 知识库状态</span>
-                <button
-                  onClick={async () => {
-                    try {
-                      const res = await fetch('/api/rag/stats/all');
-                      const data = await res.json();
-                      // 更新显示
-                      const statusEl = document.getElementById('rag-status-display');
-                      if (statusEl) {
-                        statusEl.innerHTML = `<span class="text-[#34c759]">●</span> 内置 ${data.builtin.count} 条 · 文档 ${data.user_documents.count} 条`;
-                      }
-                    } catch (e) {
-                      console.error(e);
-                    }
-                  }}
-                  className="text-xs text-[#0071e3] hover:underline"
-                >
-                  刷新
-                </button>
-              </div>
-              <div id="rag-status-display" className="text-xs text-[#86868b] mb-3">
-                <span className="text-[#86868b]">●</span> 点击刷新查看状态
-              </div>
-              <div className="flex gap-2">
-                <button
-                  onClick={async () => {
-                    if (!localSettings.ocrApiKey) {
-                      alert('请先配置下方的 API Key');
-                      return;
-                    }
-                    const btn = document.getElementById('init-rag-btn') as HTMLButtonElement;
-                    if (btn) {
-                      btn.disabled = true;
-                      btn.textContent = '索引中...';
-                    }
-                    try {
-                      const formData = new FormData();
-                      formData.append('api_key', localSettings.ocrApiKey);
-                      const res = await fetch('/api/rag/index-builtin', {
-                        method: 'POST',
-                        body: formData
-                      });
-                      const data = await res.json();
-                      if (res.ok) {
-                        alert(`✅ ${data.message}\n\n已索引 ${data.documents_count} 个知识块`);
-                        // 自动刷新状态
-                        const refreshRes = await fetch('/api/rag/stats/all');
-                        const refreshData = await refreshRes.json();
-                        const statusEl = document.getElementById('rag-status-display');
-                        if (statusEl) {
-                          statusEl.innerHTML = `<span class="text-[#34c759]">●</span> 内置 ${refreshData.builtin.count} 条 · 文档 ${refreshData.user_documents.count} 条`;
-                        }
-                      } else {
-                        alert(`❌ 索引失败: ${data.detail}`);
-                      }
-                    } catch (e) {
-                      alert(`❌ 请求失败: ${e}`);
-                    } finally {
-                      if (btn) {
-                        btn.disabled = false;
-                        btn.textContent = '初始化知识库';
-                      }
-                    }
-                  }}
-                  id="init-rag-btn"
-                  className="flex-1 px-3 py-2 text-xs font-medium text-white bg-[#0071e3] rounded-lg hover:bg-[#0077ed] transition-colors disabled:opacity-50"
-                >
-                  初始化知识库
-                </button>
-                <button
-                  onClick={async () => {
-                    if (confirm('确定要清空所有知识库索引吗？')) {
-                      try {
-                        await fetch('/api/rag/clear', { method: 'DELETE' });
-                        alert('✅ 知识库已清空');
-                        const statusEl = document.getElementById('rag-status-display');
-                        if (statusEl) {
-                          statusEl.innerHTML = `<span class="text-[#86868b]">●</span> 已清空`;
-                        }
-                      } catch (e) {
-                        alert(`❌ 清空失败: ${e}`);
-                      }
-                    }
-                  }}
-                  className="px-3 py-2 text-xs font-medium text-[#ff453a] bg-[#ff453a]/10 rounded-lg hover:bg-[#ff453a]/20 transition-colors"
-                >
-                  清空
-                </button>
-              </div>
-            </div>
-
-            {/* API 配置 */}
-            <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-[#1d1d1f] mb-2">
-                  OCR / Embedding 提供商
-                </label>
-                <select
-                  value={localSettings.ocrProvider || 'qwen-vl'}
-                  onChange={(e) => setLocalSettings({ ...localSettings, ocrProvider: e.target.value })}
-                  className="input-field cursor-pointer"
-                >
-                  <option value="qwen-vl">通义千问（推荐，同时支持 OCR 和 Embedding）</option>
-                  <option value="openai">OpenAI（GPT-4V + text-embedding-3）</option>
-                  <option value="none">不使用（仅解析纯文本）</option>
-                </select>
-              </div>
-
-              {localSettings.ocrProvider !== 'none' && (
-                <>
-                  <div>
-                    <label className="block text-sm font-medium text-[#1d1d1f] mb-2">
-                      API Key <span className="text-[#ff453a]">*</span>
-                    </label>
-                    <input
-                      type="password"
-                      value={localSettings.ocrApiKey || ''}
-                      onChange={(e) => setLocalSettings({ ...localSettings, ocrApiKey: e.target.value })}
-                      placeholder={localSettings.ocrProvider === 'qwen-vl' ? 'sk-xxx（通义千问 DashScope）' : 'sk-xxx（OpenAI）'}
-                      className="input-field"
-                    />
-                    <p className="mt-2 text-xs text-[#86868b]">
-                      {localSettings.ocrProvider === 'qwen-vl' 
-                        ? '用于：文件 OCR + 知识库 Embedding → dashscope.console.aliyun.com' 
-                        : '用于：文件 OCR + 知识库 Embedding → platform.openai.com'}
-                    </p>
-                  </div>
-
-                  <details className="group">
-                    <summary className="text-xs text-[#0071e3] cursor-pointer hover:underline">
-                      高级选项（Base URL / 模型）
-                    </summary>
-                    <div className="mt-3 space-y-3 pl-2 border-l-2 border-[#0071e3]/20">
-                      <div>
-                        <label className="block text-xs font-medium text-[#86868b] mb-1">
-                          Base URL
-                        </label>
-                        <input
-                          type="text"
-                          value={localSettings.ocrBaseUrl || ''}
-                          onChange={(e) => setLocalSettings({ ...localSettings, ocrBaseUrl: e.target.value })}
-                          placeholder={localSettings.ocrProvider === 'qwen-vl' 
-                            ? 'https://dashscope.aliyuncs.com/compatible-mode/v1' 
-                            : 'https://api.openai.com/v1'}
-                          className="input-field text-sm"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-medium text-[#86868b] mb-1">
-                          OCR 模型
-                        </label>
-                        <input
-                          type="text"
-                          value={localSettings.ocrModel || ''}
-                          onChange={(e) => setLocalSettings({ ...localSettings, ocrModel: e.target.value })}
-                          placeholder={localSettings.ocrProvider === 'qwen-vl' ? 'qwen-vl-max' : 'gpt-4o'}
-                          className="input-field text-sm"
-                        />
-                      </div>
-                    </div>
-                  </details>
-                </>
-              )}
-            </div>
-          </div>
         </div>
 
         <div className="flex justify-between items-center px-6 py-4 border-t border-[rgba(0,0,0,0.08)] bg-[#f5f5f7]">
@@ -693,6 +518,12 @@ export function SplitView() {
               onFileUpload={handleFileUpload}
               uploadedFiles={uploadedFiles}
               onRemoveFile={handleRemoveFile}
+              embeddingApiKey={settings.ocrApiKey || ''}
+              onEmbeddingApiKeyChange={(key) => {
+                const newSettings = { ...settings, ocrApiKey: key };
+                setSettings(newSettings);
+                localStorage.setItem('promptforge_settings', JSON.stringify(newSettings));
+              }}
             />
           </div>
 

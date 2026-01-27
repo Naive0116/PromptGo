@@ -73,6 +73,8 @@ interface ChatPanelProps {
   onFileUpload?: (file: File) => void;
   uploadedFiles?: Array<{ name: string; type: string; parsing?: boolean; content?: string }>;
   onRemoveFile?: (index: number) => void;
+  embeddingApiKey?: string;
+  onEmbeddingApiKeyChange?: (key: string) => void;
 }
 
 export function ChatPanel({
@@ -91,7 +93,11 @@ export function ChatPanel({
   onFileUpload,
   uploadedFiles = [],
   onRemoveFile,
+  embeddingApiKey = '',
+  onEmbeddingApiKeyChange,
 }: ChatPanelProps) {
+  const [ragStatus, setRagStatus] = useState<{ builtin: number; user: number } | null>(null);
+  const [isIndexing, setIsIndexing] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [input, setInput] = useState('');
   const [selectedOptions, setSelectedOptions] = useState<Set<string>>(new Set());
@@ -248,9 +254,95 @@ export function ChatPanel({
               </div>
             </div>
 
-            {/* 文件上传区域 */}
-            <div>
-              <p className="text-xs font-medium text-[#86868b] uppercase tracking-wide mb-3">上传参考文档（可选）</p>
+            {/* 文档与知识库 */}
+            <div className="space-y-4">
+              <p className="text-xs font-medium text-[#86868b] uppercase tracking-wide">文档与知识库</p>
+              
+              {/* API Key 配置 */}
+              <div className="p-4 bg-[#f5f5f7] rounded-xl space-y-3">
+                <div>
+                  <label className="block text-xs font-medium text-[#1d1d1f] mb-1.5">
+                    Embedding API Key
+                  </label>
+                  <input
+                    type="password"
+                    value={embeddingApiKey}
+                    onChange={(e) => onEmbeddingApiKeyChange?.(e.target.value)}
+                    placeholder="通义千问 DashScope API Key"
+                    className="w-full px-3 py-2 text-sm bg-white border border-[#d1d1d6] rounded-lg focus:outline-none focus:border-[#0071e3] focus:ring-1 focus:ring-[#0071e3]"
+                  />
+                  <p className="mt-1 text-xs text-[#86868b]">用于文件解析和知识库索引</p>
+                </div>
+                
+                {/* 知识库状态 */}
+                <div className="flex items-center justify-between pt-2 border-t border-[#e5e5e5]">
+                  <div className="text-xs text-[#86868b]">
+                    {ragStatus ? (
+                      <span>
+                        <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#34c759] mr-1"></span>
+                        内置 {ragStatus.builtin} 条 · 文档 {ragStatus.user} 条
+                      </span>
+                    ) : (
+                      <span>
+                        <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#86868b] mr-1"></span>
+                        未初始化
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={async () => {
+                        try {
+                          const res = await fetch('/api/rag/stats/all');
+                          const data = await res.json();
+                          setRagStatus({ builtin: data.builtin.count, user: data.user_documents.count });
+                        } catch (e) {
+                          console.error(e);
+                        }
+                      }}
+                      className="text-xs text-[#0071e3] hover:underline"
+                    >
+                      刷新
+                    </button>
+                    <button
+                      onClick={async () => {
+                        if (!embeddingApiKey) {
+                          alert('请先填写 Embedding API Key');
+                          return;
+                        }
+                        setIsIndexing(true);
+                        try {
+                          const formData = new FormData();
+                          formData.append('api_key', embeddingApiKey);
+                          const res = await fetch('/api/rag/index-builtin', {
+                            method: 'POST',
+                            body: formData
+                          });
+                          const data = await res.json();
+                          if (res.ok) {
+                            const statsRes = await fetch('/api/rag/stats/all');
+                            const statsData = await statsRes.json();
+                            setRagStatus({ builtin: statsData.builtin.count, user: statsData.user_documents.count });
+                            alert(`已索引 ${data.documents_count} 个知识块`);
+                          } else {
+                            alert(`索引失败: ${data.detail}`);
+                          }
+                        } catch (e) {
+                          alert(`请求失败: ${e}`);
+                        } finally {
+                          setIsIndexing(false);
+                        }
+                      }}
+                      disabled={isIndexing || !embeddingApiKey}
+                      className="text-xs text-white bg-[#0071e3] px-2.5 py-1 rounded-md hover:bg-[#0077ed] disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isIndexing ? '索引中...' : '初始化'}
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* 文件上传 */}
               <div 
                 className="border-2 border-dashed border-[#d1d1d6] rounded-xl p-4 text-center hover:border-[#0071e3] hover:bg-[#0071e3]/5 transition-all cursor-pointer"
                 onClick={() => fileInputRef.current?.click()}
@@ -268,18 +360,14 @@ export function ChatPanel({
                     e.target.value = '';
                   }}
                 />
-                <Upload className="w-8 h-8 mx-auto mb-2 text-[#86868b]" />
-                <p className="text-sm text-[#1d1d1f] font-medium">点击上传文档</p>
-                <p className="text-xs text-[#86868b] mt-1">支持 PDF、Word、图片、TXT</p>
+                <Upload className="w-6 h-6 mx-auto mb-2 text-[#86868b]" />
+                <p className="text-sm text-[#1d1d1f] font-medium">上传参考文档</p>
+                <p className="text-xs text-[#86868b] mt-1">PDF / Word / 图片 / TXT</p>
               </div>
-              <p className="mt-2 text-xs text-[#ff9500] flex items-center gap-1">
-                <span>⚠️</span>
-                图片/扫描件需在设置中配置 OCR API Key
-              </p>
               
               {/* 已上传文件列表 */}
               {uploadedFiles.length > 0 && (
-                <div className="mt-3 space-y-2">
+                <div className="space-y-2">
                   {uploadedFiles.map((file, index) => (
                     <div key={index} className="flex items-center gap-3 p-3 bg-[#f5f5f7] rounded-xl">
                       <div className="w-8 h-8 rounded-lg bg-[#0071e3]/10 flex items-center justify-center">
