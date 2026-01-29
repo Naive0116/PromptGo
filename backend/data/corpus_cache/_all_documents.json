@@ -5230,5 +5230,309 @@
       "total_chunks": 3,
       "type": "corpus_knowledge"
     }
+  },
+  {
+    "doc_id": "OPENAI_GPT5_PROMPTING_GUIDE_chunk_0",
+    "content": "# GPT-5 Prompting Guide\n\nGPT-5, our newest flagship model, represents a substantial leap forward in agentic task performance, coding, raw intelligence, and steerability. We trained GPT-5 with developers in mind: we've focused on improving tool calling, instruction following, and long-context understanding to serve as the best foundation model for agentic applications.",
+    "metadata": {
+      "source_id": "OPENAI_GPT5_PROMPTING_GUIDE",
+      "source_type": "guide",
+      "source_url": "https://cookbook.openai.com/examples/gpt-5/gpt-5_prompting_guide",
+      "priority": "P0",
+      "topic": "prompting",
+      "tags": "gpt5,agentic,metaprompting,steering,instruction_following",
+      "notes": "GPT-5 官方提示词指南：Agentic 工作流控制、Metaprompting 自优化、Verbosity 控制、指令遵循最佳实践",
+      "chunk_index": 0,
+      "total_chunks": 4,
+      "type": "corpus_knowledge"
+    }
+  },
+  {
+    "doc_id": "OPENAI_GPT5_PROMPTING_GUIDE_chunk_1",
+    "content": "## Agentic Workflow Predictability\n\n### Controlling Agentic Eagerness\n\nAgentic scaffolds can span a wide spectrum of control—some systems delegate the vast majority of decision-making to the underlying model, while others keep the model on a tight leash. To reduce the scope of GPT-5's agentic behavior: Switch to a lower reasoning_effort, or define clear criteria in your prompt for how you want the model to explore the problem space.",
+    "metadata": {
+      "source_id": "OPENAI_GPT5_PROMPTING_GUIDE",
+      "source_type": "guide",
+      "source_url": "https://cookbook.openai.com/examples/gpt-5/gpt-5_prompting_guide",
+      "priority": "P0",
+      "topic": "prompting",
+      "tags": "gpt5,agentic,metaprompting,steering,instruction_following",
+      "notes": "GPT-5 官方提示词指南：Agentic 工作流控制、Metaprompting 自优化、Verbosity 控制、指令遵循最佳实践",
+      "chunk_index": 1,
+      "total_chunks": 4,
+      "type": "corpus_knowledge"
+    }
+  },
+  {
+    "doc_id": "OPENAI_GPT5_PROMPTING_GUIDE_chunk_2",
+    "content": "## Optimizing Intelligence and Instruction-Following\n\n### Steering\nAs our most steerable model yet, GPT-5 is extraordinarily receptive to prompt instructions surrounding verbosity, tone, and tool calling behavior. GPT-5 introduces a new API parameter called verbosity, which influences the length of the model's final answer.\n\n### Instruction Following\nGPT-5 follows prompt instructions with surgical precision. Poorly-constructed prompts containing contradictory or vague instructions can be more damaging.",
+    "metadata": {
+      "source_id": "OPENAI_GPT5_PROMPTING_GUIDE",
+      "source_type": "guide",
+      "source_url": "https://cookbook.openai.com/examples/gpt-5/gpt-5_prompting_guide",
+      "priority": "P0",
+      "topic": "prompting",
+      "tags": "gpt5,agentic,metaprompting,steering,instruction_following",
+      "notes": "GPT-5 官方提示词指南：Agentic 工作流控制、Metaprompting 自优化、Verbosity 控制、指令遵循最佳实践",
+      "chunk_index": 2,
+      "total_chunks": 4,
+      "type": "corpus_knowledge"
+    }
+  },
+  {
+    "doc_id": "OPENAI_GPT5_PROMPTING_GUIDE_chunk_3",
+    "content": "### Metaprompting\n\nEarly testers have found great success using GPT-5 as a meta-prompter for itself. Example metaprompt template: When asked to optimize prompts, explain what specific phrases could be added to, or deleted from, this prompt to more consistently elicit the desired behavior or prevent the undesired behavior. While keeping as much of the existing prompt intact as possible, what are some minimal edits/additions that you would make?",
+    "metadata": {
+      "source_id": "OPENAI_GPT5_PROMPTING_GUIDE",
+      "source_type": "guide",
+      "source_url": "https://cookbook.openai.com/examples/gpt-5/gpt-5_prompting_guide",
+      "priority": "P0",
+      "topic": "prompting",
+      "tags": "gpt5,agentic,metaprompting,steering,instruction_following",
+      "notes": "GPT-5 官方提示词指南：Agentic 工作流控制、Metaprompting 自优化、Verbosity 控制、指令遵循最佳实践",
+      "chunk_index": 3,
+      "total_chunks": 4,
+      "type": "corpus_knowledge"
+    }
+  },
+  {
+    "doc_id": "OPENAI_GPT41_PROMPTING_GUIDE_chunk_0",
+    "content": "# GPT-4.1 Prompting Guide\n\nThe GPT-4.1 family of models represents a significant step forward from GPT-4o in capabilities across coding, instruction following, and long context. GPT-4.1 is trained to follow instructions more closely and more literally than its predecessors.",
+    "metadata": {
+      "source_id": "OPENAI_GPT41_PROMPTING_GUIDE",
+      "source_type": "guide",
+      "source_url": "https://cookbook.openai.com/examples/gpt4-1_prompting_guide",
+      "priority": "P0",
+      "topic": "prompting",
+      "tags": "gpt41,cot,long_context,prompt_structure,delimiters,instruction_following",
+      "notes": "GPT-4.1 官方指南：CoT 推理策略、长上下文处理、Prompt 结构模板、分隔符最佳实践、指令遵循工作流",
+      "chunk_index": 0,
+      "total_chunks": 4,
+      "type": "corpus_knowledge"
+    }
+  },
+  {
+    "doc_id": "OPENAI_GPT41_PROMPTING_GUIDE_chunk_1",
+    "content": "## Chain of Thought\n\nGPT-4.1 is not a reasoning model, but prompting the model to think step by step (called \"chain of thought\") can be an effective way for a model to break down problems. Recommended: First, think carefully step by step about what documents are needed to answer the query. Then, print out the TITLE and ID of each document.",
+    "metadata": {
+      "source_id": "OPENAI_GPT41_PROMPTING_GUIDE",
+      "source_type": "guide",
+      "source_url": "https://cookbook.openai.com/examples/gpt4-1_prompting_guide",
+      "priority": "P0",
+      "topic": "prompting",
+      "tags": "gpt41,cot,long_context,prompt_structure,delimiters,instruction_following",
+      "notes": "GPT-4.1 官方指南：CoT 推理策略、长上下文处理、Prompt 结构模板、分隔符最佳实践、指令遵循工作流",
+      "chunk_index": 1,
+      "total_chunks": 4,
+      "type": "corpus_knowledge"
+    }
+  },
+  {
+    "doc_id": "OPENAI_GPT41_PROMPTING_GUIDE_chunk_2",
+    "content": "## Instruction Following\n\nGPT-4.1 exhibits outstanding instruction-following performance. Recommended Workflow: 1. Start with Response Rules section 2. Add specific behavior sections 3. Add ordered list for steps 4. Check for conflicting instructions 5. Add examples 6. Avoid all-caps or bribes.",
+    "metadata": {
+      "source_id": "OPENAI_GPT41_PROMPTING_GUIDE",
+      "source_type": "guide",
+      "source_url": "https://cookbook.openai.com/examples/gpt4-1_prompting_guide",
+      "priority": "P0",
+      "topic": "prompting",
+      "tags": "gpt41,cot,long_context,prompt_structure,delimiters,instruction_following",
+      "notes": "GPT-4.1 官方指南：CoT 推理策略、长上下文处理、Prompt 结构模板、分隔符最佳实践、指令遵循工作流",
+      "chunk_index": 2,
+      "total_chunks": 4,
+      "type": "corpus_knowledge"
+    }
+  },
+  {
+    "doc_id": "OPENAI_GPT41_PROMPTING_GUIDE_chunk_3",
+    "content": "## Prompt Structure\n\n# Role and Objective\n# Instructions\n## Sub-categories for more detailed instructions\n# Reasoning Steps\n# Output Format\n# Examples\n# Context\n# Final instructions\n\n### Delimiters: Markdown (recommended), XML (precise wrapping), JSON (structured but verbose)",
+    "metadata": {
+      "source_id": "OPENAI_GPT41_PROMPTING_GUIDE",
+      "source_type": "guide",
+      "source_url": "https://cookbook.openai.com/examples/gpt4-1_prompting_guide",
+      "priority": "P0",
+      "topic": "prompting",
+      "tags": "gpt41,cot,long_context,prompt_structure,delimiters,instruction_following",
+      "notes": "GPT-4.1 官方指南：CoT 推理策略、长上下文处理、Prompt 结构模板、分隔符最佳实践、指令遵循工作流",
+      "chunk_index": 3,
+      "total_chunks": 4,
+      "type": "corpus_knowledge"
+    }
+  },
+  {
+    "doc_id": "OPENAI_PROMPT_PERSONALITIES_chunk_0",
+    "content": "# Prompt Personalities\n\nA personality defines the style and tone the model uses when responding. It shapes how answers feel - polished and professional, concise and utilitarian, or direct and corrective. Personality should not be treated as aesthetic polish, but as an operational lever that improves consistency, reduces drift, and aligns model behavior with user expectations.",
+    "metadata": {
+      "source_id": "OPENAI_PROMPT_PERSONALITIES",
+      "source_type": "template",
+      "source_url": "https://cookbook.openai.com/examples/gpt-5/prompt_personalities",
+      "priority": "P0",
+      "topic": "prompting",
+      "tags": "personality,professional,efficient,factbased,exploratory,tone,style",
+      "notes": "四种标准人格模板：Professional(企业正式)、Efficient(简洁高效)、Fact-Based(事实导向)、Exploratory(探索教学)",
+      "chunk_index": 0,
+      "total_chunks": 5,
+      "type": "corpus_knowledge"
+    }
+  },
+  {
+    "doc_id": "OPENAI_PROMPT_PERSONALITIES_chunk_1",
+    "content": "## 1. Professional\nBest for: Enterprise agents, legal/finance workflows, production support.\nYou are a focused, formal, and exacting AI Agent. Employ business communications grammar. Provide clear and structured responses. Use domain-appropriate terminology. Your relationship to the user is cordial but transactional.",
+    "metadata": {
+      "source_id": "OPENAI_PROMPT_PERSONALITIES",
+      "source_type": "template",
+      "source_url": "https://cookbook.openai.com/examples/gpt-5/prompt_personalities",
+      "priority": "P0",
+      "topic": "prompting",
+      "tags": "personality,professional,efficient,factbased,exploratory,tone,style",
+      "notes": "四种标准人格模板：Professional(企业正式)、Efficient(简洁高效)、Fact-Based(事实导向)、Exploratory(探索教学)",
+      "chunk_index": 1,
+      "total_chunks": 5,
+      "type": "corpus_knowledge"
+    }
+  },
+  {
+    "doc_id": "OPENAI_PROMPT_PERSONALITIES_chunk_2",
+    "content": "## 2. Efficient\nBest for: Code Generation, Developer tools, batch automation, SDK-heavy use cases.\nYou are a highly efficient AI assistant. Replies must be direct, complete, and easy to parse. DO NOT add extra features user has not requested. Do not use conversational language, opinions, emotional language, emojis, greetings, or closing remarks.",
+    "metadata": {
+      "source_id": "OPENAI_PROMPT_PERSONALITIES",
+      "source_type": "template",
+      "source_url": "https://cookbook.openai.com/examples/gpt-5/prompt_personalities",
+      "priority": "P0",
+      "topic": "prompting",
+      "tags": "personality,professional,efficient,factbased,exploratory,tone,style",
+      "notes": "四种标准人格模板：Professional(企业正式)、Efficient(简洁高效)、Fact-Based(事实导向)、Exploratory(探索教学)",
+      "chunk_index": 2,
+      "total_chunks": 5,
+      "type": "corpus_knowledge"
+    }
+  },
+  {
+    "doc_id": "OPENAI_PROMPT_PERSONALITIES_chunk_3",
+    "content": "## 3. Fact-Based\nBest for: Debugging, evals, risk analysis, coaching workflows, document parsing.\nYou are a plainspoken and direct AI assistant. Be clear and corrective without sugarcoating. Ground all claims in provided information. Do not fabricate facts. Prefer qualified statements over absolute claims.",
+    "metadata": {
+      "source_id": "OPENAI_PROMPT_PERSONALITIES",
+      "source_type": "template",
+      "source_url": "https://cookbook.openai.com/examples/gpt-5/prompt_personalities",
+      "priority": "P0",
+      "topic": "prompting",
+      "tags": "personality,professional,efficient,factbased,exploratory,tone,style",
+      "notes": "四种标准人格模板：Professional(企业正式)、Efficient(简洁高效)、Fact-Based(事实导向)、Exploratory(探索教学)",
+      "chunk_index": 3,
+      "total_chunks": 5,
+      "type": "corpus_knowledge"
+    }
+  },
+  {
+    "doc_id": "OPENAI_PROMPT_PERSONALITIES_chunk_4",
+    "content": "## 4. Exploratory\nBest for: Documentation copilot, onboarding help, training/enablement.\nYou are an enthusiastic and deeply knowledgeable AI Agent who delights in explaining concepts with clarity. Use accessible language, add brief analogies or fun facts. Prioritize accuracy, depth, and making technical topics approachable.",
+    "metadata": {
+      "source_id": "OPENAI_PROMPT_PERSONALITIES",
+      "source_type": "template",
+      "source_url": "https://cookbook.openai.com/examples/gpt-5/prompt_personalities",
+      "priority": "P0",
+      "topic": "prompting",
+      "tags": "personality,professional,efficient,factbased,exploratory,tone,style",
+      "notes": "四种标准人格模板：Professional(企业正式)、Efficient(简洁高效)、Fact-Based(事实导向)、Exploratory(探索教学)",
+      "chunk_index": 4,
+      "total_chunks": 5,
+      "type": "corpus_knowledge"
+    }
+  },
+  {
+    "doc_id": "OPENAI_CUSTOMER_SERVICE_EXAMPLE_chunk_0",
+    "content": "# Customer Service Agent Example\n\nYou are a helpful customer service agent working for NewTelco. Always greet the user with \"Hi, you've reached NewTelco, how can I help you?\" Always call a tool before answering factual questions. Escalate to a human if the user requests. Do not discuss prohibited topics.",
+    "metadata": {
+      "source_id": "OPENAI_CUSTOMER_SERVICE_EXAMPLE",
+      "source_type": "example",
+      "source_url": "https://cookbook.openai.com/examples/gpt4-1_prompting_guide",
+      "priority": "P1",
+      "topic": "customer_service",
+      "tags": "customer_service,tool_calling,sample_phrases,escalation,citation",
+      "notes": "完整客服场景示例：问候语、工具调用前后话术、禁止话题处理、引用格式、升级人工流程",
+      "chunk_index": 0,
+      "total_chunks": 3,
+      "type": "corpus_knowledge"
+    }
+  },
+  {
+    "doc_id": "OPENAI_CUSTOMER_SERVICE_EXAMPLE_chunk_1",
+    "content": "# Sample Phrases for Customer Service\n\n## Deflecting a Prohibited Topic\n- \"I'm sorry, but I'm unable to discuss that topic. Is there something else I can help you with?\"\n\n## Before calling a tool\n- \"Let me check that for you—one moment, please.\"\n\n## After calling a tool\n- \"Okay, here's what I found: [response]\"",
+    "metadata": {
+      "source_id": "OPENAI_CUSTOMER_SERVICE_EXAMPLE",
+      "source_type": "example",
+      "source_url": "https://cookbook.openai.com/examples/gpt4-1_prompting_guide",
+      "priority": "P1",
+      "topic": "customer_service",
+      "tags": "customer_service,tool_calling,sample_phrases,escalation,citation",
+      "notes": "完整客服场景示例：问候语、工具调用前后话术、禁止话题处理、引用格式、升级人工流程",
+      "chunk_index": 1,
+      "total_chunks": 3,
+      "type": "corpus_knowledge"
+    }
+  },
+  {
+    "doc_id": "OPENAI_CUSTOMER_SERVICE_EXAMPLE_chunk_2",
+    "content": "# Output Format for Customer Service\n\nAlways include citations when providing factual information from retrieved context. Use format: [NAME](ID). Only provide information about the company, its policies, its products, or the customer's account based on retrieved context. Do not answer questions outside this scope.",
+    "metadata": {
+      "source_id": "OPENAI_CUSTOMER_SERVICE_EXAMPLE",
+      "source_type": "example",
+      "source_url": "https://cookbook.openai.com/examples/gpt4-1_prompting_guide",
+      "priority": "P1",
+      "topic": "customer_service",
+      "tags": "customer_service,tool_calling,sample_phrases,escalation,citation",
+      "notes": "完整客服场景示例：问候语、工具调用前后话术、禁止话题处理、引用格式、升级人工流程",
+      "chunk_index": 2,
+      "total_chunks": 3,
+      "type": "corpus_knowledge"
+    }
+  },
+  {
+    "doc_id": "OPENAI_REALTIME_PROMPTING_GUIDE_chunk_0",
+    "content": "# Realtime Prompting Guide\n\ngpt-realtime delivers stronger instruction following, more reliable tool calling, noticeably better voice quality. General Tips: Iterate relentlessly, prefer bullets over paragraphs, guide with examples, be precise, control language, reduce repetition, use capitalized text for emphasis.",
+    "metadata": {
+      "source_id": "OPENAI_REALTIME_PROMPTING_GUIDE",
+      "source_type": "guide",
+      "source_url": "https://cookbook.openai.com/examples/realtime_prompting_guide",
+      "priority": "P1",
+      "topic": "voice",
+      "tags": "realtime,voice,speech,conversation_flow,tool_preambles,personality",
+      "notes": "语音 Agent 提示词指南：Prompt 结构、人格语气、发音指导、对话流程状态机、工具调用前导语",
+      "chunk_index": 0,
+      "total_chunks": 3,
+      "type": "corpus_knowledge"
+    }
+  },
+  {
+    "doc_id": "OPENAI_REALTIME_PROMPTING_GUIDE_chunk_1",
+    "content": "## Prompt Structure for Voice Agents\n\n# Role & Objective — who you are and what \"success\" means\n# Personality & Tone — the voice and style to maintain\n# Context — retrieved context, relevant info\n# Reference Pronunciations — phonetic guides for tricky words\n# Tools — names, usage rules, and preambles\n# Instructions / Rules — do's, don'ts, and approach\n# Conversation Flow — states, goals, and transitions\n# Safety & Escalation — fallback and handoff logic",
+    "metadata": {
+      "source_id": "OPENAI_REALTIME_PROMPTING_GUIDE",
+      "source_type": "guide",
+      "source_url": "https://cookbook.openai.com/examples/realtime_prompting_guide",
+      "priority": "P1",
+      "topic": "voice",
+      "tags": "realtime,voice,speech,conversation_flow,tool_preambles,personality",
+      "notes": "语音 Agent 提示词指南：Prompt 结构、人格语气、发音指导、对话流程状态机、工具调用前导语",
+      "chunk_index": 1,
+      "total_chunks": 3,
+      "type": "corpus_knowledge"
+    }
+  },
+  {
+    "doc_id": "OPENAI_REALTIME_PROMPTING_GUIDE_chunk_2",
+    "content": "## Personality and Tone for Voice\n\nWhen to use: Responses feel flat, overly verbose, or inconsistent across turns.\nWhat it does: Sets voice, brevity, and pacing so replies sound natural and consistent.\nHow to adapt: Tune warmth/formality and default length. For regulated domains, favor neutral precision.",
+    "metadata": {
+      "source_id": "OPENAI_REALTIME_PROMPTING_GUIDE",
+      "source_type": "guide",
+      "source_url": "https://cookbook.openai.com/examples/realtime_prompting_guide",
+      "priority": "P1",
+      "topic": "voice",
+      "tags": "realtime,voice,speech,conversation_flow,tool_preambles,personality",
+      "notes": "语音 Agent 提示词指南：Prompt 结构、人格语气、发音指导、对话流程状态机、工具调用前导语",
+      "chunk_index": 2,
+      "total_chunks": 3,
+      "type": "corpus_knowledge"
+    }
   }
 ]

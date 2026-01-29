@@ -1,0 +1,164 @@
+{
+  "version": "2.0",
+  "default_mode": "auto",
+  "scenarios": [
+    {
+      "id": "auto",
+      "name": "Auto",
+      "description": "系统根据输入自动推断最佳配置",
+      "icon": "Wand2",
+      "is_auto": true,
+      "tooltip": "智能模式：系统会分析您的输入内容，自动选择最合适的场景、人设和输出模板。适合不确定如何配置的用户。"
+    },
+    {
+      "id": "code_assistant",
+      "name": "代码助手",
+      "description": "代码生成、审查、调试、重构",
+      "icon": "Code",
+      "recommended_personality": "efficient",
+      "recommended_template": "structured",
+      "keywords": ["代码", "编程", "函数", "bug", "调试", "重构", "API", "开发", "程序", "脚本", "算法"],
+      "boundary": "代码格式规范、diff 输出、工具调用权限、不编造 API",
+      "tooltip": "专为编程任务优化：生成可运行的代码、遵循最佳实践、提供 diff 格式修改建议。不会编造不存在的 API 或库。"
+    },
+    {
+      "id": "customer_service",
+      "name": "客服代理",
+      "description": "客户咨询、问题解答、投诉处理",
+      "icon": "Headphones",
+      "recommended_personality": "professional",
+      "recommended_template": "standard",
+      "keywords": ["客服", "投诉", "退款", "咨询", "服务", "用户", "客户", "售后", "帮助"],
+      "boundary": "合规边界、同理心表达、升级流程、政策引用",
+      "tooltip": "客户服务专用：强调同理心、积极倾听，有明确的升级流程。不讨论政治/宗教，不提供医疗/法律/财务建议。"
+    },
+    {
+      "id": "content_writer",
+      "name": "内容创作",
+      "description": "文案、博客、营销内容、故事创作",
+      "icon": "PenTool",
+      "recommended_personality": "exploratory",
+      "recommended_template": "costar",
+      "keywords": ["文案", "写作", "博客", "营销", "故事", "创意", "文章", "内容", "广告", "剧本"],
+      "boundary": "创意自由度高、风格可变、受众适配、允许修辞",
+      "tooltip": "创意写作专用：允许创意表达和修辞手法，可根据目标受众调整风格。适合文案、博客、营销内容等。"
+    },
+    {
+      "id": "analyst",
+      "name": "分析研究",
+      "description": "数据分析、研究综述、决策支持",
+      "icon": "BarChart3",
+      "recommended_personality": "factbased",
+      "recommended_template": "standard",
+      "keywords": ["数据", "分析", "报表", "统计", "指标", "趋势", "研究", "论文", "文献", "综述", "引用"],
+      "boundary": "证据链要求、不确定性标注、引用来源",
+      "tooltip": "数据分析专用：强调证据支撑，对不确定的信息明确标注。不编造数据或研究，必须引用来源。"
+    },
+    {
+      "id": "educator",
+      "name": "教育导师",
+      "description": "教学解释、科普培训、知识传授",
+      "icon": "GraduationCap",
+      "recommended_personality": "exploratory",
+      "recommended_template": "langgpt",
+      "keywords": ["教学", "解释", "科普", "培训", "学习", "入门", "教程", "指南", "怎么", "如何", "为什么"],
+      "boundary": "循序渐进、类比解释、知识检查、鼓励提问",
+      "tooltip": "教学辅导专用：循序渐进地解释概念，使用类比和示例，鼓励用户提问和探索。适合科普、培训、教程等。"
+    },
+    {
+      "id": "general",
+      "name": "通用场景",
+      "description": "无特定约束，灵活适配各类需求",
+      "icon": "Zap",
+      "recommended_personality": null,
+      "recommended_template": "standard",
+      "keywords": [],
+      "boundary": "无特定约束，灵活适配",
+      "tooltip": "通用模式：无特定场景约束，灵活适配各类需求。当不确定选择哪个场景时可使用。"
+    }
+  ],
+  "personalities": [
+    {
+      "id": "professional",
+      "name": "专业正式",
+      "description": "商务沟通、企业级应用",
+      "icon": "Briefcase",
+      "tone": "formal",
+      "verbosity": "medium",
+      "best_for": ["customer_service", "general"],
+      "tooltip": "正式商务语气：使用专业术语，语言得体，适合企业级应用和客户沟通。"
+    },
+    {
+      "id": "efficient",
+      "name": "简洁高效",
+      "description": "直接输出、无寒暄、精确执行",
+      "icon": "Zap",
+      "tone": "direct",
+      "verbosity": "low",
+      "best_for": ["code_assistant", "analyst"],
+      "tooltip": "极简风格：直接输出结果，无寒暄无废话，精确执行指令。适合代码和数据分析任务。"
+    },
+    {
+      "id": "factbased",
+      "name": "事实导向",
+      "description": "证据支撑、不编造、限定性陈述",
+      "icon": "FlaskConical",
+      "tone": "analytical",
+      "verbosity": "medium",
+      "best_for": ["analyst", "code_assistant"],
+      "tooltip": "严谨分析风格：所有观点需证据支撑，不确定时明确表示，不编造不存在的信息。"
+    },
+    {
+      "id": "exploratory",
+      "name": "探索教学",
+      "description": "循序渐进、类比解释、鼓励探索",
+      "icon": "Lightbulb",
+      "tone": "encouraging",
+      "verbosity": "high",
+      "best_for": ["educator", "content_writer"],
+      "tooltip": "引导式风格：循序渐进地解释，使用类比和示例，鼓励用户思考和探索。"
+    }
+  ],
+  "templates": [
+    {
+      "id": "standard",
+      "name": "标准格式",
+      "description": "自然段落，角色→任务→约束→格式",
+      "icon": "FileText",
+      "best_for": ["general", "customer_service", "analyst"],
+      "tooltip": "通用模板：按角色定义、任务描述、约束条件、输出格式的顺序组织提示词。适合大多数场景。"
+    },
+    {
+      "id": "structured",
+      "name": "XML结构化",
+      "description": "XML 标签分离指令与数据，防注入",
+      "icon": "Code2",
+      "best_for": ["code_assistant"],
+      "tooltip": "结构化模板：使用 XML 标签分离指令和数据，有效防止提示词注入攻击。适合代码和技术场景。"
+    },
+    {
+      "id": "costar",
+      "name": "CO-STAR",
+      "description": "Context/Objective/Style/Tone/Audience/Response",
+      "icon": "Star",
+      "best_for": ["content_writer"],
+      "tooltip": "CO-STAR 框架：按背景(Context)、目标(Objective)、风格(Style)、语气(Tone)、受众(Audience)、响应(Response)组织。适合内容创作。"
+    },
+    {
+      "id": "langgpt",
+      "name": "LangGPT",
+      "description": "Role/Profile/Skills/Rules/Workflow/Initialization",
+      "icon": "Bot",
+      "best_for": ["educator"],
+      "tooltip": "LangGPT 框架：按角色(Role)、简介(Profile)、技能(Skills)、规则(Rules)、工作流(Workflow)、初始化(Init)组织。适合复杂角色扮演。"
+    }
+  ],
+  "compatibility_matrix": {
+    "code_assistant": ["efficient", "factbased"],
+    "customer_service": ["professional"],
+    "content_writer": ["exploratory", "professional"],
+    "analyst": ["factbased", "efficient"],
+    "educator": ["exploratory"],
+    "general": ["professional", "efficient", "factbased", "exploratory"]
+  }
+}

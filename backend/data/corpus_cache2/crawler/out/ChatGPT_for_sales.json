@@ -1,0 +1,131 @@
+{
+  "title": "ChatGPT for sales",
+  "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-sales",
+  "tags": [
+    "WORK USERS",
+    "PROMPT PACKS"
+  ],
+  "items": [
+    {
+      "use_case": "Generate strategic account plan",
+      "prompt": "Create an account plan for [customer name]. Use these inputs: company profile, known priorities, current product usage, stakeholders, and renewal date. Output a structured plan with goals, risks, opportunities, and next steps.",
+      "superPrompt": "Create an account plan for {{ field1 || customer name}}. Use these inputs: company profile, known priorities, current product usage, stakeholders, and renewal date. Output a structured plan with goals, risks, opportunities, and next steps.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20an%20account%20plan%20for%20%5Bcustomer%20name%5D.%20Use%20these%20inputs%3A%20company%20profile%2C%20known%20priorities%2C%20current%20product%20usage%2C%20stakeholders%2C%20and%20renewal%20date.%20Output%20a%20structured%20plan%20with%20goals%2C%20risks%2C%20opportunities%2C%20and%20next%20steps."
+    },
+    {
+      "use_case": "Design territory planning framework",
+      "prompt": "Create a territory planning guide for our next fiscal year. Inputs: team headcount, target industries, regions, and historical revenue. Recommend allocation method and sample coverage plan.",
+      "superPrompt": "Create a territory planning guide for our next fiscal year. Inputs: team headcount, target industries, regions, and historical revenue. Recommend allocation method and sample coverage plan.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20territory%20planning%20guide%20for%20our%20next%20fiscal%20year.%20Inputs%3A%20team%20headcount%2C%20target%20industries%2C%20regions%2C%20and%20historical%20revenue.%20Recommend%20allocation%20method%20and%20sample%20coverage%20plan."
+    },
+    {
+      "use_case": "Prioritize accounts using firmographic data",
+      "prompt": "I have this list of accounts: [paste sample]. Prioritize them based on [criteria: industry, size, funding, tech stack]. Output a ranked list with reasons why.",
+      "superPrompt": "I have this list of accounts: {{ field1 || paste sample}}. Prioritize them based on {{ field2 || criteria: industry, size, funding, tech stack}}. Output a ranked list with reasons why.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%20have%20this%20list%20of%20accounts%3A%20%5Bpaste%20sample%5D.%20Prioritize%20them%20based%20on%20%5Bcriteria%3A%20industry%2C%20size%2C%20funding%2C%20tech%20stack%5D.%20Output%20a%20ranked%20list%20with%20reasons%20why."
+    },
+    {
+      "use_case": "Spot high-potential accounts using weighted scoring",
+      "prompt": "Score accounts based on [insert rules—e.g., company size, engagement score, intent signals]. Data: [Upload account list]. Output top 10 ranked accounts with their score and a note explaining why.",
+      "superPrompt": "Score accounts based on {{ field1 || insert rules—e.g., company size, engagement score, intent signals}}. Data: {{ field2 || Upload account list}}. Output top 10 ranked accounts with their score and a note explaining why.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Score%20accounts%20based%20on%20%5Binsert%20rules%E2%80%94e.g.%2C%20company%20size%2C%20engagement%20score%2C%20intent%20signals%5D.%20Data%3A%20%5BUpload%20account%20list%5D.%20Output%20top%2010%20ranked%20accounts%20with%20their%20score%20and%20a%20note%20explaining%20why."
+    },
+    {
+      "use_case": "Regional market entry planning",
+      "prompt": "I’m evaluating market entry into [region/country] for our [SaaS solution]. Research local buying behaviors, competitive landscape, economic conditions, and regulatory concerns. Format as a go/no-go market readiness summary with citations and action steps.",
+      "superPrompt": "I’m evaluating market entry into {{ field1 || region/country}} for our {{ field2 || SaaS solution}}. Research local buying behaviors, competitive landscape, economic conditions, and regulatory concerns. Format as a go/no-go market readiness summary with citations and action steps.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%E2%80%99m%20evaluating%20market%20entry%20into%20%5Bregion%2Fcountry%5D%20for%20our%20%5BSaaS%20solution%5D.%20Research%20local%20buying%20behaviors%2C%20competitive%20landscape%2C%20economic%20conditions%2C%20and%20regulatory%20concerns.%20Format%20as%20a%20go%2Fno-go%20market%20readiness%20summary%20with%20citations%20and%20action%20steps."
+    },
+    {
+      "use_case": "Create battlecard for competitor",
+      "prompt": "Create a battlecard for [competitor name]. Use these notes: [insert positioning data]. Include strengths, weaknesses, how we win, and quick talk track. Output as table format.",
+      "superPrompt": "Create a battlecard for {{ field1 || competitor name}}. Use these notes: {{ field2 || insert positioning data}}. Include strengths, weaknesses, how we win, and quick talk track. Output as table format.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20battlecard%20for%20%5Bcompetitor%20name%5D.%20Use%20these%20notes%3A%20%5Binsert%20positioning%20data%5D.%20Include%20strengths%2C%20weaknesses%2C%20how%20we%20win%2C%20and%20quick%20talk%20track.%20Output%20as%20table%20format."
+    },
+    {
+      "use_case": "Competitive positioning analysis",
+      "prompt": "I’m preparing a competitive battlecard for [competitor name]. Research their pricing model, product positioning, recent customer wins/losses, and sales motion. Compare it to ours based on these strengths: [insert]. Output a 1-page summary with citations.",
+      "superPrompt": "I’m preparing a competitive battlecard for {{ field1 || competitor name}}. Research their pricing model, product positioning, recent customer wins/losses, and sales motion. Compare it to ours based on these strengths: {{ field2 || insert}}. Output a 1-page summary with citations.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%E2%80%99m%20preparing%20a%20competitive%20battlecard%20for%20%5Bcompetitor%20name%5D.%20Research%20their%20pricing%20model%2C%20product%20positioning%2C%20recent%20customer%20wins%2Flosses%2C%20and%20sales%20motion.%20Compare%20it%20to%20ours%20based%20on%20these%20strengths%3A%20%5Binsert%5D.%20Output%20a%201-page%20summary%20with%20citations."
+    },
+    {
+      "use_case": "Create a sales enablement one-pager",
+      "prompt": "Create a one-pager to help reps pitch [product name] to [persona]. Include key benefits, features, common use cases, and competitor differentiators. Format as copy-ready enablement doc.",
+      "superPrompt": "Create a one-pager to help reps pitch {{ field1 || product name}} to {{ field2 || persona}}. Include key benefits, features, common use cases, and competitor differentiators. Format as copy-ready enablement doc.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20one-pager%20to%20help%20reps%20pitch%20%5Bproduct%20name%5D%20to%20%5Bpersona%5D.%20Include%20key%20benefits%2C%20features%2C%20common%20use%20cases%2C%20and%20competitor%20differentiators.%20Format%20as%20copy-ready%20enablement%20doc."
+    },
+    {
+      "use_case": "Prepare sales objection rebuttals",
+      "prompt": "Create rebuttals to these common objections: [insert 2–3 objections]. Make them sound natural and confident, and include a backup stat or story where useful. Output as list.",
+      "superPrompt": "Create rebuttals to these common objections: {{ field1 || insert 2–3 objections}}. Make them sound natural and confident, and include a backup stat or story where useful. Output as list.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20rebuttals%20to%20these%20common%20objections%3A%20%5Binsert%202%E2%80%933%20objections%5D.%20Make%20them%20sound%20natural%20and%20confident%2C%20and%20include%20a%20backup%20stat%20or%20story%20where%20useful.%20Output%20as%20list."
+    },
+    {
+      "use_case": "Find customer proof points in the public domain",
+      "prompt": "Research recent online reviews, social mentions, and testimonials about [our product OR competitor product]. Focus on what customers are praising or criticizing. Summarize top 5 quotes, what persona each came from, and where it was posted. Include links.",
+      "superPrompt": "Research recent online reviews, social mentions, and testimonials about {{ field1 || our product OR competitor product}}. Focus on what customers are praising or criticizing. Summarize top 5 quotes, what persona each came from, and where it was posted. Include links.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Research%20recent%20online%20reviews%2C%20social%20mentions%2C%20and%20testimonials%20about%20%5Bour%20product%20OR%20competitor%20product%5D.%20Focus%20on%20what%20customers%20are%20praising%20or%20criticizing.%20Summarize%20top%205%20quotes%2C%20what%20persona%20each%20came%20from%2C%20and%20where%20it%20was%20posted.%20Include%20links."
+    },
+    {
+      "use_case": "Analyze pipeline conversion rates by stage",
+      "prompt": "Analyze this sales pipeline export. Calculate conversion rates between each stage and identify the biggest drop-off point. Data: [Upload pipeline CSV]. Output a short summary and a table of conversion % by stage.",
+      "superPrompt": "Analyze this sales pipeline export. Calculate conversion rates between each stage and identify the biggest drop-off point. Data: {{ field1 || Upload pipeline CSV}}. Output a short summary and a table of conversion % by stage.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Analyze%20this%20sales%20pipeline%20export.%20Calculate%20conversion%20rates%20between%20each%20stage%20and%20identify%20the%20biggest%20drop-off%20point.%20Data%3A%20%5BUpload%20pipeline%20CSV%5D.%20Output%20a%20short%20summary%20and%20a%20table%20of%20conversion%20%25%20by%20stage."
+    },
+    {
+      "use_case": "Identify top-performing reps by close rate",
+      "prompt": "From this dataset of rep activities and closed deals, calculate the close rate for each rep and rank them. Data: [Upload rep performance CSV]. Output a ranked list and a sentence for each rep’s strength.",
+      "superPrompt": "From this dataset of rep activities and closed deals, calculate the close rate for each rep and rank them. Data: {{ field1 || Upload rep performance CSV}}. Output a ranked list and a sentence for each rep’s strength.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=From%20this%20dataset%20of%20rep%20activities%20and%20closed%20deals%2C%20calculate%20the%20close%20rate%20for%20each%20rep%20and%20rank%20them.%20Data%3A%20%5BUpload%20rep%20performance%20CSV%5D.%20Output%20a%20ranked%20list%20and%20a%20sentence%20for%20each%20rep%E2%80%99s%20strength."
+    },
+    {
+      "use_case": "Visualize deal velocity across quarters",
+      "prompt": "Use this CRM export to calculate average deal velocity per quarter (days from lead to close). Data: [Upload with open/close dates]. Show velocity trend in a simple chart and summarize the trendline.",
+      "superPrompt": "Use this CRM export to calculate average deal velocity per quarter (days from lead to close). Data: {{ field1 || Upload with open/close dates}}. Show velocity trend in a simple chart and summarize the trendline.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Use%20this%20CRM%20export%20to%20calculate%20average%20deal%20velocity%20per%20quarter%20%28days%20from%20lead%20to%20close%29.%20Data%3A%20%5BUpload%20with%20open%2Fclose%20dates%5D.%20Show%20velocity%20trend%20in%20a%20simple%20chart%20and%20summarize%20the%20trendline."
+    },
+    {
+      "use_case": "Summarize campaign attribution to closed deals",
+      "prompt": "Match campaign sources to closed-won deals from this data. Identify which campaign drove the most closed revenue. Data: [Upload campaign + deal export]. Output a ranked list and a short campaign summary.",
+      "superPrompt": "Match campaign sources to closed-won deals from this data. Identify which campaign drove the most closed revenue. Data: {{ field1 || Upload campaign + deal export}}. Output a ranked list and a short campaign summary.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Match%20campaign%20sources%20to%20closed-won%20deals%20from%20this%20data.%20Identify%20which%20campaign%20drove%20the%20most%20closed%20revenue.%20Data%3A%20%5BUpload%20campaign%20%2B%20deal%20export%5D.%20Output%20a%20ranked%20list%20and%20a%20short%20campaign%20summary."
+    },
+    {
+      "use_case": "Generate performance comparison chart",
+      "prompt": "Here’s a table of rep performance by quarter: [paste data]. Compare top vs bottom performers. Show chart with trends and call out key differences. Output as table + insights.",
+      "superPrompt": "Here’s a table of rep performance by quarter: {{ field1 || paste data}}. Compare top vs bottom performers. Show chart with trends and call out key differences. Output as table + insights.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Here%E2%80%99s%20a%20table%20of%20rep%20performance%20by%20quarter%3A%20%5Bpaste%20data%5D.%20Compare%20top%20vs%20bottom%20performers.%20Show%20chart%20with%20trends%20and%20call%20out%20key%20differences.%20Output%20as%20table%20%2B%20insights."
+    },
+    {
+      "use_case": "Visualize sales process in funnel view",
+      "prompt": "Create a funnel graphic showing our sales stages: [insert stages]. Make it clean and easy to read for onboarding docs. Output as simple image.",
+      "superPrompt": "Create a funnel graphic showing our sales stages: {{ field1 || insert stages}}. Make it clean and easy to read for onboarding docs. Output as simple image.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20funnel%20graphic%20showing%20our%20sales%20stages%3A%20%5Binsert%20stages%5D.%20Make%20it%20clean%20and%20easy%20to%20read%20for%20onboarding%20docs.%20Output%20as%20simple%20image."
+    },
+    {
+      "use_case": "Visualize the B2B sales funnel",
+      "prompt": "Create an image of a standard B2B SaaS sales funnel with these stages: Prospecting, Discovery, Demo, Proposal, Closed Won/Lost. Use clean, modern icons and text labels. Output should be clear enough for use in a slide or enablement doc.",
+      "superPrompt": "Create an image of a standard B2B SaaS sales funnel with these stages: Prospecting, Discovery, Demo, Proposal, Closed Won/Lost. Use clean, modern icons and text labels. Output should be clear enough for use in a slide or enablement doc.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20an%20image%20of%20a%20standard%20B2B%20SaaS%20sales%20funnel%20with%20these%20stages%3A%20Prospecting%2C%20Discovery%2C%20Demo%2C%20Proposal%2C%20Closed%20Won%2FLost.%20Use%20clean%2C%20modern%20icons%20and%20text%20labels.%20Output%20should%20be%20clear%20enough%20for%20use%20in%20a%20slide%20or%20enablement%20doc."
+    },
+    {
+      "use_case": "Illustrate key sales personas",
+      "prompt": "Create professional illustrations for 3 personas: (1) CFO of a mid-market company, (2) VP of IT at a global enterprise, and (3) Operations Manager at a logistics firm. Style should be flat and modern, ideal for use in a one-pager or training slide.",
+      "superPrompt": "Create professional illustrations for 3 personas: (1) CFO of a mid-market company, (2) VP of IT at a global enterprise, and (3) Operations Manager at a logistics firm. Style should be flat and modern, ideal for use in a one-pager or training slide.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20professional%20illustrations%20for%203%20personas%3A%20%281%29%20CFO%20of%20a%20mid-market%20company%2C%20%282%29%20VP%20of%20IT%20at%20a%20global%20enterprise%2C%20and%20%283%29%20Operations%20Manager%20at%20a%20logistics%20firm.%20Style%20should%20be%20flat%20and%20modern%2C%20ideal%20for%20use%20in%20a%20one-pager%20or%20training%20slide."
+    },
+    {
+      "use_case": "Create a territory coverage map",
+      "prompt": "Create a simplified U.S. map showing sales territories split by region: West, Central, East. Use distinctive color zones and label key states. Output should look clean and suitable for a sales kickoff deck.",
+      "superPrompt": "Create a simplified U.S. map showing sales territories split by region: West, Central, East. Use distinctive color zones and label key states. Output should look clean and suitable for a sales kickoff deck.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20simplified%20U.S.%20map%20showing%20sales%20territories%20split%20by%20region%3A%20West%2C%20Central%2C%20East.%20Use%20distinctive%20color%20zones%20and%20label%20key%20states.%20Output%20should%20look%20clean%20and%20suitable%20for%20a%20sales%20kickoff%20deck."
+    },
+    {
+      "use_case": "Draft a team celebration graphic",
+      "prompt": "Design a fun, modern graphic to celebrate “Top Rep of the Month.” Include a placeholder for name/photo and stylized trophy or badge. Style should match internal brand or newsletter vibe.",
+      "superPrompt": "Design a fun, modern graphic to celebrate “Top Rep of the Month.” Include a placeholder for name/photo and stylized trophy or badge. Style should match internal brand or newsletter vibe.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Design%20a%20fun%2C%20modern%20graphic%20to%20celebrate%20%E2%80%9CTop%20Rep%20of%20the%20Month.%E2%80%9D%20Include%20a%20placeholder%20for%20name%2Fphoto%20and%20stylized%20trophy%20or%20badge.%20Style%20should%20match%20internal%20Slack%20or%20newsletter%20vibe."
+    }
+  ],
+  "scraped_at": "2025-10-05T16:38:16.172Z"
+}

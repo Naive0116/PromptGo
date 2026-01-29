@@ -1,0 +1,125 @@
+{
+  "title": "ChatGPT 給產品",
+  "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-product",
+  "tags": [
+    "WORK USERS",
+    "PROMPT PACKS"
+  ],
+  "items": [
+    {
+      "use_case": "根據影響力優先排序產品藍圖項目",
+      "prompt": "檢視這份即將推出的產品計畫清單。使用提供的資料（影響力分數、投入估計和策略一致性註解）來建議優先順序。以重新排序的清單呈現，並為每個建議提供理由。[插入計畫清單]",
+      "superPrompt": "檢視這份即將推出的產品計畫清單。使用提供的資料（影響力分數、投入估計和策略一致性註解）來建議優先順序。以重新排序的清單呈現，並為每個建議提供理由。 {{ 欄位一 || 插入計畫清單 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Review%20this%20list%20of%20upcoming%20product%20initiatives.%20Use%20the%20data%20provided%20%28impact%20scores%2C%20effort%20estimates%2C%20and%20strategic%20alignment%20notes%29%20to%20suggest%20priority%20order.%20Present%20the%20reordered%20list%20with%20justification%20for%20each%20recommendation.%20%5BInsert%20initiative%20list%5D"
+    },
+    {
+      "use_case": "探索收費模式",
+      "prompt": "我們正在考慮更改定價。根據此產品價值和目標受眾，建議 3 種收費策略。包括優點、缺點以及使用每種策略的公司範例。[插入產品和目標受眾詳細資訊]",
+      "superPrompt": "我們正在考慮更改定價。根據此產品價值和目標受眾，建議 3 種收費策略。包括優點、缺點以及使用每種策略的公司範例。 {{ 欄位一 || 插入產品和目標受眾詳細資訊 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=We%E2%80%99re%20considering%20pricing%20changes.%20Based%20on%20this%20product%20value%20and%20audience%2C%20suggest%203%20monetization%20strategies.%20Include%20pros%2C%20cons%2C%20and%20examples%20of%20companies%20using%20each.%20%5BInsert%20product%20and%20audience%20details%5D"
+    },
+    {
+      "use_case": "為產品草擬願景聲明",
+      "prompt": "根據此長期目標和使用者需求，撰寫一份簡潔的產品願景聲明。使其鼓舞人心並立足於實際成果。[插入產品目標]",
+      "superPrompt": "根據此長期目標和使用者需求，撰寫一份簡潔的產品願景聲明。使其鼓舞人心並立足於實際成果。 {{ 欄位一 || 插入產品目標 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Based%20on%20this%20long-term%20goal%20and%20user%20need%2C%20write%20a%20concise%20product%20vision%20statement.%20Keep%20it%20inspiring%20and%20grounded%20in%20real%20outcomes.%20%5BInsert%20product%20goal%5D"
+    },
+    {
+      "use_case": "從客戶回饋中腦力激盪功能點子",
+      "prompt": "檢視上一季的這批客戶回饋。找出痛點並產生 5 個功能點子清單，以解決重複出現的主題。[插入回饋或摘要]",
+      "superPrompt": "檢視上一季的這批客戶回饋。找出痛點並產生 5 個功能點子清單，以解決重複出現的主題。 {{ 欄位一 || 插入回饋或摘要 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Review%20this%20batch%20of%20customer%20feedback%20from%20the%20past%20quarter.%20Identify%20pain%20points%2C%20and%20generate%20a%20list%20of%205%20feature%20ideas%20to%20address%20recurring%20themes.%20%5BInsert%20feedback%20or%20summary%5D"
+    },
+    {
+      "use_case": "規劃 A/B 測試實驗",
+      "prompt": "檢視此產品 UI 變更清單，並提出 2 個 A/B 測試設定。包括假設、成功指標和潛在結果。[插入 UI 變更或使用者目標]",
+      "superPrompt": "檢視此產品 UI 變更清單，並提出 2 個 A/B 測試設定。包括假設、成功指標和潛在結果。 {{ 欄位一 || 插入 UI 變更或使用者目標 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Review%20this%20list%20of%20product%20UI%20changes%20and%20propose%202%20A%2FB%20test%20setups.%20Include%20hypothesis%2C%20success%20metrics%2C%20and%20potential%20outcomes.%20%5BInsert%20UI%20changes%20or%20user%20goals%5D"
+    },
+    {
+      "use_case": "為新功能草擬 PRD",
+      "prompt": "根據此功能點子和客戶需求，撰寫一份 PRD 初稿。包括使用者故事、問題陳述、解決方案概觀、驗收標準和成功指標。[插入背景或問題]",
+      "superPrompt": "根據此功能點子和客戶需求，撰寫一份 PRD 初稿。包括使用者故事、問題陳述、解決方案概觀、驗收標準和成功指標。 {{ 欄位一 || 插入背景或問題 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Based%20on%20this%20feature%20idea%20and%20customer%20need%2C%20write%20a%20first-draft%20PRD.%20Include%20user%20story%2C%20problem%20statement%2C%20solution%20overview%2C%20acceptance%20criteria%2C%20and%20success%20metrics.%20%5BInsert%20context%20or%20problem%5D"
+    },
+    {
+      "use_case": "草擬變更日誌和版本說明",
+      "prompt": "使用此版本摘要，為我們的下一個版本草擬面向使用者的變更日誌說明。使用友好、清晰的語氣，並按類別（例如，新增、改進、已修復）分組。[插入版本說明或票證清單]",
+      "superPrompt": "使用此版本摘要，為我們的下一個版本草擬面向使用者的變更日誌說明。使用友好、清晰的語氣，並按類別（例如，新增、改進、已修復）分組。 {{ 欄位一 || 插入版本說明或票證清單 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Using%20this%20release%20summary%2C%20draft%20user-facing%20changelog%20notes%20for%20our%20next%20version%20release.%20Use%20a%20friendly%2C%20clear%20tone%20and%20group%20by%20category%20%28e.g.%2C%20new%2C%20improved%2C%20fixed%29.%20%5BInsert%20release%20notes%20or%20ticket%20list%5D"
+    },
+    {
+      "use_case": "建立上市常見問題解答",
+      "prompt": "為我們的銷售和支援團隊草擬一份關於即將推出的功能發布的內部常見問題解答。使用此背景和預期問題。以自信、資訊豐富的語氣撰寫。[插入功能和發表詳細資訊]",
+      "superPrompt": "為我們的銷售和支援團隊草擬一份關於即將推出的功能發布的內部常見問題解答。使用此背景和預期問題。以自信、資訊豐富的語氣撰寫。 {{ 欄位一 || 插入功能和發表詳細資訊 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Draft%20an%20internal%20FAQ%20for%20our%20sales%20and%20support%20teams%20about%20our%20upcoming%20feature%20launch.%20Use%20this%20background%20and%20anticipated%20questions.%20Write%20in%20a%20confident%2C%20informative%20tone.%20%5BInsert%20feature%20and%20launch%20details%5D"
+    },
+    {
+      "use_case": "產生一句話價值主張",
+      "prompt": "根據此功能描述，撰寫 3 個版本清晰、引人注目的一句話價值主張。為每個版本針對不同的目標受眾量身定制。[插入功能描述]",
+      "superPrompt": "根據此功能描述，撰寫 3 個版本清晰、引人注目的一句話價值主張。為每個版本針對不同的目標受眾量身定制。 {{ 欄位一 || 插入功能描述 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Based%20on%20this%20feature%20description%2C%20write%203%20versions%20of%20a%20clear%2C%20compelling%20one-sentence%20value%20proposition.%20Tailor%20each%20one%20to%20a%20different%20target%20audience.%20%5BInsert%20feature%20description%5D"
+    },
+    {
+      "use_case": "為新產品草擬簡報",
+      "prompt": "為向內部利害關係人介紹我們的新產品，建立一份 5 張投影片的簡報大綱。包括問題、解決方案、市場、產品概觀和時間表。[插入產品點子]",
+      "superPrompt": "為向內部利害關係人介紹我們的新產品，建立一份 5 張投影片的簡報大綱。包括問題、解決方案、市場、產品概觀和時間表。 {{ 欄位一 || 插入產品點子 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%205-slide%20outline%20for%20a%20pitch%20deck%20introducing%20our%20new%20product%20to%20internal%20stakeholders.%20Include%20problem%2C%20solution%2C%20market%2C%20product%20overview%2C%20and%20timeline.%20%5BInsert%20product%20idea%5D"
+    },
+    {
+      "use_case": "視覺化使用者旅程地圖",
+      "prompt": "為我們的 [插入使用者畫像] 經歷 [插入體驗] 建立一個使用者旅程地圖。包括情緒高低點、接觸點和摩擦時刻。以視覺流程的形式輸出。",
+      "superPrompt": "為我們的 {{ 欄位一 || 插入使用者畫像 }} 經歷 {{ 欄位二 || 插入體驗 }} 建立一個使用者旅程地圖。包括情緒高低點、接觸點和摩擦時刻。以視覺流程的形式輸出。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20user%20journey%20map%20for%20our%20%5Binsert%20user%20persona%5D%20going%20through%20%5Binsert%20experience%5D.%20Include%20emotional%20highs%2Flows%2C%20touchpoints%2C%20and%20moments%20of%20friction.%20Output%20as%20a%20visual%20flow."
+    },
+    {
+      "use_case": "設計上線流程線框圖",
+      "prompt": "為一個金融應用程式產生一個 3 步驟上線流程的線框圖風格圖像。步驟包括：連結帳戶、設定財務目標和檢視建議。風格：帶有標籤的灰階線框圖。",
+      "superPrompt": "為一個金融應用程式產生一個 3 步驟上線流程的線框圖風格圖像。步驟包括：連結帳戶、設定財務目標和檢視建議。風格：帶有標籤的灰階線框圖。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Generate%20a%20wireframe-style%20image%20of%20a%203-step%20onboarding%20flow%20for%20a%20finance%20app.%20Steps%20include%3A%20linking%20an%20account%2C%20setting%20financial%20goals%2C%20and%20reviewing%20suggestions.%20Style%3A%20greyscale%20wireframe%20with%20labels."
+    },
+    {
+      "use_case": "說明產品比較視覺效果",
+      "prompt": "建立兩個應用程式儀表板的並排視覺比較：一個雜亂無章，有太多指標，另一個簡化了，有可行的見解。風格：儀表板 UI、極簡主義、中性品牌。",
+      "superPrompt": "建立兩個應用程式儀表板的並排視覺比較：一個雜亂無章，有太多指標，另一個簡化了，有可行的見解。風格：儀表板 UI、極簡主義、中性品牌。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20side-by-side%20visual%20comparison%20of%20two%20app%20dashboards%3A%20one%20cluttered%20with%20too%20many%20metrics%2C%20and%20one%20simplified%20with%20actionable%20insights.%20Style%3A%20dashboard%20UI%2C%20minimalistic%2C%20neutral%20branding."
+    },
+    {
+      "use_case": "設計使用者旅程資訊圖表",
+      "prompt": "產生一個使用者旅程資訊圖表，顯示行動健康追蹤應用程式的上線體驗。包括關鍵里程碑、情緒和摩擦點。風格：資訊圖表、垂直佈局、柔和色彩。",
+      "superPrompt": "產生一個使用者旅程資訊圖表，顯示行動健康追蹤應用程式的上線體驗。包括關鍵里程碑、情緒和摩擦點。風格：資訊圖表、垂直佈局、柔和色彩。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Generate%20a%20user%20journey%20infographic%20showing%20the%20onboarding%20experience%20for%20a%20mobile%20health-tracking%20app.%20Include%20key%20milestones%2C%20emotions%2C%20and%20friction%20points.%20Style%3A%20infographic%2C%20vertical%20layout%2C%20soft%20colors."
+    },
+    {
+      "use_case": "分析產品回饋主題",
+      "prompt": "分析這組使用者回饋，並找出 4 個最常見的主題。用範例引述總結每個主題，並建議對產品的影響。[插入回饋或資料傾印]",
+      "superPrompt": "分析這組使用者回饋，並找出 4 個最常見的主題。用範例引述總結每個主題，並建議對產品的影響。 {{ 欄位一 || 插入回饋或資料傾印 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Analyze%20this%20set%20of%20user%20feedback%20and%20identify%20the%204%20most%20frequent%20themes.%20Summarize%20each%20with%20example%20quotes%20and%20suggested%20product%20implications.%20%5BInsert%20feedback%20or%20data%20dump%5D"
+    },
+    {
+      "use_case": "從使用資料中綜合見解",
+      "prompt": "根據以下產品使用資料，總結 3 個關鍵行為趨勢，以及它們對使用者需求的啟示。建議 2 個後續調查。[插入資料或摘要]",
+      "superPrompt": "根據以下產品使用資料，總結 3 個關鍵行為趨勢，以及它們對使用者需求的啟示。建議 2 個後續調查。 {{ 欄位一 || 插入資料或摘要 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Based%20on%20the%20following%20product%20usage%20data%2C%20summarize%203%20key%20behavioral%20trends%20and%20what%20they%20suggest%20about%20user%20needs.%20Recommend%202%20follow-up%20investigations.%20%5BInsert%20data%20or%20summary%5D"
+    },
+    {
+      "use_case": "識別產品採用風險",
+      "prompt": "檢視我們的產品推出計畫，並突顯 5 個成功採用的風險。包括可能性、影響和緩解建議。[插入推出計畫或摘要]",
+      "superPrompt": "檢視我們的產品推出計畫，並突顯 5 個成功採用的風險。包括可能性、影響和緩解建議。 {{ 欄位一 || 插入推出計畫或摘要 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Review%20our%20product%20rollout%20plan%20and%20highlight%205%20risks%20to%20successful%20adoption.%20Include%20likelihood%2C%20impact%2C%20and%20mitigation%20recommendations.%20%5BInsert%20rollout%20plan%20or%20summary%5D"
+    },
+    {
+      "use_case": "分析 A/B 測試結果",
+      "prompt": "檢視我們最近的 A/B 測試（測試與對照）結果。找出統計顯著性、改變的關鍵指標，並建議下一步。如果需要，以圖表清晰地呈現見解。[上傳測試資料]",
+      "superPrompt": "檢視我們最近的 A/B 測試（測試與對照）結果。找出統計顯著性、改變的關鍵指標，並建議下一步。如果需要，以圖表清晰地呈現見解。 {{ 欄位一 || 上傳測試資料 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Review%20the%20results%20of%20our%20recent%20A%2FB%20test%20%28test%20vs.%20control%29.%20Identify%20statistical%20significance%2C%20key%20metrics%20that%20changed%2C%20and%20recommend%20next%20steps.%20Present%20insights%20clearly%20with%20graphs%20if%20needed.%20%5BUpload%20test%20data%5D"
+    },
+    {
+      "use_case": "比較不同客戶區隔的功能採用率",
+      "prompt": "使用此資料比較小型企業與企業客戶如何採用我們的關鍵功能。突顯主要差異、使用頻率和對留存率的影響。以包含見解的表格格式輸出。[上傳 CSV 或描述資料集]",
+      "superPrompt": "使用此資料比較小型企業與企業客戶如何採用我們的關鍵功能。突顯主要差異、使用頻率和對留存率的影響。以包含見解的表格格式輸出。 {{ 欄位一 || 上傳 CSV 或描述資料集 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Use%20this%20data%20to%20compare%20how%20small%20business%20vs.%20enterprise%20customers%20adopt%20our%20key%20features.%20Highlight%20major%20differences%2C%20usage%20frequencies%2C%20and%20retention%20impact.%20Format%20output%20as%20a%20table%20with%20insights.%20%5BUpload%20CSV%20or%20describe%20dataset%5D"
+    }
+  ],
+  "scraped_at": "2025-10-05T12:52:41.595Z"
+}

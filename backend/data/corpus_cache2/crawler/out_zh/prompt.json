@@ -1,0 +1,90 @@
+{
+  "ChatGPT_for_any_role": {
+    "title": "ChatGPT 適用於任何角色",
+    "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/chatgpt-for-any-role",
+    "tags": [
+      "WORK USERS",
+      "PROMPT PACKS"
+    ]
+  },
+  "ChatGPT_for_sales": {
+    "title": "ChatGPT 適用於銷售",
+    "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-sales",
+    "tags": [
+      "WORK USERS",
+      "PROMPT PACKS"
+    ]
+  },
+  "ChatGPT_for_customer_success": {
+    "title": "ChatGPT 適用於客戶成功",
+    "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-customer-success",
+    "tags": [
+      "WORK USERS",
+      "PROMPT PACKS"
+    ]
+  },
+  "ChatGPT_for_product": {
+    "title": "ChatGPT 適用於產品",
+    "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-product",
+    "tags": [
+      "WORK USERS",
+      "PROMPT PACKS"
+    ]
+  },
+  "ChatGPT_for_engineers": {
+    "title": "ChatGPT 適用於工程師",
+    "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-engineers",
+    "tags": [
+      "WORK USERS",
+      "PROMPT PACKS"
+    ]
+  },
+  "ChatGPT_for_HR": {
+    "title": "ChatGPT 適用於人力資源",
+    "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-hr",
+    "tags": [
+      "WORK USERS",
+      "PROMPT PACKS"
+    ]
+  },
+  "ChatGPT_for_IT": {
+    "title": "ChatGPT 適用於資訊科技",
+    "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-it",
+    "tags": [
+      "WORK USERS",
+      "PROMPT PACKS"
+    ]
+  },
+  "ChatGPT_for_managers": {
+    "title": "ChatGPT 適用於經理",
+    "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-for-managers",
+    "tags": [
+      "WORK USERS",
+      "PROMPT PACKS"
+    ]
+  },
+  "ChatGPT_for_executives": {
+    "title": "ChatGPT 適用於高階主管",
+    "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-executives",
+    "tags": [
+      "WORK USERS",
+      "PROMPT PACKS"
+    ]
+  },
+  "ChatGPT_for_finance": {
+    "title": "ChatGPT 適用於財務",
+    "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-finance",
+    "tags": [
+      "WORK USERS",
+      "PROMPT PACKS"
+    ]
+  },
+  "ChatGPT_for_marketing": {
+    "title": "ChatGPT 適用於行銷",
+    "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-marketing",
+    "tags": [
+      "WORK USERS",
+      "PROMPT PACKS"
+    ]
+  }
+}

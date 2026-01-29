@@ -1,0 +1,155 @@
+{
+  "title": "ChatGPT for customer success",
+  "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-customer-success",
+  "tags": [
+    "WORK USERS",
+    "PROMPT PACKS"
+  ],
+  "items": [
+    {
+      "use_case": "Create onboarding plan template",
+      "prompt": "Create a reusable onboarding plan template for [type of customer]. Reference typical timelines, milestones, and stakeholder alignment needs. Format as a week-by-week table with task owners and goals.",
+      "superPrompt": "Create a reusable onboarding plan template for {{ field1 || type of customer}}. Reference typical timelines, milestones, and stakeholder alignment needs. Format as a week-by-week table with task owners and goals.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20reusable%20onboarding%20plan%20template%20for%20%5Btype%20of%20customer%5D.%20Reference%20typical%20timelines%2C%20milestones%2C%20and%20stakeholder%20alignment%20needs.%20Format%20as%20a%20week-by-week%20table%20with%20task%20owners%20and%20goals."
+    },
+    {
+      "use_case": "Summarize onboarding feedback",
+      "prompt": "Summarize onboarding feedback from our last 10 customers in [segment]. Use these shared notes and survey answers. Output a short paragraph per theme: wins, blockers, suggestions.",
+      "superPrompt": "Summarize onboarding feedback from our last 10 customers in {{ field1 || segment}}. Use these shared notes and survey answers. Output a short paragraph per theme: wins, blockers, suggestions.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Summarize%20onboarding%20feedback%20from%20our%20last%2010%20customers%20in%20%5Bsegment%5D.%20Use%20these%20shared%20notes%20and%20survey%20answers.%20Output%20a%20short%20paragraph%20per%20theme%3A%20wins%2C%20blockers%2C%20suggestions."
+    },
+    {
+      "use_case": "Identify best practices for high-touch onboarding",
+      "prompt": "Research how leading B2B companies structure high-touch onboarding journeys. Focus on companies with $1M+ ACV and hybrid onboarding models. Include sources and structure the output as a bulleted summary of key tactics with references.",
+      "superPrompt": "Research how leading B2B companies structure high-touch onboarding journeys. Focus on companies with $1M+ ACV and hybrid onboarding models. Include sources and structure the output as a bulleted summary of key tactics with references.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Research%20how%20leading%20B2B%20companies%20structure%20high-touch%20onboarding%20journeys.%20Focus%20on%20companies%20with%20%241M%2B%20ACV%20and%20hybrid%20onboarding%20models.%20Include%20sources%20and%20structure%20the%20output%20as%20a%20bulleted%20summary%20of%20key%20tactics%20with%20references."
+    },
+    {
+      "use_case": "Suggest proactive playbooks",
+      "prompt": "Recommend 3 proactive outreach playbooks for at-risk customers in [industry/segment]. Use trends from recent churn, feature inactivity, and low engagement. Output should include: goal, trigger, CTA, and timing.",
+      "superPrompt": "Recommend 3 proactive outreach playbooks for at-risk customers in {{ field1 || industry/segment}}. Use trends from recent churn, feature inactivity, and low engagement. Output should include: goal, trigger, CTA, and timing.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Recommend%203%20proactive%20outreach%20playbooks%20for%20at-risk%20customers%20in%20%5Bindustry%2Fsegment%5D.%20Use%20trends%20from%20recent%20churn%2C%20feature%20inactivity%2C%20and%20low%20engagement.%20Output%20should%20include%3A%20goal%2C%20trigger%2C%20CTA%2C%20and%20timing."
+    },
+    {
+      "use_case": "Brainstorm retention incentives",
+      "prompt": "Suggest creative retention strategies for accounts likely to downgrade in [industry]. Use trends in usage and renewal hesitations we’ve seen. Output 5 tested and 5 novel ideas with pros/cons.",
+      "superPrompt": "Suggest creative retention strategies for accounts likely to downgrade in {{ field1 || industry}}. Use trends in usage and renewal hesitations we’ve seen. Output 5 tested and 5 novel ideas with pros/cons.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Suggest%20creative%20retention%20strategies%20for%20accounts%20likely%20to%20downgrade%20in%20%5Bindustry%5D.%20Use%20trends%20in%20usage%20and%20renewal%20hesitations%20we%E2%80%99ve%20seen.%20Output%205%20tested%20and%205%20novel%20ideas%20with%20pros%2Fcons."
+    },
+    {
+      "use_case": "Benchmark CS org structure",
+      "prompt": "Benchmark the CS org structure for companies like ours in [industry, size]. Focus on roles per customer segment and ratio to revenue. Output as a comparison table with notes on headcount ratios.",
+      "superPrompt": "Benchmark the CS org structure for companies like ours in {{ field1 || industry, size}}. Focus on roles per customer segment and ratio to revenue. Output as a comparison table with notes on headcount ratios.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Benchmark%20the%20CS%20org%20structure%20for%20companies%20like%20ours%20in%20%5Bindustry%2C%20size%5D.%20Focus%20on%20roles%20per%20customer%20segment%20and%20ratio%20to%20revenue.%20Output%20as%20a%20comparison%20table%20with%20notes%20on%20headcount%20ratios."
+    },
+    {
+      "use_case": "Benchmark success metrics by industry",
+      "prompt": "Research top 3 success metrics used for customer health scoring in the [industry] sector. Include CSAT, NRR, usage frequency, or other emerging benchmarks. Output as a table comparing metric, source, and benchmark value with citations.",
+      "superPrompt": "Research top 3 success metrics used for customer health scoring in the {{ field1 || industry}} sector. Include CSAT, NRR, usage frequency, or other emerging benchmarks. Output as a table comparing metric, source, and benchmark value with citations.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=%5BCS%20Ops%20at%20B2B%20SaaS%20Company.%5D%20Research%20top%203%20success%20metrics%20used%20for%20customer%20health%20scoring%20in%20the%20%5Bindustry%5D%20sector.%20Include%20CSAT%2C%20NRR%2C%20usage%20frequency%2C%20or%20other%20emerging%20benchmarks.%20Output%20as%20a%20table%20comparing%20metric%2C%20source%2C%20and%20benchmark%20value%20with%20citations."
+    },
+    {
+      "use_case": "Evaluate CS tooling stacks",
+      "prompt": "Research typical Customer Success tech stacks for companies in early-stage, growth-stage, and enterprise. Include categories (e.g., CRM, Success Platform, Analytics). Output a comparison chart with examples and usage notes.",
+      "superPrompt": "Research typical Customer Success tech stacks for companies in early-stage, growth-stage, and enterprise. Include categories (e.g., CRM, Success Platform, Analytics). Output a comparison chart with examples and usage notes.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=%5BDirector%20of%20CS%20Strategy.%5D%20Research%20typical%20Customer%20Success%20tech%20stacks%20for%20companies%20in%20early-stage%2C%20growth-stage%2C%20and%20enterprise.%20Include%20categories%20(e.g.%2C%20CRM%2C%20Success%20Platform%2C%20Analytics).%20Output%20a%20comparison%20chart%20with%20examples%20and%20usage%20notes."
+    },
+    {
+      "use_case": "Competitive enablement summary",
+      "prompt": "Research how competitors are supporting enterprise customers post-sale in [industry]. Include examples of success resources, team structure, and onboarding formats. Output as a table comparing 3 competitors with pros/cons per tactic.",
+      "superPrompt": "Research how competitors are supporting enterprise customers post-sale in {{ field1 || industry}}. Include examples of success resources, team structure, and onboarding formats. Output as a table comparing 3 competitors with pros/cons per tactic.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Research%20how%20competitors%20are%20supporting%20enterprise%20customers%20post-sale%20in%20%5Bindustry%5D.%20Include%20examples%20of%20success%20resources%2C%20team%20structure%2C%20and%20onboarding%20formats.%20Output%20as%20a%20table%20comparing%203%20competitors%20with%20pros%2Fcons%20per%20tactic."
+    },
+    {
+      "use_case": "Create competitive comparison of CS programs",
+      "prompt": "Research what customer success programs look like at our top 3 competitors. Focus on onboarding, health tracking, and expansion strategies. Output a comparison matrix.",
+      "superPrompt": "Research what customer success programs look like at our top 3 competitors. Focus on onboarding, health tracking, and expansion strategies. Output a comparison matrix.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=[Head%20of%20CS%20Strategy.]%20Research%20what%20customer%20success%20programs%20look%20like%20at%20our%20top%203%20competitors.%20Focus%20on%20onboarding%2C%20health%20tracking%2C%20and%20expansion%20strategies.%20Output%20a%20comparison%20matrix%20with%20columns%3A"
+    },
+    {
+      "use_case": "Draft executive email update",
+      "prompt": "Write a weekly update email for [executive stakeholder at customer]. Use these internal notes from this week’s call and usage metrics: [paste here]. Output should be a short, polished email with 3 bullets.",
+      "superPrompt": "Write a weekly update email for {{ field1 || executive stakeholder at customer}}. Use these internal notes from this week’s call and usage metrics: {{ field2 || paste here}}. Output should be a short, polished email with 3 bullets.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Write%20a%20weekly%20update%20email%20for%20%5Bexecutive%20stakeholder%20at%20customer%5D.%20Use%20these%20internal%20notes%20from%20this%20week%E2%80%99s%20call%20and%20usage%20metrics%3A%20%5Bpaste%20here%5D.%20Output%20should%20be%20a%20short%2C%20polished%20email%20with%203%20bullets."
+    },
+    {
+      "use_case": "Draft QBR talking points",
+      "prompt": "Summarize the top wins, risks, and product usage highlights for [Customer Name] ahead of our QBR. Use their latest health score, usage trends, and support ticket history. Format as a bulleted prep doc for internal review.",
+      "superPrompt": "Summarize the top wins, risks, and product usage highlights for {{ field1 || Customer Name}} ahead of our QBR. Use their latest health score, usage trends, and support ticket history. Format as a bulleted prep doc for internal review.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Summarize%20the%20top%20wins%2C%20risks%2C%20and%20product%20usage%20highlights%20for%20%5BCustomer%20Name%5D%20ahead%20of%20our%20QBR.%20Use%20their%20latest%20health%20score%2C%20usage%20trends%2C%20and%20support%20ticket%20history.%20Format%20as%20a%20bulleted%20prep%20doc%20for%20internal%20review."
+    },
+    {
+      "use_case": "Prep for renewal call",
+      "prompt": "Create a renewal call prep checklist for [Customer Name]. Include contract terms, current usage, known risks, and upsell potential. Output as a bulleted checklist.",
+      "superPrompt": "Create a renewal call prep checklist for {{ field1 || Customer Name}}. Include contract terms, current usage, known risks, and upsell potential. Output as a bulleted checklist.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20renewal%20call%20prep%20checklist%20for%20%5BCustomer%20Name%5D.%20Include%20contract%20terms%2C%20current%20usage%2C%20known%20risks%2C%20and%20upsell%20potential.%20Output%20as%20a%20bulleted%20checklist."
+    },
+    {
+      "use_case": "Create account plan summary",
+      "prompt": "Draft a 1-pager account plan for [Customer Name]. Use notes from our last 2 calls + contract info + goals: [paste here]. Output should be formatted as goals, blockers, actions, and renewals.",
+      "superPrompt": "Draft a 1-pager account plan for {{ field1 || Customer Name}}. Use notes from our last 2 calls + contract info + goals: {{ field2 || paste here}}. Output should be formatted as goals, blockers, actions, and renewals.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Draft%20a%201-pager%20account%20plan%20for%20%5BCustomer%20Name%5D.%20Use%20notes%20from%20our%20last%202%20calls%20%2B%20contract%20info%20%2B%20goals%3A%20%5Bpaste%20here%5D.%20Output%20should%20be%20formatted%20as%20goals%2C%20blockers%2C%20actions%2C%20and%20renewals."
+    },
+    {
+      "use_case": "Outline renewal risk summary",
+      "prompt": "Draft a renewal risk summary for [Customer Name] ahead of our internal forecast call. Include their renewal date, usage trend, sentiment, and contract notes. Output should be a paragraph summary + 1-line recommendation.",
+      "superPrompt": "Draft a renewal risk summary for {{ field1 || Customer Name}} ahead of our internal forecast call. Include their renewal date, usage trend, sentiment, and contract notes. Output should be a paragraph summary + 1-line recommendation.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Draft%20a%20renewal%20risk%20summary%20for%20%5BCustomer%20Name%5D%20ahead%20of%20our%20internal%20forecast%20call.%20Include%20their%20renewal%20date%2C%20usage%20trend%2C%20sentiment%2C%20and%20contract%20notes.%20Output%20should%20be%20a%20paragraph%20summary%20%2B%201-line%20recommendation."
+    },
+    {
+      "use_case": "Outline success metrics by segment",
+      "prompt": "Outline a draft list of success metrics for [segment] customers. Include adoption goals, engagement targets, and renewal benchmarks. Format as a 2-column table: Metric | Definition.",
+      "superPrompt": "Outline a draft list of success metrics for {{ field1 || segment}} customers. Include adoption goals, engagement targets, and renewal benchmarks. Format as a 2-column table: Metric | Definition.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Outline%20a%20draft%20list%20of%20success%20metrics%20for%20%5Bsegment%5D%20customers.%20Include%20adoption%20goals%2C%20engagement%20targets%2C%20and%20renewal%20benchmarks.%20Format%20as%20a%202-column%20table%3A%20Metric%20%7C%20Definition."
+    },
+    {
+      "use_case": "Evaluate CSAT score distribution",
+      "prompt": "Review this CSAT survey data from Q2. Calculate overall average, identify outlier scores, and summarize feedback themes if available. Output as a short summary with key stats and top positive/negative feedback examples.",
+      "superPrompt": "Review this CSAT survey data from Q2. Calculate overall average, identify outlier scores, and summarize feedback themes if available. Output as a short summary with key stats and top positive/negative feedback examples.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Review%20this%20CSAT%20survey%20data%20from%20Q2.%20Calculate%20overall%20average%2C%20identify%20outlier%20scores%2C%20and%20summarize%20feedback%20themes%20if%20available.%20Output%20as%20a%20short%20summary%20with%20key%20stats%20and%20top%20positive%2Fnegative%20feedback%20examples."
+    },
+    {
+      "use_case": "Analyze support ticket trends",
+      "prompt": "Examine this export of support tickets from the last quarter. Identify the top 5 recurring issues and provide a short summary of root causes. Output should include a ranked list with issue, frequency, and potential CS actions.",
+      "superPrompt": "Examine this export of support tickets from the last quarter. Identify the top 5 recurring issues and provide a short summary of root causes. Output should include a ranked list with issue, frequency, and potential CS actions.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Examine%20this%20export%20of%20support%20tickets%20from%20the%20last%20quarter.%20Identify%20the%20top%205%20recurring%20issues%20and%20provide%20a%20short%20summary%20of%20root%20causes.%20Output%20should%20include%20a%20ranked%20list%20with%20issue%2C%20frequency%2C%20and%20potential%20CS%20actions."
+    },
+    {
+      "use_case": "Spot early signs of churn",
+      "prompt": "Review this customer usage data from the past 90 days. Identify any customers who may be at risk of churning based on usage drop, login frequency, or support interactions. Summarize the findings in a table with columns: Customer Name | Risk Factor | Notes.",
+      "superPrompt": "Review this customer usage data from the past 90 days. Identify any customers who may be at risk of churning based on usage drop, login frequency, or support interactions. Summarize the findings in a table with columns: Customer Name | Risk Factor | Notes.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Review%20this%20customer%20usage%20data%20from%20the%20past%2090%20days.%20Identify%20any%20customers%20who%20may%20be%20at%20risk%20of%20churning%20based%20on%20usage%20drop%2C%20login%20frequency%2C%20or%20support%20interactions.%20Summarize%20the%20findings%20in%20a%20table%20with%20columns%3A%20Customer%20Name%20%7C%20Risk%20Factor%20%7C%20Notes."
+    },
+    {
+      "use_case": "Standardize customer health scoring",
+      "prompt": "Build a draft health scoring rubric for [segment or region]. Use inputs like usage %, NPS, renewal status, and ticket volume. Output as a table with scoring ranges, weights, and color indicators.",
+      "superPrompt": "Build a draft health scoring rubric for {{ field1 || segment or region}}. Use inputs like usage %, NPS, renewal status, and ticket volume. Output as a table with scoring ranges, weights, and color indicators.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Build%20a%20draft%20health%20scoring%20rubric%20for%20%5Bsegment%20or%20region%5D.%20Use%20inputs%20like%20usage%20%25%2C%20NPS%2C%20renewal%20status%2C%20and%20ticket%20volume.%20Output%20as%20a%20table%20with%20scoring%20ranges%2C%20weights%2C%20and%20color%20indicators."
+    },
+    {
+      "use_case": "Design customer health score mock-up",
+      "prompt": "Design a visual mock-up of a color-coded health score gauge for customers. Include Low, Medium, High ranges with suggested numerical ranges and icons. Style: dashboard-style, clean lines, professional.",
+      "superPrompt": "Design a visual mock-up of a color-coded health score gauge for customers. Include Low, Medium, High ranges with suggested numerical ranges and icons. Style: dashboard-style, clean lines, professional.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Design%20a%20visual%20mock-up%20of%20a%20color-coded%20health%20score%20gauge%20for%20customers.%20Include%20Low%2C%20Medium%2C%20High%20ranges%20with%20suggested%20numerical%20ranges%20and%20icons.%20Style%3A%20dashboard-style%2C%20clean%20lines%2C%20professional."
+    },
+    {
+      "use_case": "Visualize customer journey map",
+      "prompt": "Turn this outline of customer lifecycle stages into a visual journey map. Use the stages and pain points listed here: [paste text]. Output as a labeled diagram with 5 lifecycle stages.",
+      "superPrompt": "Turn this outline of customer lifecycle stages into a visual journey map. Use the stages and pain points listed here: {{ field1 || paste text}}. Output as a labeled diagram with 5 lifecycle stages.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Turn%20this%20outline%20of%20customer%20lifecycle%20stages%20into%20a%20visual%20journey%20map.%20Use%20the%20stages%20and%20pain%20points%20listed%20here%3A%20%5Bpaste%20text%5D.%20Output%20as%20a%20labeled%20diagram%20with%205%20lifecycle%20stages."
+    },
+    {
+      "use_case": "Illustrate escalation process flow",
+      "prompt": "Create a diagram that illustrates the internal escalation process from CSM to Support to Engineering. Include 3 levels of severity and labeled handoff points. Style: flowchart format, minimal colors, ready for internal wiki.",
+      "superPrompt": "Create a diagram that illustrates the internal escalation process from CSM to Support to Engineering. Include 3 levels of severity and labeled handoff points. Style: flowchart format, minimal colors, ready for internal wiki.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20diagram%20that%20illustrates%20the%20internal%20escalation%20process%20from%20CSM%20to%20Support%20to%20Engineering.%20Include%203%20levels%20of%20severity%20and%20labeled%20handoff%20points.%20Style%3A%20flowchart%20format%2C%20minimal%20colors%2C%20ready%20for%20internal%20wiki."
+    },
+    {
+      "use_case": "Build a visual customer maturity model",
+      "prompt": "Create an image that visualizes a 4-stage customer maturity model for a SaaS platform. Each stage should have a title, key behavior pattern, and suggested CS touchpoint. Style: professional, clean, slide-ready.",
+      "superPrompt": "Create an image that visualizes a 4-stage customer maturity model for a SaaS platform. Each stage should have a title, key behavior pattern, and suggested CS touchpoint. Style: professional, clean, slide-ready.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20an%20image%20that%20visualizes%20a%204-stage%20customer%20maturity%20model%20for%20a%20SaaS%20platform.%20Each%20stage%20should%20have%20a%20title%2C%20key%20behavior%20pattern%2C%20and%20suggested%20CS%20touchpoint.%20Style%3A%20professional%2C%20clean%2C%20slide-ready."
+    }
+  ],
+  "scraped_at": "2025-10-05T16:38:24.152Z"
+}

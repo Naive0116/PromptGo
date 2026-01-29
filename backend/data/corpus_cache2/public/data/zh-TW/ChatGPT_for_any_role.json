@@ -1,0 +1,131 @@
+{
+  "title": "ChatGPT 適用於任何角色",
+  "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/chatgpt-for-any-role",
+  "tags": [
+    "WORK USERS",
+    "PROMPT PACKS"
+  ],
+  "items": [
+    {
+      "use_case": "撰寫專業電子郵件",
+      "prompt": "寫一封專業的電子郵件給 [收件人]。郵件內容是關於 [主題]，並且應該要禮貌、清晰、簡潔。提供主旨和簡短的結尾。",
+      "superPrompt": "寫一封專業的電子郵件給 {{ 欄位一 || 收件人 }}。郵件內容是關於 {{ 欄位二 || 主題 }}，並且應該要禮貌、清晰、簡潔。提供主旨和簡短的結尾。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Draft%20an%20email%20to%20%5Brecipient%5D%20about%20%5Btopic%5D.%20Keep%20it%20clear%2C%20polite%2C%20and%20concise."
+    },
+    {
+      "use_case": "重寫以求清晰",
+      "prompt": "重寫以下文字，使其更容易理解。這段文字將用於專業場合。確保語氣清晰、尊重、簡潔。文字：[貼上文字]。",
+      "superPrompt": "重寫以下文字，使其更容易理解。這段文字將用於專業場合。確保語氣清晰、尊重、簡潔。文字： {{ 欄位一 || 貼上文字 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Rewrite%20the%20following%20text%20so%20it%20is%20easier%20to%20understand.%20The%20text%20will%20be%20used%20in%20a%20professional%20setting.%20Ensure%20the%20tone%20is%20clear%2C%20respectful%2C%20and%20concise.%20Text%3A%20%5Bpaste%20text%5D."
+    },
+    {
+      "use_case": "為不同受眾調整訊息",
+      "prompt": "為 [受眾類型：主管、同事或客戶] 重新建構此訊息。此訊息最初是為 [情境] 撰寫的。調整語氣、用詞和風格以適應目標受眾。文字：[貼上文字]。",
+      "superPrompt": "為 {{ 欄位一 || 受眾類型：主管、同事或客戶 }} 重新建構此訊息。此訊息最初是為 {{ 欄位二 || 情境 }} 撰寫的。調整語氣、用詞和風格以適應目標受眾。文字： {{ 欄位三 || 貼上文字 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Reframe%20this%20message%20for%20%5Baudience%20type%3A%20executives%2C%20peers%2C%20or%20customers%5D.%20The%20message%20was%20originally%20written%20for%20%5Bcontext%5D.%20Adjust%20tone%2C%20word%20choice%2C%20and%20style%20to%20fit%20the%20intended%20audience.%20Text%3A%20%5Bpaste%20text%5D."
+    },
+    {
+      "use_case": "草擬會議邀請",
+      "prompt": "為一場關於 [主題] 的會議草擬一份會議邀請。會議將包括 [與會者/角色]，並應概述議程項目、目標和所需準備。以行事曆邀請格式提供文字。",
+      "superPrompt": "為一場關於 {{ 欄位一 || 主題 }} 的會議草擬一份會議邀請。會議將包括 {{ 欄位二 || 與會者/角色 }}，並應概述議程項目、目標和所需準備。以行事曆邀請格式提供文字。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Draft%20a%20meeting%20invitation%20for%20a%20session%20about%20%5Btopic%5D.%20The%20meeting%20will%20include%20%5Battendees%2Froles%5D%20and%20should%20outline%20agenda%20items%2C%20goals%2C%20and%20preparation%20required.%20Provide%20the%20text%20in%20calendar-invite%20format."
+    },
+    {
+      "use_case": "總結長篇電子郵件",
+      "prompt": "將此電子郵件串總結成一個簡短的回顧。郵件串包含多封來回的訊息。突顯關鍵決策、行動項目和待解決的問題。電子郵件：[貼上文字]。",
+      "superPrompt": "將此電子郵件串總結成一個簡短的回顧。郵件串包含多封來回的訊息。突顯關鍵決策、行動項目和待解決的問題。電子郵件： {{ 欄位一 || 貼上文字 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Summarize%20this%20email%20thread%20into%20a%20short%20recap.%20The%20thread%20includes%20several%20back-and-forth%20messages.%20Highlight%20key%20decisions%2C%20action%20items%2C%20and%20open%20questions.%20Email%3A%20%5Bpaste%20text%5D."
+    },
+    {
+      "use_case": "建立會議議程",
+      "prompt": "為一場關於 [主題] 的會議建立一份結構化的議程。會議將持續 [時間] 並包括 [與會者]。將議程分為幾個部分，並為每個部分估計時間和目標。",
+      "superPrompt": "為一場關於 {{ 欄位一 || 主題 }} 的會議建立一份結構化的議程。會議將持續 {{ 欄位二 || 時間 }} 並包括 {{ 欄位三 || 與會者 }}。將議程分為幾個部分，並為每個部分估計時間和目標。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20structured%20agenda%20for%20a%20meeting%20about%20%5Btopic%5D.%20The%20meeting%20will%20last%20%5Btime%5D%20and%20include%20%5Battendees%5D.%20Break%20the%20agenda%20into%20sections%20with%20time%20estimates%20and%20goals%20for%20each%20section."
+    },
+    {
+      "use_case": "總結會議記錄",
+      "prompt": "將這些會議記錄總結成一份結構化的回顧。這些記錄是草稿且非正式的。將它們分類為：關鍵決策、後續步驟和責任歸屬。記錄：[貼上文字]。",
+      "superPrompt": "將這些會議記錄總結成一份結構化的回顧。這些記錄是草稿且非正式的。將它們分類為：關鍵決策、後續步驟和責任歸屬。記錄： {{ 欄位一 || 貼上文字 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Summarize%20these%20meeting%20notes%20into%20a%20structured%20recap.%20The%20notes%20are%20rough%20and%20informal.%20Organize%20them%20into%20categories%3A%20key%20decisions%2C%20next%20steps%2C%20and%20responsibilities.%20Notes%3A%20%5Bpaste%20text%5D."
+    },
+    {
+      "use_case": "建立行動項目清單",
+      "prompt": "將以下會議記錄轉換為一份清晰的任務清單。任務應按負責人分組，並包括提到的截止日期。記錄：[貼上文字]。",
+      "superPrompt": "將以下會議記錄轉換為一份清晰的任務清單。任務應按負責人分組，並包括提到的截止日期。記錄： {{ 欄位一 || 貼上文字 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Turn%20the%20following%20meeting%20notes%20into%20a%20clean%20task%20list.%20The%20tasks%20should%20be%20grouped%20by%20owner%20and%20include%20deadlines%20if%20mentioned.%20Notes%3A%20%5Bpaste%20text%5D."
+    },
+    {
+      "use_case": "為會議準備問題",
+      "prompt": "為一場關於 [主題] 的會議建議一些深思熟慮的問題。會議的目的是 [目的]。提供至少 5 個能顯示準備充分和洞察力的問題。",
+      "superPrompt": "為一場關於 {{ 欄位一 || 主題 }} 的會議建議一些深思熟慮的問題。會議的目的是 {{ 欄位二 || 目的 }}。提供至少 5 個能顯示準備充分和洞察力的問題。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Suggest%20thoughtful%20questions%20to%20ask%20in%20a%20meeting%20about%20%5Btopic%5D.%20The%20purpose%20of%20the%20meeting%20is%20%5Bpurpose%5D.%20Provide%20a%20list%20of%20at%20least%205%20questions%20that%20show%20preparation%20and%20insight."
+    },
+    {
+      "use_case": "草擬後續追蹤郵件",
+      "prompt": "在一場關於 [主題] 的會議後，撰寫一封專業的後續追蹤電子郵件。包括關鍵要點的回顧、分配的責任以及附有截止日期的後續步驟。使用清晰禮貌的語氣。",
+      "superPrompt": "在一場關於 {{ 欄位一 || 主題 }} 的會議後，撰寫一封專業的後續追蹤電子郵件。包括關鍵要點的回顧、分配的責任以及附有截止日期的後續步驟。使用清晰禮貌的語氣。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Write%20a%20professional%20follow-up%20email%20after%20a%20meeting%20about%20%5Btopic%5D.%20Include%20a%20recap%20of%20key%20points%2C%20assigned%20responsibilities%2C%20and%20next%20steps%20with%20deadlines.%20Use%20a%20clear%20and%20polite%20tone."
+    },
+    {
+      "use_case": "找出根本原因",
+      "prompt": "分析以下職場問題：[描述問題]。背景是這個問題已經發生多次。找出可能的根本原因並建議問題以確認它們。",
+      "superPrompt": "分析以下職場問題： {{ 欄位一 || 描述問題 }}。背景是這個問題已經發生多次。找出可能的根本原因並建議問題以確認它們。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Analyze%20the%20following%20workplace%20issue%3A%20%5Bdescribe%20issue%5D.%20The%20context%20is%20that%20the%20problem%20has%20occurred%20multiple%20times.%20Identify%20possible%20root%20causes%20and%20suggest%20questions%20to%20confirm%20them."
+    },
+    {
+      "use_case": "比較選項",
+      "prompt": "比較以下兩個或多個可能的解決方案：[列出選項]。決定需要在 [時間範圍] 內做出。評估每個選項的優點、缺點和潛在風險。",
+      "superPrompt": "比較以下兩個或多個可能的解決方案： {{ 欄位一 || 列出選項 }}。決定需要在 {{ 欄位二 || 時間範圍 }} 內做出。評估每個選項的優點、缺點和潛在風險。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Compare%20the%20following%20two%20or%20more%20possible%20solutions%3A%20%5Blist%20options%5D.%20The%20decision%20needs%20to%20be%20made%20in%20%5Btimeframe%5D.%20Evaluate%20pros%2C%20cons%2C%20and%20potential%20risks%20for%20each%20option."
+    },
+    {
+      "use_case": "決策標準",
+      "prompt": "幫助為 [描述決策] 定義清晰的決策標準。背景是涉及多個利害關係人。提供一份加權標準的簡短清單以指導選擇。",
+      "superPrompt": "幫助為 {{ 欄位一 || 描述決策 }} 定義清晰的決策標準。背景是涉及多個利害關係人。提供一份加權標準的簡短清單以指導選擇。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Help%20define%20clear%20decision-making%20criteria%20for%20%5Bdescribe%20decision%5D.%20The%20context%20is%20that%20multiple%20stakeholders%20are%20involved.%20Provide%20a%20short%20list%20of%20weighted%20criteria%20to%20guide%20the%20choice."
+    },
+    {
+      "use_case": "風險評估",
+      "prompt": "評估以下計畫的潛在風險：[描述計畫]。該計畫預計於 [日期] 開始。按可能性和影響列出風險，並建議緩解策略。",
+      "superPrompt": "評估以下計畫的潛在風險： {{ 欄位一 || 描述計畫 }}。該計畫預計於 {{ 欄位二 || 日期 }} 開始。按可能性和影響列出風險，並建議緩解策略。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Assess%20the%20potential%20risks%20of%20the%20following%20plan%3A%20%5Bdescribe%20plan%5D.%20The%20plan%20is%20set%20to%20start%20on%20%5Bdate%5D.%20List%20risks%20by%20likelihood%20and%20impact%2C%20and%20suggest%20mitigation%20strategies."
+    },
+    {
+      "use_case": "推薦最佳選項",
+      "prompt": "根據以下背景：[描述情況和選項]，推薦最適合的選項。清晰地解釋您的理由並建議實施的第一步。",
+      "superPrompt": "根據以下背景： {{ 欄位一 || 描述情況和選項 }}，推薦最適合的選項。清晰地解釋您的理由並建議實施的第一步。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Based%20on%20the%20following%20background%3A%20%5Bdescribe%20situation%20and%20options%5D%2C%20recommend%20the%20most%20suitable%20option.%20Explain%20your%20reasoning%20clearly%20and%20suggest%20first%20steps%20for%20implementation."
+    },
+    {
+      "use_case": "記錄每日優先事項",
+      "prompt": "從以下任務中建立一個優先待辦事項清單：[貼上任務]。背景是一個時間有限的典型工作日。建議哪些任務應該先做以及原因。",
+      "superPrompt": "從以下任務中建立一個優先待辦事項清單： {{ 欄位一 || 貼上任務 }}。背景是一個時間有限的典型工作日。建議哪些任務應該先做以及原因。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20prioritized%20to-do%20list%20from%20the%20following%20tasks%3A%20%5Bpaste%20tasks%5D.%20The%20context%20is%20a%20typical%20workday%20with%20limited%20time.%20Suggest%20which%20tasks%20should%20be%20done%20first%20and%20why."
+    },
+    {
+      "use_case": "建立每週計畫",
+      "prompt": "為 [描述角色或情況] 建立一份每週工作計畫。本週包括截止日期、會議和個人專注時間。提供一個均衡的時程表及建議的優先事項。",
+      "superPrompt": "為 {{ 欄位一 || 描述角色或情況 }} 建立一份每週工作計畫。本週包括截止日期、會議和個人專注時間。提供一個均衡的時程表及建議的優先事項。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Build%20a%20weekly%20work%20plan%20for%20%5Bdescribe%20role%20or%20situation%5D.%20The%20week%20includes%20deadlines%2C%20meetings%2C%20and%20individual%20focus%20time.%20Provide%20a%20balanced%20schedule%20with%20recommended%20priorities."
+    },
+    {
+      "use_case": "總結長文件",
+      "prompt": "將以下文件總結為 5 個重點和 3 個建議行動。該文件是 [類型：報告、計畫或筆記]。保持摘要簡潔專業。文字：[貼上文件]。",
+      "superPrompt": "將以下文件總結為 5 個重點和 3 個建議行動。該文件是 {{ 欄位一 || 類型：報告、計畫或筆記 }}。保持摘要簡潔專業。文字： {{ 欄位二 || 貼上文件 }}。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Summarize%20the%20following%20document%20into%205%20key%20points%20and%203%20recommended%20actions.%20The%20document%20is%20%5Btype%3A%20report%2C%20plan%2C%20or%20notes%5D.%20Keep%20the%20summary%20concise%20and%20professional.%20Text%3A%20%5Bpaste%20document%5D."
+    },
+    {
+      "use_case": "腦力激盪解決方案",
+      "prompt": "為以下職場挑戰腦力激盪潛在的解決方案：[描述挑戰]。提供至少 5 個不同的想法，並註明每個想法的優缺點。",
+      "superPrompt": "為以下職場挑戰腦力激盪潛在的解決方案： {{ 欄位一 || 描述挑戰 }}。提供至少 5 個不同的想法，並註明每個想法的優缺點。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Brainstorm%20potential%20solutions%20to%20the%20following%20workplace%20challenge%3A%20%5Bdescribe%20challenge%5D.%20Provide%20at%20least%205%20varied%20ideas%2C%20noting%20pros%20and%20cons%20for%20each."
+    },
+    {
+      "use_case": "撰寫專案更新",
+      "prompt": "為利害關係人草擬一份簡短的專案更新。專案是 [描述專案]。包括取得的進展、目前的障礙和後續步驟。以專業、簡潔的風格撰寫。",
+      "superPrompt": "為利害關係人草擬一份簡短的專案更新。專案是 {{ 欄位一 || 描述專案 }}。包括取得的進展、目前的障礙和後續步驟。以專業、簡潔的風格撰寫。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Draft%20a%20short%20project%20update%20for%20stakeholders.%20The%20project%20is%20%5Bdescribe%20project%5D.%20Include%20progress%20made%2C%20current%20blockers%2C%20and%20next%20steps.%20Write%20in%20a%20professional%2C%20concise%20style."
+    }
+  ],
+  "scraped_at": "2025-10-05T12:52:19.530Z"
+}

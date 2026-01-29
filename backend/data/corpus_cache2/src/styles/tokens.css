@@ -1,0 +1,97 @@
+/* Color Tokens */
+:root {
+  /* Primary colors - Modern purple gradient */
+  --color-primary: #6366f1; /* Indigo-500 */
+  --color-primary-dark: #4f46e5; /* Indigo-600 */
+  --color-primary-light: #818cf8; /* Indigo-400 */
+  --color-secondary: #8b5cf6; /* Violet-500 */
+  --color-accent: #ec4899; /* Pink-500 for accents */
+  
+  /* Text colors */
+  --color-text: #f1f5f9; /* Slate-100 for better readability */
+  --color-text-light: #1e293b; /* Slate-800 for light theme */
+  --color-text-muted: #94a3b8; /* Slate-400 */
+  --color-text-secondary: #cbd5e1; /* Slate-300 */
+  
+  /* Background colors */
+  --color-background: #0f172a; /* Slate-900 deep dark */
+  --color-background-light: #ffffff; /* Pure white for light theme */
+  --color-background-secondary: #1e293b; /* Slate-800 */
+  --color-card-background: #1e293b; /* Slate-800 for cards */
+  --color-card-background-rgb: 30, 41, 59; /* RGB for transparency */
+  
+  /* Border and divider colors */
+  --color-border: #334155; /* Slate-700 */
+  --color-border-light: #475569; /* Slate-600 */
+  
+  /* Interactive states */
+  --color-hover-bg: rgba(99, 102, 241, 0.1); /* Primary with opacity */
+  --color-active-bg: rgba(99, 102, 241, 0.2);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --gradient-card: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+  --gradient-button: linear-gradient(135deg, #6366f1 0%, #7c3aed 100%);
+}
+
+/* Light theme preference */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-text: #1e293b; /* Slate-800 */
+    --color-text-light: #f1f5f9;
+    --color-text-muted: #64748b; /* Slate-500 */
+    --color-text-secondary: #475569; /* Slate-600 */
+    --color-background: #f8fafc; /* Slate-50 */
+    --color-background-light: #ffffff;
+    --color-background-secondary: #f1f5f9; /* Slate-100 */
+    --color-card-background: #ffffff;
+    --color-card-background-rgb: 255, 255, 255;
+    --color-border: #e2e8f0; /* Slate-200 */
+    --color-border-light: #cbd5e1; /* Slate-300 */
+    --color-hover-bg: rgba(99, 102, 241, 0.08);
+    --color-active-bg: rgba(99, 102, 241, 0.15);
+  }
+}
+
+/* Spacing Tokens (4/8/12/16/24 scale) */
+:root {
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px; /* Adjusted to 12px for 4-scale */
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+  --spacing-xxl: 32px; /* Added for larger spacing */
+}
+
+/* Font Sizes */
+:root {
+  --font-size-xs: 0.75rem; /* 注解 */
+  --font-size-sm: 0.875rem; /* 內文 */
+  --font-size-base: 1rem;
+  --font-size-md: 1.125rem; /* 區塊標題 */
+  --font-size-lg: 1.5rem;
+  --font-size-xl: 2rem; /* 頁標題 */
+  --font-size-xxl: 2.5rem;
+}
+
+/* Font Family */
+:root {
+  --font-family-base: "Noto Sans TC", "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif; /* Added Noto Sans TC for CJK */
+}
+
+/* Border Radius */
+:root {
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+}
+
+/* Shadow Tokens */
+:root {
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3), 0 0 40px rgba(139, 92, 246, 0.2);
+  --shadow-card-hover: 0 20px 25px -5px rgba(99, 102, 241, 0.1), 0 10px 10px -5px rgba(139, 92, 246, 0.04);
+}

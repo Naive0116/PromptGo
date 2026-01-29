@@ -1,0 +1,23 @@
+{
+  "id": "OPENAI_REALTIME_PROMPTING_GUIDE",
+  "url": "https://cookbook.openai.com/examples/realtime_prompting_guide",
+  "type": "guide",
+  "priority": "P1",
+  "topic": "voice",
+  "tags": [
+    "realtime",
+    "voice",
+    "speech",
+    "conversation_flow",
+    "tool_preambles",
+    "personality"
+  ],
+  "notes": "语音 Agent 提示词指南：Prompt 结构、人格语气、发音指导、对话流程状态机、工具调用前导语",
+  "content": "# Realtime Prompting Guide\n\nToday, we're releasing gpt-realtime — our most capable speech-to-speech model yet in the API. The new gpt-realtime model delivers stronger instruction following, more reliable tool calling, noticeably better voice quality, and an overall smoother feel.\n\n## General Tips\n\n- **Iterate relentlessly**: Small wording changes can make or break behavior.\n  - Example: For unclear audio instruction, we swapped \"inaudible\" → \"unintelligible\" which improved noisy input handling.\n- **Prefer bullets over paragraphs**: Clear, short bullets outperform long paragraphs.\n- **Guide with examples**: The model strongly closely follows sample phrases.\n- **Be precise**: Ambiguity or conflicting instructions = degraded performance.\n- **Control language**: Pin output to a target language if you see unwanted language switching.\n- **Reduce repetition**: Add a Variety rule to reduce robotic phrasing.\n- **Use capitalized text for emphasis**: Capitalizing key rules makes them stand out.\n- **Convert non-text rules to text**: instead of writing \"IF x > 3 THEN ESCALATE\", write, \"IF MORE THAN THREE FAILURES THEN ESCALATE\".\n\n## Prompt Structure\n\nOrganizing your prompt makes it easier for the model to understand context and stay consistent across turns.\n\n```\n# Role & Objective — who you are and what \"success\" means\n# Personality & Tone — the voice and style to maintain\n# Context — retrieved context, relevant info\n# Reference Pronunciations — phonetic guides for tricky words\n# Tools — names, usage rules, and preambles\n# Instructions / Rules — do's, don'ts, and approach\n# Conversation Flow — states, goals, and transitions\n# Safety & Escalation — fallback and handoff logic\n```\n\n## Role and Objective\n\nThis section defines who the agent is and what \"done\" means. The model will adhere tightly to role and objective when they're explicit.\n\n## Personality and Tone\n\nThe newer model snapshot is really great at following instructions to imitate a particular personality or tone. You can tailor the voice experience and delivery depending on what your use case expects.\n\n- **When to use**: Responses feel flat, overly verbose, or inconsistent across turns.\n- **What it does**: Sets voice, brevity, and pacing so replies sound natural and consistent.\n- **How to adapt**: Tune warmth/formality and default length. For regulated domains, favor neutral precision.\n\n## Tool Call Preambles\n\nBefore calling a tool, the agent should inform the user what it's about to do. This keeps the user in the loop and sets expectations.\n\nExample:\n```\n## Tool Call Preambles\n- Before calling any tool, briefly tell the user what you're about to do.\n- Example: \"Let me look that up for you...\"\n- Example: \"I'll check our system for that information...\"\n```\n\n## Conversation Flow\n\nDefine states, goals, and transitions for multi-turn conversations. Can be implemented as a state machine for complex flows.\n\n## Safety & Escalation\n\nDefine fallback and handoff logic for when the agent cannot help or when the user requests human assistance.",
+  "chunks": [
+    "# Realtime Prompting Guide\n\ngpt-realtime delivers stronger instruction following, more reliable tool calling, noticeably better voice quality. General Tips: Iterate relentlessly, prefer bullets over paragraphs, guide with examples, be precise, control language, reduce repetition, use capitalized text for emphasis.",
+    "## Prompt Structure for Voice Agents\n\n# Role & Objective — who you are and what \"success\" means\n# Personality & Tone — the voice and style to maintain\n# Context — retrieved context, relevant info\n# Reference Pronunciations — phonetic guides for tricky words\n# Tools — names, usage rules, and preambles\n# Instructions / Rules — do's, don'ts, and approach\n# Conversation Flow — states, goals, and transitions\n# Safety & Escalation — fallback and handoff logic",
+    "## Personality and Tone for Voice\n\nWhen to use: Responses feel flat, overly verbose, or inconsistent across turns.\nWhat it does: Sets voice, brevity, and pacing so replies sound natural and consistent.\nHow to adapt: Tune warmth/formality and default length. For regulated domains, favor neutral precision."
+  ],
+  "fetched_at": "2026-01-29T10:26:00.000000"
+}

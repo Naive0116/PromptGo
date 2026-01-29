@@ -3,13 +3,30 @@ export interface QuestionOption {
   value: string;
 }
 
+export interface CurrentUnderstanding {
+  goal?: string;
+  audience?: string;
+  persona?: string;
+  context?: string;
+  inputs?: string;
+  output_format?: string;
+  constraints?: {
+    must: string[];
+    must_not: string[];
+  };
+  tools?: string[];
+  quality_bar?: string;
+  risk_flags?: string[];
+  unknowns?: string[];
+}
+
 export interface QuestionResponse {
   type: 'question';
   question: string;
   options: QuestionOption[];
   allow_custom: boolean;
   hint?: string;
-  current_understanding?: string;
+  current_understanding?: CurrentUnderstanding | string;
   current_turn: number;
   max_turns: number;
 }
@@ -75,4 +92,14 @@ export interface ConversationMessageResponse {
   current_turn: number;
   max_turns: number;
   response: SocraticResponse;
+}
+
+export interface PromptSuggestion {
+  id: string;
+  type: 'addition' | 'modification' | 'deletion';
+  field: 'role' | 'task' | 'constraints' | 'output_format' | 'full';
+  originalValue?: string;
+  suggestedValue: string;
+  description: string;
+  status: 'pending' | 'accepted' | 'rejected';
 }

@@ -1,0 +1,161 @@
+{
+  "title": "ChatGPT 給工程師",
+  "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-engineers",
+  "tags": [
+    "WORK USERS",
+    "PROMPT PACKS"
+  ],
+  "items": [
+    {
+      "use_case": "評估雲端供應商以進行遷移",
+      "prompt": "我是一名基礎設施工程師，正在評估雲端遷移選項。背景：我們正在將金融科技後端從本地遷移到雲端。輸出：比較 AWS、GCP 和 Azure 的可擴展性、定價、合規性和開發人員工具。包含引文。",
+      "superPrompt": "我是一名基礎設施工程師，正在評估雲端遷移選項。背景：我們正在將金融科技後端從本地遷移到雲端。輸出：比較 AWS、GCP 和 Azure 的可擴展性、定價、合規性和開發人員工具。包含引文。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%E2%80%99m%20an%20infrastructure%20engineer%20evaluating%20cloud%20migration%20options.%20Context%3A%20We%E2%80%99re%20moving%20from%20on-prem%20to%20the%20cloud%20for%20a%20fintech%20backend.%20Output%3A%20Compare%20AWS%2C%20GCP%2C%20and%20Azure%20for%20scalability%2C%20pricing%2C%20compliance%2C%20and%20developer%20tooling.%20Include%20citations."
+    },
+    {
+      "use_case": "研究即時應用程式的框架",
+      "prompt": "我正在建立一個即時協作工具。背景：我們需要低延遲和可擴展性。輸出：比較頂級框架（例如 SignalR、Socket.io、WebRTC）的用例、優缺點以及其他 SaaS 公司的當前使用情況。包含來源。",
+      "superPrompt": "我正在建立一個即時協作工具。背景：我們需要低延遲和可擴展性。輸出：比較頂級框架（例如 SignalR、Socket.io、WebRTC）的用例、優缺點以及其他 SaaS 公司的當前使用情況。包含來源。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%E2%80%99m%20building%20a%20real-time%20collaboration%20tool.%20Context%3A%20We%20need%20low-latency%20and%20scalability.%20Output%3A%20Compare%20top%20frameworks%20%28e.g.%2C%20SignalR%2C%20Socket.io%2C%20WebRTC%29%20with%20use%20cases%2C%20pros%2Fcons%2C%20and%20current%20usage%20by%20other%20SaaS%20companies.%20Include%20sources."
+    },
+    {
+      "use_case": "基準測試可觀測性工具",
+      "prompt": "基準測試頂級可觀測性工具。背景：我們希望從基本日誌記錄轉向全端監控。輸出：為 Datadog、New Relic、Prometheus 和 OpenTelemetry 建立一個功能、定價、整合的比較表。包含來源。",
+      "superPrompt": "基準測試頂級可觀測性工具。背景：我們希望從基本日誌記錄轉向全端監控。輸出：為 Datadog、New Relic、Prometheus 和 OpenTelemetry 建立一個功能、定價、整合的比較表。包含來源。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Benchmark%20the%20top%20observability%20tools.%20Context%3A%20We%20want%20to%20move%20from%20basic%20logging%20to%20full-stack%20monitoring.%20Output%3A%20Create%20a%20comparison%20table%20of%20features%2C%20pricing%2C%20integrations%20for%20Datadog%2C%20New%20Relic%2C%20Prometheus%2C%20and%20OpenTelemetry.%20Include%20sources."
+    },
+    {
+      "use_case": "分析物流領域的 AI/ML 趨勢",
+      "prompt": "我正在研究物流系統中 AI/ML 的採用情況。背景：我們公司正在考慮整合預測性路由。輸出：關於當前趨勢、供應商和實施模式的 5 段摘要。包含引文和連結。",
+      "superPrompt": "我正在研究物流系統中 AI/ML 的採用情況。背景：我們公司正在考慮整合預測性路由。輸出：關於當前趨勢、供應商和實施模式的 5 段摘要。包含引文和連結。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%E2%80%99m%20researching%20AI%2FML%20adoption%20in%20logistics%20systems.%20Context%3A%20Our%20company%20is%20considering%20integrating%20predictive%20routing.%20Output%3A%20A%205-paragraph%20summary%20on%20current%20trends%2C%20vendors%2C%20and%20implementation%20patterns.%20Include%20citations%20and%20links."
+    },
+    {
+      "use_case": "調查合規性最佳實踐",
+      "prompt": "研究 GDPR/CCPA 合規性的最佳實踐，以便我們可以與我們的法律團隊展開討論。背景：我們的應用程式在歐盟和美國儲存敏感的使用者資料。輸出：一份按法規排序的合規性檢查清單，包含引文。包含文件和法規的連結。",
+      "superPrompt": "研究 GDPR/CCPA 合規性的最佳實踐，以便我們可以與我們的法律團隊展開討論。背景：我們的應用程式在歐盟和美國儲存敏感的使用者資料。輸出：一份按法規排序的合規性檢查清單，包含引文。包含文件和法規的連結。",
+      "chatgpt_url": "https://chatgpt.com/?model=o4-mini-high&prompt=Research%20best%20practices%20for%20GDPR%2FCCPA%20compliance%20so%20we%20can%20help%20kick%20off%20discussions%20with%20our%20legal%20team.%20Context%3A%20Our%20app%20stores%20sensitive%20user%20data%20in%20the%20EU%20and%20US.%20Output%3A%20A%20compliance%20checklist%20with%20citations%2C%20sorted%20by%20regulation.%20Include%20links%20to%20documentation%20and%20regulations."
+    },
+    {
+      "use_case": "審查系統設計文件",
+      "prompt": "我為 [插入專案或功能] 草擬了一份技術設計文件。請審查其清晰度、架構健全性和完整性。突顯任何遺漏的考量或審查者可能提出的問題。",
+      "superPrompt": "我為 {{ 欄位一 || 插入專案或功能 }} 草擬了一份技術設計文件。請審查其清晰度、架構健全性和完整性。突顯任何遺漏的考量或審查者可能提出的問題。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%E2%80%99ve%20drafted%20a%20technical%20design%20document%20for%20%5Binsert%20project%20or%20feature%5D.%20Review%20it%20for%20clarity%2C%20architectural%20soundness%2C%20and%20completeness.%20Highlight%20any%20missing%20considerations%20or%20questions%20reviewers%20may%20raise."
+    },
+    {
+      "use_case": "記錄內部 API 行為",
+      "prompt": "我需要為其他開發人員記錄這個內部 API 的工作原理。這是相關的程式碼、結構描述和使用範例：[插入資料]。建立清晰的文件，包括端點、輸入/輸出格式和預期行為。",
+      "superPrompt": "我需要為其他開發人員記錄這個內部 API 的工作原理。這是相關的程式碼、結構描述和使用範例： {{ 欄位一 || 插入資料 }}。建立清晰的文件，包括端點、輸入/輸出格式和預期行為。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%20need%20to%20document%20how%20this%20internal%20API%20works%20for%20other%20developers.%20Here%E2%80%99s%20the%20relevant%20code%2C%20schema%2C%20and%20usage%20examples%3A%20%5Binsert%20materials%5D.%20Create%20clear%20documentation%20including%20endpoints%2C%20input%2Foutput%20formats%2C%20and%20expected%20behavior."
+    },
+    {
+      "use_case": "為待命工程師草擬執行手冊",
+      "prompt": "我需要為支援 [插入系統] 的待命工程師建立一份執行手冊。草擬一份包含系統概觀、常見警報、診斷步驟和升級程序的章節。",
+      "superPrompt": "我需要為支援 {{ 欄位一 || 插入系統 }} 的待命工程師建立一份執行手冊。草擬一份包含系統概觀、常見警報、診斷步驟和升級程序的章節。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%20need%20to%20create%20a%20runbook%20for%20on-call%20engineers%20supporting%20%5Binsert%20system%5D.%20Draft%20one%20that%20includes%20sections%20for%20system%20overview%2C%20common%20alerts%2C%20diagnostic%20steps%2C%20and%20escalation%20procedures."
+    },
+    {
+      "use_case": "為新進人員草擬入門指南",
+      "prompt": "我需要為加入 [插入團隊] 的新工程師撰寫一份入門指南。建立一份草稿，包含所需工具、存取設定、程式碼庫概觀和第一個任務等章節。使其適合自助式入門。",
+      "superPrompt": "我需要為加入 {{ 欄位一 || 插入團隊 }} 的新工程師撰寫一份入門指南。建立一份草稿，包含所需工具、存取設定、程式碼庫概觀和第一個任務等章節。使其適合自助式入門。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%20need%20to%20write%20an%20onboarding%20guide%20for%20new%20engineers%20joining%20%5Binsert%20team%5D.%20Create%20a%20draft%20with%20sections%20for%20required%20tools%2C%20access%20setup%2C%20codebase%20overview%2C%20and%20first%20tasks.%20Make%20it%20suitable%20for%20self-service%20onboarding."
+    },
+    {
+      "use_case": "從規格撰寫 JIRA 工單",
+      "prompt": "根據 [插入任務或功能] 的工程規格，撰寫一張 JIRA 工單，包含問題陳述、背景、目標、驗收標準和實施的技術說明。",
+      "superPrompt": "根據 {{ 欄位一 || 插入任務或功能 }} 的工程規格，撰寫一張 JIRA 工單，包含問題陳述、背景、目標、驗收標準和實施的技術說明。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Based%20on%20this%20engineering%20spec%20for%20%5Binsert%20task%20or%20feature%5D%2C%20write%20a%20JIRA%20ticket%20that%20includes%20the%20problem%20statement%2C%20context%2C%20goals%2C%20acceptance%20criteria%2C%20and%20technical%20notes%20for%20implementation."
+    },
+    {
+      "use_case": "偵錯生產環境中發生故障的系統",
+      "prompt": "生產環境中的一個系統間歇性地發生故障，我們很難找出根本原因。根據以下的日誌、指標和最近的變更：[插入內容]，幫助找出最可能的原因並建議下一步的緩解措施。",
+      "superPrompt": "生產環境中的一個系統間歇性地發生故障，我們很難找出根本原因。根據以下的日誌、指標和最近的變更： {{ 欄位一 || 插入內容 }}，幫助找出最可能的原因並建議下一步的緩解措施。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=A%20system%20in%20production%20is%20intermittently%20failing%2C%20and%20we%E2%80%99re%20struggling%20to%20isolate%20the%20root%20cause.%20Based%20on%20the%20following%20logs%2C%20metrics%2C%20and%20recent%20changes%3A%20%5Binsert%20context%5D%2C%20help%20identify%20the%20most%20likely%20causes%20and%20suggest%20next%20steps%20for%20mitigation."
+    },
+    {
+      "use_case": "分析效能瓶頸",
+      "prompt": "我們的服務在尖峰使用期間出現延遲和效能下降。這裡是指標、日誌和相關的追蹤資訊：[插入內容]。幫助找出瓶頸並建議具體的最佳化措施。",
+      "superPrompt": "我們的服務在尖峰使用期間出現延遲和效能下降。這裡是指標、日誌和相關的追蹤資訊： {{ 欄位一 || 插入內容 }}。幫助找出瓶頸並建議具體的最佳化措施。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Our%20service%20is%20experiencing%20latency%20and%20degraded%20performance%20during%20peak%20usage.%20Here%20are%20metrics%2C%20logs%2C%20and%20relevant%20traces%3A%20%5Binsert%20context%5D.%20Help%20identify%20the%20bottlenecks%20and%20recommend%20specific%20optimizations."
+    },
+    {
+      "use_case": "分析資料管道故障",
+      "prompt": "一個關鍵的資料管道在昨天的執行中失敗了。這裡是日誌、資料量趨勢和錯誤輸出：[插入內容]。分析可能出錯的原因並提供預防再次發生的建議。",
+      "superPrompt": "一個關鍵的資料管道在昨天的執行中失敗了。這裡是日誌、資料量趨勢和錯誤輸出： {{ 欄位一 || 插入內容 }}。分析可能出錯的原因並提供預防再次發生的建議。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=A%20critical%20data%20pipeline%20failed%20in%20yesterday%E2%80%99s%20run.%20Here%20are%20the%20logs%2C%20data%20volume%20trends%2C%20and%20error%20outputs%3A%20%5Binsert%20context%5D.%20Analyze%20what%20likely%20went%20wrong%20and%20provide%20recommendations%20to%20prevent%20recurrence."
+    },
+    {
+      "use_case": "建議可觀測性的改進",
+      "prompt": "我們目前使用 [插入工具] 來監控 [插入服務]。檢閱我們的可觀測性設定，並建議在指標、日誌、警報和儀表板方面的改進，以改善問題偵測和偵錯。",
+      "superPrompt": "我們目前使用 {{ 欄位一 || 插入工具 }} 來監控 {{ 欄位二 || 插入服務 }}。檢閱我們的可觀測性設定，並建議在指標、日誌、警報和儀表板方面的改進，以改善問題偵測和偵錯。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=We%20currently%20use%20%5Binsert%20tools%5D%20for%20monitoring%20%5Binsert%20service%5D.%20Review%20our%20observability%20setup%20and%20suggest%20improvements%20across%20metrics%2C%20logging%2C%20alerting%2C%20and%20dashboards%20to%20improve%20issue%20detection%20and%20debugging."
+    },
+    {
+      "use_case": "腦力激盪測試的邊界案例",
+      "prompt": "我們正在為 [插入功能/系統] 準備測試案例。腦力激盪標準測試可能未涵蓋的潛在邊界案例和失敗情境，包括不尋常的使用者輸入、系統狀態變更和並行問題。",
+      "superPrompt": "我們正在為 {{ 欄位一 || 插入功能/系統 }} 準備測試案例。腦力激盪標準測試可能未涵蓋的潛在邊界案例和失敗情境，包括不尋常的使用者輸入、系統狀態變更和並行問題。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=We%E2%80%99re%20preparing%20test%20cases%20for%20%5Binsert%20feature%2Fsystem%5D.%20Brainstorm%20potential%20edge%20cases%20and%20failure%20scenarios%20that%20may%20not%20be%20covered%20by%20standard%20testing%2C%20including%20unusual%20user%20inputs%2C%20system%20state%20changes%2C%20and%20concurrency%20issues."
+    },
+    {
+      "use_case": "識別產品使用日誌中的趨勢",
+      "prompt": "分析此產品使用日誌的 CSV。背景：我們希望識別隨時間和跨使用者區隔的使用趨勢。輸出：摘要統計資料 + 強調關鍵趨勢的折線圖或長條圖。",
+      "superPrompt": "分析此產品使用日誌的 CSV。背景：我們希望識別隨時間和跨使用者區隔的使用趨勢。輸出：摘要統計資料 + 強調關鍵趨勢的折線圖或長條圖。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Analyze%20this%20CSV%20of%20product%20usage%20logs.%20Context%3A%20We%20want%20to%20identify%20usage%20trends%20over%20time%20and%20across%20user%20segments.%20Output%3A%20Summary%20stats%20%2B%20line%20or%20bar%20charts%20highlighting%20key%20trends."
+    },
+    {
+      "use_case": "視覺化系統錯誤率隨時間的變化",
+      "prompt": "從此資料集繪製錯誤率隨時間的變化圖。背景：它包含上個月的應用程式日誌。輸出：一個時間序列圖表，標示出錯誤高峰和簡短的解讀。",
+      "superPrompt": "從此資料集繪製錯誤率隨時間的變化圖。背景：它包含上個月的應用程式日誌。輸出：一個時間序列圖表，標示出錯誤高峰和簡短的解讀。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Plot%20error%20rates%20over%20time%20from%20this%20dataset.%20Context%3A%20It%20contains%20application%20logs%20from%20the%20last%20month.%20Output%3A%20A%20time-series%20chart%20with%20callouts%20for%20error%20spikes%20and%20a%20short%20interpretation."
+    },
+    {
+      "use_case": "分析效能測試結果",
+      "prompt": "分析這組效能測試結果。背景：它比較了我們後端服務的兩個版本。輸出：並排比較圖表 + 改進或退步的文字摘要。",
+      "superPrompt": "分析這組效能測試結果。背景：它比較了我們後端服務的兩個版本。輸出：並排比較圖表 + 改進或退步的文字摘要。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Analyze%20this%20set%20of%20performance%20test%20results.%20Context%3A%20It%20compares%20two%20versions%20of%20our%20backend%20service.%20Output%3A%20Side-by-side%20comparison%20charts%20%2B%20text%20summary%20of%20improvements%20or%20regressions."
+    },
+    {
+      "use_case": "根據影響優先處理錯誤",
+      "prompt": "分析此錯誤報告資料集。背景：每一行包括嚴重性、頻率和受影響的使用者。輸出：一個優先排序的頂級錯誤清單，附有顯示頻率與嚴重性的圖表。",
+      "superPrompt": "分析此錯誤報告資料集。背景：每一行包括嚴重性、頻率和受影響的使用者。輸出：一個優先排序的頂級錯誤清單，附有顯示頻率與嚴重性的圖表。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Analyze%20this%20bug%20report%20dataset.%20Context%3A%20Each%20row%20includes%20severity%2C%20frequency%2C%20and%20affected%20users.%20Output%3A%20A%20prioritized%20list%20of%20top%20bugs%20with%20charts%20showing%20frequency%20vs.%20severity."
+    },
+    {
+      "use_case": "總結使用者調查的回饋",
+      "prompt": "總結此使用者回饋 CSV。背景：它包括最近一次調查的評分和開放式文字回應。輸出：關鍵主題、情緒分數和顯示評分分佈的圖表。",
+      "superPrompt": "總結此使用者回饋 CSV。背景：它包括最近一次調查的評分和開放式文字回應。輸出：關鍵主題、情緒分數和顯示評分分佈的圖表。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Summarize%20this%20user%20feedback%20CSV.%20Context%3A%20It%20includes%20ratings%20and%20open%20text%20responses%20from%20a%20recent%20survey.%20Output%3A%20Key%20themes%2C%20sentiment%20scores%2C%20and%20charts%20showing%20distribution%20of%20ratings."
+    },
+    {
+      "use_case": "建立元件圖",
+      "prompt": "我需要視覺化 [插入系統或服務] 的架構。產生一個元件圖，顯示關鍵服務、資料流和第三方整合。使用清晰的標籤並邏輯地分組元件。",
+      "superPrompt": "我需要視覺化 {{ 欄位一 || 插入系統或服務 }} 的架構。產生一個元件圖，顯示關鍵服務、資料流和第三方整合。使用清晰的標籤並邏輯地分組元件。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%20need%20to%20visualize%20the%20architecture%20of%20%5Binsert%20system%20or%20service%5D.%20Generate%20a%20component%20diagram%20showing%20key%20services%2C%20data%20flows%2C%20and%20third-party%20integrations.%20Use%20clear%20labels%20and%20group%20components%20logically."
+    },
+    {
+      "use_case": "視覺化系統架構",
+      "prompt": "建立系統架構的圖像。背景：這是一個基於微服務的電子商務平台，提供支付、目錄和使用者個人資料等服務。輸出：帶有標籤服務和資料流箭頭的圖表。",
+      "superPrompt": "建立系統架構的圖像。背景：這是一個基於微服務的電子商務平台，提供支付、目錄和使用者個人資料等服務。輸出：帶有標籤服務和資料流箭頭的圖表。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20an%20image%20of%20the%20system%20architecture.%20Context%3A%20It%E2%80%99s%20a%20microservices-based%20e-commerce%20platform%20with%20services%20for%20payments%2C%20catalog%2C%20and%20user%20profiles.%20Output%3A%20Diagram%20with%20labeled%20services%20and%20data%20flow%20arrows."
+    },
+    {
+      "use_case": "向利害關係人解釋 CI/CD 管道",
+      "prompt": "建立一個解釋我們 CI/CD 流程的圖像。背景：這是為向業務利害關係人簡報而準備的。輸出：顯示開發 → 建置 → 測試 → 部署步驟的圖表，附有基本圖示和簡短描述。",
+      "superPrompt": "建立一個解釋我們 CI/CD 流程的圖像。背景：這是為向業務利害關係人簡報而準備的。輸出：顯示開發 → 建置 → 測試 → 部署步驟的圖表，附有基本圖示和簡短描述。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20an%20image%20that%20explains%20our%20CI%2FCD%20process.%20Context%3A%20This%20is%20for%20a%20presentation%20to%20business%20stakeholders.%20Output%3A%20Diagram%20showing%20dev%20%E2%86%92%20build%20%E2%86%92%20test%20%E2%86%92%20deploy%20steps%20with%20basic%20icons%20and%20short%20descriptions."
+    },
+    {
+      "use_case": "模型化機器學習管道中的資料流",
+      "prompt": "建立一個顯示機器學習管道中資料流的圖像。背景：我們收集原始使用者資料，清理它，訓練模型，並提供預測服務。輸出：一個從原始資料到推論的標籤流程圖。",
+      "superPrompt": "建立一個顯示機器學習管道中資料流的圖像。背景：我們收集原始使用者資料，清理它，訓練模型，並提供預測服務。輸出：一個從原始資料到推論的標籤流程圖。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20an%20image%20showing%20data%20flow%20in%20a%20machine%20learning%20pipeline.%20Context%3A%20We%20collect%20raw%20user%20data%2C%20clean%20it%2C%20train%20models%2C%20and%20serve%20predictions.%20Output%3A%20A%20labeled%20flowchart%20from%20raw%20data%20to%20inference."
+    },
+    {
+      "use_case": "圖解應用程式中的客戶旅程",
+      "prompt": "建立我們行動銀行應用程式中的客戶旅程地圖。背景：步驟包括上線、帳戶連結、交易和支援。輸出：一個包含步驟、畫面和決策點的視覺流程圖。",
+      "superPrompt": "建立我們行動銀行應用程式中的客戶旅程地圖。背景：步驟包括上線、帳戶連結、交易和支援。輸出：一個包含步驟、畫面和決策點的視覺流程圖。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20customer%20journey%20map%20through%20our%20mobile%20banking%20app.%20Context%3A%20Steps%20include%20onboarding%2C%20account%20linking%2C%20transactions%2C%20and%20support.%20Output%3A%20A%20visual%20flowchart%20with%20steps%2C%20screens%2C%20and%20decision%20points."
+    }
+  ],
+  "scraped_at": "2025-10-05T12:52:49.275Z"
+}

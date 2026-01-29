@@ -130,6 +130,9 @@ async def send_message(
 
     await MessageCRUD.create(db, conversation_id, "user", data.content)
 
+    # 关键：SQLite 在写事务期间会锁库；这里先提交释放写锁，再进行耗时的 LLM 调用
+    await db.commit()
+
     messages = [
         {"role": m.role, "content": m.content}
         for m in conversation.messages
@@ -138,6 +141,9 @@ async def send_message(
 
     current_turn = int(conversation.current_turn) + 1
     await ConversationCRUD.update_turn(db, conversation, current_turn)
+
+    # 同上：turn 更新也需要尽快落库，避免长事务持锁
+    await db.commit()
 
     llm = get_llm_provider(
         provider_name=conversation.llm_provider,
@@ -176,6 +182,9 @@ async def send_message(
             tags=result.get("tags", [])
         )
 
+    # 结果写入后提交，缩短锁持有时间
+    await db.commit()
+
     return ConversationMessageResponse(
         status=conversation.status.value if result["type"] == "question" else "completed",
         current_turn=current_turn,
@@ -198,6 +207,9 @@ async def refine_prompt(
         raise HTTPException(status_code=400, detail="No prompt to refine")
 
     await MessageCRUD.create(db, conversation_id, "user", data.content)
+
+    # 关键：先提交释放写锁，再进行耗时的 LLM 调用
+    await db.commit()
 
     llm = get_llm_provider(
         provider_name=conversation.llm_provider,
@@ -273,6 +285,8 @@ async def refine_prompt(
         output_format=prompt_data.get("output_format"),
         tags=result.get("tags", [])
     )
+
+    await db.commit()
 
     return result
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Plus, PanelLeftClose, PanelLeft, Settings, X, Save, Wrench } from 'lucide-react';
-import { ChatPanel, PromptPreview, HistoryList } from '../components';
+import { ChatPanel, PromptPreview, HistoryList, PromptSettingsModal } from '../components';
 import { AdvancedSettings } from '../components/AdvancedSettings';
 import { useConversation } from '../hooks/useConversation';
 import { usePromptHistory } from '../hooks/usePromptHistory';
@@ -28,11 +28,14 @@ interface SettingsData {
   model: string;
   maxTurns: number;
   promptFramework: string;
-  // OCR 解析配置
-  ocrProvider: string;
-  ocrBaseUrl: string;
-  ocrApiKey: string;
-  ocrModel: string;
+}
+
+interface PromptSettings {
+  mode: 'auto' | 'manual';
+  scenario: string;
+  personality: string | null;
+  template: string;
+  verbosity?: number;
 }
 
 function SettingsPanel({ 
@@ -220,21 +223,30 @@ function SettingsPanel({
   );
 }
 
-interface UploadedFile {
-  name: string;
-  type: string;
-  parsing?: boolean;
-  content?: string;
-  chunksCount?: number;
-  indexed?: boolean;      // 是否已索引到向量库
-  documentId?: string;    // 向量库中的文档 ID
-}
-
 export function SplitView() {
   const [showHistory, setShowHistory] = useState(true);
   const [showSettings, setShowSettings] = useState(false);
   const [showAdvancedSettings, setShowAdvancedSettings] = useState(false);
-  const [uploadedFiles, setUploadedFiles] = useState<UploadedFile[]>([]);
+  const [showPromptSettings, setShowPromptSettings] = useState(false);
+  const [previousPrompt, setPreviousPrompt] = useState<GeneratedPromptResponse | null>(null);
+  const [hasPendingChanges, setHasPendingChanges] = useState(false);
+  const [promptSettings, setPromptSettings] = useState<PromptSettings>(() => {
+    const defaultPromptSettings: PromptSettings = {
+      mode: 'auto',
+      scenario: 'auto',
+      personality: null,
+      template: 'standard'
+    };
+    const saved = localStorage.getItem('promptforge_prompt_settings');
+    if (saved) {
+      try {
+        return { ...defaultPromptSettings, ...JSON.parse(saved) };
+      } catch {
+        return defaultPromptSettings;
+      }
+    }
+    return defaultPromptSettings;
+  });
   const [settings, setSettings] = useState<SettingsData>(() => {
     const defaultSettings: SettingsData = { 
       llmProvider: 'anthropic', 
@@ -242,12 +254,7 @@ export function SplitView() {
       apiKey: '', 
       model: 'claude-sonnet-4-5-20250929', 
       maxTurns: 5, 
-      promptFramework: 'standard',
-      // OCR 默认配置
-      ocrProvider: 'qwen-vl',
-      ocrBaseUrl: '',
-      ocrApiKey: '',
-      ocrModel: 'qwen-vl-max'
+      promptFramework: 'standard'
     };
     const saved = localStorage.getItem('promptforge_settings');
     if (saved) {
@@ -282,17 +289,7 @@ export function SplitView() {
 
   const handleStart = async (idea: string) => {
     try {
-      // 如果有上传的文件，将解析内容附加到用户输入
-      let enrichedIdea = idea;
-      const parsedFiles = uploadedFiles.filter(f => f.content && !f.content.includes('失败'));
-      if (parsedFiles.length > 0) {
-        const fileContexts = parsedFiles.map(f => 
-          `【参考文档: ${f.name}】\n${f.content}`
-        ).join('\n\n---\n\n');
-        enrichedIdea = `${idea}\n\n---\n以下是用户上传的参考文档内容，请在生成提示词时参考其中的专业术语和背景知识：\n\n${fileContexts}`;
-      }
-      
-      await conversation.startConversation(enrichedIdea, {
+      await conversation.startConversation(idea, {
         llmProvider: settings.llmProvider,
         baseUrl: settings.baseUrl || undefined,
         apiKey: settings.apiKey || undefined,
@@ -300,9 +297,6 @@ export function SplitView() {
         maxTurns: settings.maxTurns,
         promptFramework: settings.promptFramework
       });
-      
-      // 开始对话后清空已上传文件
-      setUploadedFiles([]);
     } catch (err) {
       console.error('Failed to start conversation:', err);
     }
@@ -318,9 +312,31 @@ export function SplitView() {
 
   const handleRefinePrompt = async (content: string) => {
     try {
+      // 保存当前提示词作为"之前"版本，用于对比
+      if (generatedPrompt) {
+        setPreviousPrompt(generatedPrompt);
+      }
       await conversation.refinePrompt(content);
+      setHasPendingChanges(true);
     } catch (err) {
       console.error('Failed to refine prompt:', err);
+      setHasPendingChanges(false);
+    }
+  };
+
+  const handleAcceptChanges = () => {
+    // 接受修改：清除之前的版本，确认当前版本
+    setPreviousPrompt(null);
+    setHasPendingChanges(false);
+  };
+
+  const handleRejectChanges = async () => {
+    // 拒绝修改：恢复到之前的版本
+    if (previousPrompt) {
+      // 通过重新发送一个特殊的恢复请求来撤销
+      // 简化实现：直接清除 pending 状态，用户可以手动重新优化
+      setPreviousPrompt(null);
+      setHasPendingChanges(false);
     }
   };
 
@@ -360,83 +376,12 @@ export function SplitView() {
     localStorage.setItem('promptforge_settings', JSON.stringify(newSettings));
   };
 
-  const handleFileUpload = async (file: File) => {
-    const newFile: UploadedFile = {
-      name: file.name,
-      type: file.type,
-      parsing: true,
-    };
-    setUploadedFiles(prev => [...prev, newFile]);
-
-    try {
-      const formData = new FormData();
-      formData.append('file', file);
-      
-      // 检查是否配置了 OCR API Key（用于完整 RAG 流程）
-      const hasApiKey = settings.ocrApiKey && settings.ocrProvider !== 'none';
-      
-      if (hasApiKey) {
-        // 使用完整 RAG 流程：解析 + 切块 + Embedding + 向量库
-        formData.append('api_key', settings.ocrApiKey);
-        if (settings.ocrBaseUrl) {
-          formData.append('base_url', settings.ocrBaseUrl);
-        } else if (settings.ocrProvider === 'qwen-vl') {
-          formData.append('base_url', 'https://dashscope.aliyuncs.com/compatible-mode/v1');
-        }
-        if (settings.ocrModel) {
-          formData.append('model', settings.ocrModel);
-        } else if (settings.ocrProvider === 'qwen-vl') {
-          formData.append('model', 'qwen-vl-max');
-        } else if (settings.ocrProvider === 'openai') {
-          formData.append('model', 'gpt-4o');
-        }
-      }
-      
-      // 根据是否有 API Key 选择不同的端点
-      const endpoint = hasApiKey ? '/api/documents/parse-and-index' : '/api/documents/parse';
-      
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        body: formData,
-      });
-      
-      if (response.ok) {
-        const data = await response.json();
-        const contentText = data.content || '解析成功，但无内容';
-        
-        const statusText = data.chunks_count 
-          ? `已索引 ${data.chunks_count} 个片段\n${contentText}`
-          : contentText;
-        setUploadedFiles(prev => 
-          prev.map(f => 
-            f.name === file.name ? { 
-              ...f, 
-              parsing: false, 
-              content: statusText,
-              chunksCount: typeof data.chunks_count === 'number' ? data.chunks_count : undefined,
-            } : f
-          )
-        );
-      } else {
-        const errorData = await response.json().catch(() => ({ detail: '解析失败' }));
-        setUploadedFiles(prev => 
-          prev.map(f => 
-            f.name === file.name ? { ...f, parsing: false, content: `${errorData.detail || '解析失败'}` } : f
-          )
-        );
-      }
-    } catch (error) {
-      console.error('File upload failed:', error);
-      setUploadedFiles(prev => 
-        prev.map(f => 
-          f.name === file.name ? { ...f, parsing: false, content: '上传失败' } : f
-        )
-      );
+  const handlePromptSettingsSave = (newPromptSettings: PromptSettings) => {
+    setPromptSettings(newPromptSettings);
+    localStorage.setItem('promptforge_prompt_settings', JSON.stringify(newPromptSettings));
+    if (newPromptSettings.template !== settings.promptFramework) {
+      handleFrameworkChange(newPromptSettings.template);
     }
-  };
-
-  const handleRemoveFile = (index: number) => {
-    setUploadedFiles(prev => prev.filter((_, i) => i !== index));
   };
 
   return (
@@ -515,23 +460,31 @@ export function SplitView() {
               status={conversation.status}
               promptFramework={settings.promptFramework}
               onFrameworkChange={handleFrameworkChange}
-              onFileUpload={handleFileUpload}
-              uploadedFiles={uploadedFiles}
-              onRemoveFile={handleRemoveFile}
-              embeddingApiKey={settings.ocrApiKey || ''}
-              onEmbeddingApiKeyChange={(key) => {
-                const newSettings = { ...settings, ocrApiKey: key };
-                setSettings(newSettings);
-                localStorage.setItem('promptforge_settings', JSON.stringify(newSettings));
-              }}
+              onOpenSettings={() => setShowPromptSettings(true)}
+              promptSettingsDisplay={promptSettings}
+              hasPendingChanges={hasPendingChanges}
+              previousPromptText={previousPrompt?.raw_text}
+              currentPromptText={generatedPrompt?.raw_text}
+              onAcceptChanges={handleAcceptChanges}
+              onRejectChanges={handleRejectChanges}
             />
           </div>
 
           <div className="flex-1 min-w-0">
             <PromptPreview
               promptResponse={generatedPrompt}
-              currentUnderstanding={currentQuestion?.current_understanding}
+              previousPromptResponse={previousPrompt}
+              currentUnderstanding={
+                typeof currentQuestion?.current_understanding === 'string' 
+                  ? currentQuestion.current_understanding 
+                  : currentQuestion?.current_understanding?.goal !== 'UNKNOWN' 
+                    ? currentQuestion?.current_understanding?.goal 
+                    : undefined
+              }
               status={conversation.status}
+              onAcceptChanges={handleAcceptChanges}
+              onRejectChanges={handleRejectChanges}
+              hasPendingChanges={hasPendingChanges}
             />
           </div>
         </main>
@@ -547,6 +500,13 @@ export function SplitView() {
       <AdvancedSettings
         isOpen={showAdvancedSettings}
         onClose={() => setShowAdvancedSettings(false)}
+      />
+
+      <PromptSettingsModal
+        isOpen={showPromptSettings}
+        onClose={() => setShowPromptSettings(false)}
+        settings={promptSettings}
+        onSave={handlePromptSettingsSave}
       />
 
       {conversation.error && (

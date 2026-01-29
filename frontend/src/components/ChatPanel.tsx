@@ -1,5 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Send, Loader2, Plus, X, Check, ChevronRight, RefreshCcw, Sparkles, Upload, FileText, Image, File } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { 
+  Send, Plus, X, Check, ChevronRight, RefreshCcw, Sparkles, Settings,
+  FileText, Puzzle, Wand2, Code2, AlertTriangle, Lightbulb, Target,
+  Download, Upload, ShieldAlert, BookOpen
+} from 'lucide-react';
 import type { Message, QuestionResponse, QuestionOption } from '../types';
 
 // 普提狗吉祥物组件
@@ -24,7 +28,7 @@ const FRAMEWORK_OPTIONS = [
     name: 'Standard',
     label: '标准格式',
     description: '角色/任务/约束/输出',
-    icon: '📋',
+    IconComponent: FileText,
     color: 'from-[#0071e3] to-[#0077ed]',
     suitable: '通用场景'
   },
@@ -33,7 +37,7 @@ const FRAMEWORK_OPTIONS = [
     name: 'LangGPT',
     label: '结构化模板',
     description: 'Role/Skills/Rules/Workflow',
-    icon: '🧩',
+    IconComponent: Puzzle,
     color: 'from-[#bf5af2] to-[#9d4edd]',
     suitable: '复杂角色扮演'
   },
@@ -42,7 +46,7 @@ const FRAMEWORK_OPTIONS = [
     name: 'CO-STAR',
     label: '内容创作',
     description: '背景/目标/风格/受众',
-    icon: '✨',
+    IconComponent: Wand2,
     color: 'from-[#ff9f0a] to-[#ff6b35]',
     suitable: '文案写作'
   },
@@ -51,11 +55,21 @@ const FRAMEWORK_OPTIONS = [
     name: 'XML',
     label: 'XML结构化',
     description: '标签化/程序友好',
-    icon: '🏗️',
+    IconComponent: Code2,
     color: 'from-[#30d158] to-[#34c759]',
     suitable: '技术场景'
   }
 ];
+
+interface PromptSettingsDisplay {
+  mode: 'auto' | 'manual';
+  scenario: string;
+  scenarioName?: string;
+  personality: string | null;
+  personalityName?: string;
+  template: string;
+  templateName?: string;
+}
 
 interface ChatPanelProps {
   messages: Message[];
@@ -70,11 +84,14 @@ interface ChatPanelProps {
   status: 'idle' | 'in_progress' | 'completed';
   promptFramework?: string;
   onFrameworkChange?: (framework: string) => void;
-  onFileUpload?: (file: File) => void;
-  uploadedFiles?: Array<{ name: string; type: string; parsing?: boolean; content?: string }>;
-  onRemoveFile?: (index: number) => void;
-  embeddingApiKey?: string;
-  onEmbeddingApiKeyChange?: (key: string) => void;
+  onOpenSettings?: () => void;
+  promptSettingsDisplay?: PromptSettingsDisplay;
+  // 优化建议批注系统
+  hasPendingChanges?: boolean;
+  previousPromptText?: string;
+  currentPromptText?: string;
+  onAcceptChanges?: () => void;
+  onRejectChanges?: () => void;
 }
 
 export function ChatPanel({
@@ -90,26 +107,25 @@ export function ChatPanel({
   status,
   promptFramework = 'standard',
   onFrameworkChange,
-  onFileUpload,
-  uploadedFiles = [],
-  onRemoveFile,
-  embeddingApiKey = '',
-  onEmbeddingApiKeyChange,
+  onOpenSettings,
+  promptSettingsDisplay,
+  hasPendingChanges = false,
+  previousPromptText,
+  currentPromptText,
+  onAcceptChanges,
+  onRejectChanges,
 }: ChatPanelProps) {
-  const [ragStatus, setRagStatus] = useState<{ builtin: number; user: number } | null>(null);
-  const [isIndexing, setIsIndexing] = useState(false);
-  const uploadedFilesCount = uploadedFiles.length;
-  const uploadedChunksTotal = uploadedFiles.reduce((sum, f) => sum + (typeof (f as any).chunksCount === 'number' ? (f as any).chunksCount : 0), 0);
-  const fileInputRef = useRef<HTMLInputElement>(null);
   const [input, setInput] = useState('');
   const [selectedOptions, setSelectedOptions] = useState<Set<string>>(new Set());
   const [customItems, setCustomItems] = useState<string[]>([]);
   const [newCustomItem, setNewCustomItem] = useState('');
+  const [customOptimizeInput, setCustomOptimizeInput] = useState('');
+  const [showDiffDetail, setShowDiffDetail] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+  }, [messages, hasPendingChanges]);
 
   useEffect(() => {
     setSelectedOptions(new Set());
@@ -147,10 +163,12 @@ export function ChatPanel({
   const handleOptionToggle = (option: QuestionOption) => {
     if (isLoading) return;
     const newSelected = new Set(selectedOptions);
-    if (newSelected.has(option.value)) {
-      newSelected.delete(option.value);
+    // 使用 label 而不是 value，这样显示给用户的是友好的中文文本
+    const displayText = option.label;
+    if (newSelected.has(displayText)) {
+      newSelected.delete(displayText);
     } else {
-      newSelected.add(option.value);
+      newSelected.add(displayText);
     }
     setSelectedOptions(newSelected);
   };
@@ -233,22 +251,26 @@ export function ChatPanel({
                   <button
                     key={framework.id}
                     onClick={() => onFrameworkChange?.(framework.id)}
-                    className={`relative p-3 rounded-xl text-left transition-all ${
+                    className={`relative p-4 rounded-2xl text-left transition-all duration-200 ${
                       promptFramework === framework.id
-                        ? 'bg-gradient-to-br ' + framework.color + ' text-white shadow-lg scale-[1.02]'
-                        : 'bg-[#f5f5f7] hover:bg-[#e8e8ed] text-[#1d1d1f]'
+                        ? 'bg-gradient-to-br ' + framework.color + ' text-white shadow-lg shadow-black/10'
+                        : 'bg-white hover:bg-[#f5f5f7] text-[#1d1d1f] border border-[#d2d2d7] hover:border-[#0071e3]/30'
                     }`}
                   >
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-lg">{framework.icon}</span>
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${
+                        promptFramework === framework.id ? 'bg-white/20' : 'bg-gradient-to-br from-[#f5f5f7] to-[#e8e8ed]'
+                      }`}>
+                        <framework.IconComponent className={`w-5 h-5 ${promptFramework === framework.id ? 'text-white' : 'text-[#1d1d1f]'}`} />
+                      </div>
                       <span className="font-semibold text-sm">{framework.name}</span>
                     </div>
-                    <p className={`text-xs ${promptFramework === framework.id ? 'text-white/80' : 'text-[#86868b]'}`}>
+                    <p className={`text-xs leading-relaxed ${promptFramework === framework.id ? 'text-white/80' : 'text-[#86868b]'}`}>
                       {framework.description}
                     </p>
                     {promptFramework === framework.id && (
-                      <div className="absolute top-2 right-2">
-                        <Check className="w-4 h-4" />
+                      <div className="absolute top-3 right-3 w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
+                        <Check className="w-3 h-3" />
                       </div>
                     )}
                   </button>
@@ -256,163 +278,33 @@ export function ChatPanel({
               </div>
             </div>
 
-            {/* 文档与知识库 */}
-            <div className="space-y-4">
-              <p className="text-xs font-medium text-[#86868b] uppercase tracking-wide">文档与知识库</p>
-              
-              {/* API Key 配置 */}
-              <div className="p-4 bg-[#f5f5f7] rounded-xl space-y-3">
-                <div>
-                  <label className="block text-xs font-medium text-[#1d1d1f] mb-1.5">
-                    Embedding API Key
-                  </label>
-                  <input
-                    type="password"
-                    value={embeddingApiKey}
-                    onChange={(e) => onEmbeddingApiKeyChange?.(e.target.value)}
-                    placeholder="通义千问 DashScope API Key"
-                    className="w-full px-3 py-2 text-sm bg-white border border-[#d1d1d6] rounded-lg focus:outline-none focus:border-[#0071e3] focus:ring-1 focus:ring-[#0071e3]"
-                  />
-                  <p className="mt-1 text-xs text-[#86868b]">用于文件解析和知识库索引</p>
+            {/* 提示词设置按钮 - Apple 风格 */}
+            <div className="flex justify-center">
+              <button
+                onClick={onOpenSettings}
+                className="group flex items-center gap-3 px-5 py-3 bg-white hover:bg-[#f5f5f7] border border-[#d2d2d7] hover:border-[#0071e3]/30 rounded-2xl text-sm font-medium text-[#1d1d1f] transition-all duration-200 shadow-sm hover:shadow-md"
+              >
+                <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#0071e3] to-[#0077ed] flex items-center justify-center">
+                  <Settings className="w-4 h-4 text-white" />
                 </div>
-                
-                {/* 知识库状态 */}
-                <div className="flex items-center justify-between pt-2 border-t border-[#e5e5e5]">
-                  <div className="text-xs text-[#86868b]">
-                    {ragStatus ? (
-                      <span>
-                        <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#34c759] mr-1"></span>
-                        内置 {ragStatus.builtin} 向量 · 文档片段 {ragStatus.user} 向量
-                      </span>
-                    ) : (
-                      <span>
-                        <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#86868b] mr-1"></span>
-                        未初始化
-                      </span>
+                {promptSettingsDisplay?.mode === 'auto' ? (
+                  <div className="flex items-center gap-2">
+                    <span className="font-semibold">Auto</span>
+                    <span className="text-xs text-[#86868b] bg-[#f5f5f7] px-2 py-0.5 rounded-full">智能推断</span>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-2">
+                    <span className="font-semibold">{promptSettingsDisplay?.scenarioName || promptSettingsDisplay?.scenario}</span>
+                    {promptSettingsDisplay?.personalityName && (
+                      <>
+                        <span className="w-1 h-1 rounded-full bg-[#86868b]"></span>
+                        <span className="text-[#bf5af2] font-medium">{promptSettingsDisplay.personalityName}</span>
+                      </>
                     )}
                   </div>
-                  <div className="flex gap-2">
-                    <button
-                      onClick={async () => {
-                        try {
-                          const res = await fetch('/api/rag/stats/all');
-                          const data = await res.json();
-                          setRagStatus({ builtin: data.builtin.count, user: data.user_documents.count });
-                        } catch (e) {
-                          console.error(e);
-                        }
-                      }}
-                      className="text-xs text-[#0071e3] hover:underline"
-                    >
-                      刷新
-                    </button>
-                    <button
-                      onClick={async () => {
-                        if (!embeddingApiKey) {
-                          alert('请先填写 Embedding API Key');
-                          return;
-                        }
-                        setIsIndexing(true);
-                        try {
-                          const formData = new FormData();
-                          formData.append('api_key', embeddingApiKey);
-                          const res = await fetch('/api/rag/index-builtin', {
-                            method: 'POST',
-                            body: formData
-                          });
-                          const data = await res.json();
-                          if (res.ok) {
-                            const statsRes = await fetch('/api/rag/stats/all');
-                            const statsData = await statsRes.json();
-                            setRagStatus({ builtin: statsData.builtin.count, user: statsData.user_documents.count });
-                            alert(`已索引 ${data.documents_count} 个知识块`);
-                          } else {
-                            alert(`索引失败: ${data.detail}`);
-                          }
-                        } catch (e) {
-                          alert(`请求失败: ${e}`);
-                        } finally {
-                          setIsIndexing(false);
-                        }
-                      }}
-                      disabled={isIndexing || !embeddingApiKey}
-                      className="text-xs text-white bg-[#0071e3] px-2.5 py-1 rounded-md hover:bg-[#0077ed] disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      {isIndexing ? '索引中...' : '初始化'}
-                    </button>
-                  </div>
-                </div>
-                <div className="text-xs text-[#86868b]">
-                  已上传 {uploadedFilesCount} 个文件 · 累计 {uploadedChunksTotal} 个片段
-                </div>
-              </div>
-
-              {/* 文件上传 */}
-              <div 
-                className="border-2 border-dashed border-[#d1d1d6] rounded-xl p-4 text-center hover:border-[#0071e3] hover:bg-[#0071e3]/5 transition-all cursor-pointer"
-                onClick={() => fileInputRef.current?.click()}
-              >
-                <input
-                  ref={fileInputRef}
-                  type="file"
-                  className="hidden"
-                  accept=".pdf,.doc,.docx,.txt,.md,.png,.jpg,.jpeg"
-                  onChange={(e) => {
-                    const file = e.target.files?.[0];
-                    if (file && onFileUpload) {
-                      onFileUpload(file);
-                    }
-                    e.target.value = '';
-                  }}
-                />
-                <Upload className="w-6 h-6 mx-auto mb-2 text-[#86868b]" />
-                <p className="text-sm text-[#1d1d1f] font-medium">上传参考文档</p>
-                <p className="text-xs text-[#86868b] mt-1">PDF / Word / 图片 / TXT</p>
-              </div>
-              
-              {/* 已上传文件列表 */}
-              {uploadedFiles.length > 0 && (
-                <div className="space-y-2">
-                  {uploadedFiles.map((file, index) => (
-                    <div key={index} className="flex items-center gap-3 p-3 bg-[#f5f5f7] rounded-xl">
-                      <div className="w-8 h-8 rounded-lg bg-[#0071e3]/10 flex items-center justify-center">
-                        {file.type.includes('image') ? (
-                          <Image className="w-4 h-4 text-[#0071e3]" />
-                        ) : file.type.includes('pdf') ? (
-                          <FileText className="w-4 h-4 text-[#ff453a]" />
-                        ) : (
-                          <File className="w-4 h-4 text-[#0071e3]" />
-                        )}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium text-[#1d1d1f] truncate">{file.name}</p>
-                        <p className="text-xs text-[#86868b]">
-                          {file.parsing
-                            ? '解析中...'
-                            : typeof (file as any).chunksCount === 'number'
-                            ? `已索引 ${(file as any).chunksCount} 个片段`
-                            : file.content
-                            ? '已解析'
-                            : '待解析'}
-                        </p>
-                      </div>
-                      {file.parsing ? (
-                        <Loader2 className="w-4 h-4 animate-spin text-[#0071e3]" />
-                      ) : (
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            onRemoveFile?.(index);
-                          }}
-                          className="w-6 h-6 flex items-center justify-center rounded-full hover:bg-[#ff453a]/10 text-[#86868b] hover:text-[#ff453a] transition-all"
-                        >
-                          <X className="w-4 h-4" />
-                        </button>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              )}
+                )}
+                <ChevronRight className="w-4 h-4 text-[#86868b] group-hover:text-[#0071e3] transition-colors" />
+              </button>
             </div>
 
             {/* 普提狗欢迎语 */}
@@ -461,7 +353,7 @@ export function ChatPanel({
             {currentQuestion.options && currentQuestion.options.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-4">
                 {currentQuestion.options.map((option, index) => {
-                  const isSelected = selectedOptions.has(option.value);
+                  const isSelected = selectedOptions.has(option.label);
                   return (
                     <button
                       key={index}
@@ -529,15 +421,20 @@ export function ChatPanel({
               </div>
             </div>
             {newCustomItem.trim() && (
-              <p className="text-xs text-[#ff9f0a] mb-3 flex items-center gap-1">
-                <span>⚠️</span> 有未添加的想法，请点击 + 添加后再确认
+              <p className="text-xs text-[#ff9f0a] mb-3 flex items-center gap-1.5">
+                <AlertTriangle className="w-3.5 h-3.5" /> 有未添加的想法，请点击 + 添加后再确认
               </p>
             )}
 
             <div className="flex justify-between items-center pt-4 border-t border-[rgba(0,0,0,0.06)]">
-              {currentQuestion.current_understanding && (
-                <p className="text-xs text-[#86868b] flex-1 pr-4">
-                  💡 {currentQuestion.current_understanding}
+              {currentQuestion.current_understanding && typeof currentQuestion.current_understanding === 'string' && (
+                <p className="text-xs text-[#86868b] flex-1 pr-4 flex items-center gap-1.5">
+                  <Lightbulb className="w-3.5 h-3.5 text-[#ff9f0a]" /> {currentQuestion.current_understanding}
+                </p>
+              )}
+              {currentQuestion.current_understanding && typeof currentQuestion.current_understanding === 'object' && currentQuestion.current_understanding.goal && currentQuestion.current_understanding.goal !== 'UNKNOWN' && (
+                <p className="text-xs text-[#86868b] flex-1 pr-4 flex items-center gap-1.5">
+                  <Lightbulb className="w-3.5 h-3.5 text-[#ff9f0a]" /> 目标: {currentQuestion.current_understanding.goal}
                 </p>
               )}
               <div className="flex items-center gap-2 ml-auto">
@@ -568,31 +465,75 @@ export function ChatPanel({
 
         {/* 完成状态 - 智慧诞生 */}
         {status === 'completed' && (
-          <div className="bg-gradient-to-br from-[#30d158]/5 to-[#34c759]/10 rounded-2xl p-5 border border-[#30d158]/20">
+          <div className="bg-gradient-to-br from-[#30d158]/5 to-[#34c759]/10 rounded-2xl p-5 border-2 border-[#30d158]/30">
             <div className="flex items-center gap-2 mb-3">
               <PromptGoDog mood="happy" />
               <p className="text-sm font-medium text-[#248a3d]">
                 智慧诞生了！点击 Go，让它去改变世界。
               </p>
             </div>
-            <p className="text-xs text-[#86868b] mb-3">或选择维度继续优化：</p>
-            <div className="flex flex-wrap gap-2 mb-3">
+            <p className="text-xs text-[#86868b] mb-3">快捷优化维度：</p>
+            <div className="flex flex-wrap gap-2 mb-4">
               {[
-                { label: '🎯 目标更明确', value: '请帮我让目标描述更加明确和具体' },
-                { label: '📥 输入更完整', value: '请帮我补充更多输入信息的说明' },
-                { label: '📤 输出更可控', value: '请帮我让输出格式更加规范和可控' },
-                { label: '⚠️ 约束更严格', value: '请帮我添加更多约束条件' },
-                { label: '💡 添加示例', value: '请帮我添加一些输入输出示例' },
+                { label: '目标更明确', value: '请帮我让目标描述更加明确和具体', Icon: Target },
+                { label: '输入更完整', value: '请帮我补充更多输入信息的说明', Icon: Download },
+                { label: '输出更可控', value: '请帮我让输出格式更加规范和可控', Icon: Upload },
+                { label: '约束更严格', value: '请帮我添加更多约束条件', Icon: ShieldAlert },
+                { label: '添加示例', value: '请帮我添加一些输入输出示例', Icon: BookOpen },
               ].map((item, index) => (
                 <button
                   key={index}
                   onClick={() => onRefinePrompt?.(item.value)}
                   disabled={isLoading}
-                  className="px-3 py-2 text-sm bg-white/80 border border-[#30d158]/30 text-[#248a3d] rounded-full hover:bg-[#30d158]/10 hover:border-[#30d158]/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all font-medium"
+                  className="px-3 py-2 text-sm bg-white border-2 border-[#30d158]/40 text-[#248a3d] rounded-full hover:bg-[#30d158]/10 hover:border-[#30d158]/60 disabled:opacity-50 disabled:cursor-not-allowed transition-all font-medium flex items-center gap-1.5 shadow-sm hover:shadow-md"
                 >
+                  <item.Icon className="w-3.5 h-3.5" />
                   {item.label}
                 </button>
               ))}
+            </div>
+            
+            {/* 自定义优化输入 - 内联式 */}
+            <div className="pt-3 border-t border-[#30d158]/20">
+              <p className="text-xs text-[#86868b] mb-2">或提出自定义要求：</p>
+              <div className="flex gap-2 items-end">
+                <textarea
+                  value={customOptimizeInput}
+                  onChange={(e) => setCustomOptimizeInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.nativeEvent.isComposing || e.keyCode === 229) return;
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                      e.preventDefault();
+                      if (customOptimizeInput.trim()) {
+                        onRefinePrompt?.(customOptimizeInput.trim());
+                        setCustomOptimizeInput('');
+                      }
+                    }
+                  }}
+                  placeholder="描述你的优化需求..."
+                  rows={1}
+                  disabled={isLoading}
+                  className="flex-1 px-4 py-3 text-sm bg-white border-2 border-[#0071e3]/20 rounded-xl focus:border-[#0071e3]/50 focus:ring-2 focus:ring-[#0071e3]/10 outline-none resize-none min-h-[46px] max-h-24 transition-all shadow-sm"
+                  style={{ height: 'auto' }}
+                  onInput={(e) => {
+                    const target = e.target as HTMLTextAreaElement;
+                    target.style.height = 'auto';
+                    target.style.height = Math.min(target.scrollHeight, 96) + 'px';
+                  }}
+                />
+                <button
+                  onClick={() => {
+                    if (customOptimizeInput.trim()) {
+                      onRefinePrompt?.(customOptimizeInput.trim());
+                      setCustomOptimizeInput('');
+                    }
+                  }}
+                  disabled={!customOptimizeInput.trim() || isLoading}
+                  className="px-4 py-3 text-sm bg-[#0071e3] text-white rounded-xl hover:bg-[#0077ed] disabled:opacity-40 disabled:cursor-not-allowed transition-all font-medium flex items-center gap-2 shadow-md hover:shadow-lg"
+                >
+                  <Send className="w-4 h-4" />
+                </button>
+              </div>
             </div>
           </div>
         )}
@@ -605,6 +546,69 @@ export function ChatPanel({
                 <PromptGoDog mood="thinking" />
               </div>
               <span className="text-[#86868b] text-sm">普提狗正在进行哲学思考...</span>
+            </div>
+          </div>
+        )}
+
+        {/* 优化建议对比卡片 - 在对话流中显示 */}
+        {hasPendingChanges && previousPromptText && currentPromptText && (
+          <div className="flex justify-start">
+            <div className="max-w-[95%] bg-gradient-to-br from-[#ff9f0a]/5 to-[#ff6b35]/5 border-2 border-[#ff9f0a]/30 rounded-2xl p-4 shadow-sm">
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-[#ff9f0a]/20 flex items-center justify-center">
+                    <Sparkles className="w-4 h-4 text-[#ff9f0a]" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-semibold text-[#1d1d1f]">优化建议已生成</h4>
+                    <p className="text-xs text-[#86868b]">请审阅修改，选择接受或撤销</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setShowDiffDetail(!showDiffDetail)}
+                  className="text-xs text-[#0071e3] hover:underline flex items-center gap-1"
+                >
+                  {showDiffDetail ? '收起' : '展开'}
+                </button>
+              </div>
+              
+              {showDiffDetail && (
+                <div className="space-y-3 mb-4">
+                  <div className="bg-white/80 rounded-xl p-3 border border-red-200">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 bg-red-100 text-red-600 rounded text-xs font-medium">原版本</span>
+                    </div>
+                    <pre className="text-xs text-[#86868b] whitespace-pre-wrap font-mono leading-relaxed line-through max-h-32 overflow-y-auto">
+                      {previousPromptText.length > 500 ? previousPromptText.substring(0, 500) + '...' : previousPromptText}
+                    </pre>
+                  </div>
+                  <div className="bg-white/80 rounded-xl p-3 border border-green-200">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 bg-green-100 text-green-600 rounded text-xs font-medium">新版本</span>
+                    </div>
+                    <pre className="text-xs text-[#1d1d1f] whitespace-pre-wrap font-mono leading-relaxed max-h-32 overflow-y-auto">
+                      {currentPromptText.length > 500 ? currentPromptText.substring(0, 500) + '...' : currentPromptText}
+                    </pre>
+                  </div>
+                </div>
+              )}
+              
+              <div className="flex gap-2">
+                <button
+                  onClick={onAcceptChanges}
+                  className="flex-1 px-4 py-2.5 text-sm bg-[#30d158] text-white rounded-xl hover:bg-[#28a745] transition-all font-medium flex items-center justify-center gap-2 shadow-sm"
+                >
+                  <Check className="w-4 h-4" />
+                  接受修改
+                </button>
+                <button
+                  onClick={onRejectChanges}
+                  className="flex-1 px-4 py-2.5 text-sm bg-white border-2 border-[#ff3b30]/30 text-[#ff3b30] rounded-xl hover:bg-[#ff3b30]/5 transition-all font-medium flex items-center justify-center gap-2"
+                >
+                  <X className="w-4 h-4" />
+                  撤销修改
+                </button>
+              </div>
             </div>
           </div>
         )}

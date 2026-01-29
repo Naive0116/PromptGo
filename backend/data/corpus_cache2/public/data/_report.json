@@ -1,0 +1,20 @@
+{
+  "generated_at": "2025-10-05T20:27:53.272Z",
+  "counts": {
+    "en": {
+      "categories": 11,
+      "items": 235
+    },
+    "zh-TW": {
+      "categories": 11,
+      "items": 235
+    }
+  },
+  "missing": {
+    "zh-TW": [],
+    "en": []
+  },
+  "versions": {
+    "max_scraped_at": "2025-10-05T16:39:26.111Z"
+  }
+}

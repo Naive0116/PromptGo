@@ -1,0 +1,131 @@
+{
+  "title": "ChatGPT 給銷售",
+  "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-sales",
+  "tags": [
+    "WORK USERS",
+    "PROMPT PACKS"
+  ],
+  "items": [
+    {
+      "use_case": "產生策略性客戶計畫",
+      "prompt": "為 [客戶名稱] 建立一份客戶計畫。使用這些輸入：公司簡介、已知優先事項、目前產品使用情況、利害關係人和續約日期。以包含目標、風險、機會和後續步驟的結構化計畫輸出。",
+      "superPrompt": "為 {{ 欄位一 || 客戶名稱 }} 建立一份客戶計畫。使用這些輸入：公司簡介、已知優先事項、目前產品使用情況、利害關係人和續約日期。以包含目標、風險、機會和後續步驟的結構化計畫輸出。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20an%20account%20plan%20for%20%5Bcustomer%20name%5D.%20Use%20these%20inputs%3A%20company%20profile%2C%20known%20priorities%2C%20current%20product%20usage%2C%20stakeholders%2C%20and%20renewal%20date.%20Output%20a%20structured%20plan%20with%20goals%2C%20risks%2C%20opportunities%2C%20and%20next%20steps."
+    },
+    {
+      "use_case": "設計區域規劃框架",
+      "prompt": "為我們的下一個會計年度建立一份區域規劃指南。輸入：團隊人數、目標產業、地區和歷史收入。建議分配方法和範例覆蓋計畫。",
+      "superPrompt": "為我們的下一個會計年度建立一份區域規劃指南。輸入：團隊人數、目標產業、地區和歷史收入。建議分配方法和範例覆蓋計畫。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20territory%20planning%20guide%20for%20our%20next%20fiscal%20year.%20Inputs%3A%20team%20headcount%2C%20target%20industries%2C%20regions%2C%20and%20historical%20revenue.%20Recommend%20allocation%20method%20and%20sample%20coverage%20plan."
+    },
+    {
+      "use_case": "使用公司特徵資料優先處理客戶",
+      "prompt": "我這份客戶清單：[貼上範例]。根據 [標準：產業、規模、融資、技術堆疊] 對其進行優先排序。以排名清單的形式輸出，並附上原因。",
+      "superPrompt": "我這份客戶清單： {{ 欄位一 || 貼上範例 }}。根據 {{ 欄位二 || 標準：產業、規模、融資、技術堆疊 }} 對其進行優先排序。以排名清單的形式輸出，並附上原因。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%20have%20this%20list%20of%20accounts%3A%20%5Bpaste%20sample%5D.%20Prioritize%20them%20based%20on%20%5Bcriteria%3A%20industry%2C%20size%2C%20funding%2C%20tech%20stack%5D.%20Output%20a%20ranked%20list%20with%20reasons%20why."
+    },
+    {
+      "use_case": "使用加權評分發現高潛力客戶",
+      "prompt": "根據 [插入規則——例如，公司規模、參與度分數、意向信號] 對客戶進行評分。資料：[上傳客戶清單]。輸出排名前 10 的客戶及其分數，並附上解釋原因的註解。",
+      "superPrompt": "根據 {{ 欄位一 || 插入規則——例如，公司規模、參與度分數、意向信號 }} 對客戶進行評分。資料： {{ 欄位二 || 上傳客戶清單 }}。輸出排名前 10 的客戶及其分數，並附上解釋原因的註解。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Score%20accounts%20based%20on%20%5Binsert%20rules%E2%80%94e.g.%2C%20company%20size%2C%20engagement%20score%2C%20intent%20signals%5D.%20Data%3A%20%5BUpload%20account%20list%5D.%20Output%20top%2010%20ranked%20accounts%20with%20their%20score%20and%20a%20note%20explaining%20why."
+    },
+    {
+      "use_case": "區域市場進入規劃",
+      "prompt": "我正在為我們的 [SaaS 解決方案] 評估進入 [地區/國家] 市場。研究當地的購買行為、競爭格局、經濟狀況和法規問題。以市場準備度摘要的形式呈現，附上引文和行動步驟。",
+      "superPrompt": "我正在為我們的 {{ 欄位二 || SaaS 解決方案 }} 評估進入 {{ 欄位一 || 地區/國家 }} 市場。研究當地的購買行為、競爭格局、經濟狀況和法規問題。以市場準備度摘要的形式呈現，附上引文和行動步驟。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%E2%80%99m%20evaluating%20market%20entry%20into%20%5Bregion%2Fcountry%5D%20for%20our%20%5BSaaS%20solution%5D.%20Research%20local%20buying%20behaviors%2C%20competitive%20landscape%2C%20economic%20conditions%2C%20and%20regulatory%20concerns.%20Format%20as%20a%20go%2Fno-go%20market%20readiness%20summary%20with%20citations%20and%20action%20steps."
+    },
+    {
+      "use_case": "為競爭對手建立戰術卡",
+      "prompt": "為 [競爭對手名稱] 建立一張戰術卡。使用這些筆記：[插入定位資料]。包括優勢、劣勢、我們如何取勝以及快速談話要點。以表格格式輸出。",
+      "superPrompt": "為 {{ 欄位一 || 競爭對手名稱 }} 建立一張戰術卡。使用這些筆記： {{ 欄位二 || 插入定位資料 }}。包括優勢、劣勢、我們如何取勝以及快速談話要點。以表格格式輸出。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20battlecard%20for%20%5Bcompetitor%20name%5D.%20Use%20these%20notes%3A%20%5Binsert%20positioning%20data%5D.%20Include%20strengths%2C%20weaknesses%2C%20how%20we%20win%2C%20and%20quick%20talk%20track.%20Output%20as%20table%20format."
+    },
+    {
+      "use_case": "競爭定位分析",
+      "prompt": "我正在為 [競爭對手名稱] 準備一份競爭戰術卡。研究他們的定價模型、產品定位、最近的客戶贏/輸以及銷售動態。根據這些優勢與我們的進行比較：[插入]。以 1 頁摘要的形式輸出，並附上引文。",
+      "superPrompt": "我正在為 {{ 欄位一 || 競爭對手名稱 }} 準備一份競爭戰術卡。研究他們的定價模型、產品定位、最近的客戶贏/輸以及銷售動態。根據這些優勢與我們的進行比較： {{ 欄位二 || 插入 }}。以 1 頁摘要的形式輸出，並附上引文。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%E2%80%99m%20preparing%20a%20competitive%20battlecard%20for%20%5Bcompetitor%20name%5D.%20Research%20their%20pricing%20model%2C%20product%20positioning%2C%20recent%20customer%20wins%2Flosses%2C%20and%20sales%20motion.%20Compare%20it%20to%20ours%20based%20on%20these%20strengths%3A%20%5Binsert%5D.%20Output%20a%201-page%20summary%20with%20citations."
+    },
+    {
+      "use_case": "建立銷售支援單頁文件",
+      "prompt": "建立一份單頁文件，幫助銷售代表向 [人物誌] 推銷 [產品名稱]。包括主要優點、功能、常見使用案例和競爭對手差異化因素。格式化為可直接複製的支援文件。",
+      "superPrompt": "建立一份單頁文件，幫助銷售代表向 {{ 欄位二 || 人物誌 }} 推銷 {{ 欄位一 || 產品名稱 }}。包括主要優點、功能、常見使用案例和競爭對手差異化因素。格式化為可直接複製的支援文件。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20one-pager%20to%20help%20reps%20pitch%20%5Bproduct%20name%5D%20to%20%5Bpersona%5D.%20Include%20key%20benefits%2C%20features%2C%20common%20use%20cases%2C%20and%20competitor%20differentiators.%20Format%20as%20copy-ready%20enablement%20doc."
+    },
+    {
+      "use_case": "準備銷售異議反駁",
+      "prompt": "為這些常見的異議建立反駁：[插入 2-3 個異議]。使其聽起來自然且自信，並在有用時加入備用統計資料或故事。以清單形式輸出。",
+      "superPrompt": "為這些常見的異議建立反駁： {{ 欄位一 || 插入 2-3 個異議 }}。使其聽起來自然且自信，並在有用時加入備用統計資料或故事。以清單形式輸出。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20rebuttals%20to%20these%20common%20objections%3A%20%5Binsert%202%E2%80%933%20objections%5D.%20Make%20them%20sound%20natural%20and%20confident%2C%20and%20include%20a%20backup%20stat%20or%20story%20where%20useful.%20Output%20as%20list."
+    },
+    {
+      "use_case": "在公共領域尋找客戶證明點",
+      "prompt": "研究關於 [我們的產品或競爭對手產品] 的最新線上評論、社群提及和推薦。專注於客戶稱讚或批評的內容。總結前 5 條引述、每條引述來自哪個人物誌以及發布位置。包括連結。",
+      "superPrompt": "研究關於 {{ 欄位一 || 我們的產品或競爭對手產品 }} 的最新線上評論、社群提及和推薦。專注於客戶稱讚或批評的內容。總結前 5 條引述、每條引述來自哪個人物誌以及發布位置。包括連結。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Research%20recent%20online%20reviews%2C%20social%20mentions%2C%20and%20testimonials%20about%20%5Bour%20product%20OR%20competitor%20product%5D.%20Focus%20on%20what%20customers%20are%20praising%20or%20criticizing.%20Summarize%20top%205%20quotes%2C%20what%20persona%20each%20came%20from%2C%20and%20where%20it%20was%20posted.%20Include%20links."
+    },
+    {
+      "use_case": "按階段分析管道轉換率",
+      "prompt": "分析此銷售管道匯出。計算每個階段之間的轉換率，並找出最大的下降點。資料：[上傳管道 CSV]。輸出一個簡短的摘要和一個按階段顯示轉換率百分比的表格。",
+      "superPrompt": "分析此銷售管道匯出。計算每個階段之間的轉換率，並找出最大的下降點。資料： {{ 欄位一 || 上傳管道 CSV }}。輸出一個簡短的摘要和一個按階段顯示轉換率百分比的表格。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Analyze%20this%20sales%20pipeline%20export.%20Calculate%20conversion%20rates%20between%20each%20stage%20and%20identify%20the%20biggest%20drop-off%20point.%20Data%3A%20%5BUpload%20pipeline%20CSV%5D.%20Output%20a%20short%20summary%20and%20a%20table%20of%20conversion%20%25%20by%20stage."
+    },
+    {
+      "use_case": "按成交率識別表現最佳的銷售代表",
+      "prompt": "從此銷售代表活動和已成交交易的資料集中，計算每個銷售代表的成交率並對其進行排名。資料：[上傳銷售代表表現 CSV]。輸出一個排名清單和一句描述每個銷售代表優勢的話。",
+      "superPrompt": "從此銷售代表活動和已成交交易的資料集中，計算每個銷售代表的成交率並對其進行排名。資料： {{ 欄位一 || 上傳銷售代表表現 CSV }}。輸出一個排名清單和一句描述每個銷售代表優勢的話。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=From%20this%20dataset%20of%20rep%20activities%20and%20closed%20deals%2C%20calculate%20the%20close%20rate%20for%20each%20rep%20and%20rank%20them.%20Data%3A%20%5BUpload%20rep%20performance%20CSV%5D.%20Output%20a%20ranked%20list%20and%20a%20sentence%20for%20each%20rep%E2%80%99s%20strength."
+    },
+    {
+      "use_case": "視覺化跨季度的交易速度",
+      "prompt": "使用此 CRM 匯出計算每季的平均交易速度（從潛在客戶到成交的天數）。資料：[上傳包含開啟/關閉日期的資料]。以簡單的圖表顯示速度趨勢並總結趨勢線。",
+      "superPrompt": "使用此 CRM 匯出計算每季的平均交易速度（從潛在客戶到成交的天數）。資料： {{ 欄位一 || 上傳包含開啟/關閉日期的資料 }}。以簡單的圖表顯示速度趨勢並總結趨勢線。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Use%20this%20CRM%20export%20to%20calculate%20average%20deal%20velocity%20per%20quarter%20%28days%20from%20lead%20to%20close%29.%20Data%3A%20%5BUpload%20with%20open%2Fclose%20dates%5D.%20Show%20velocity%20trend%20in%20a%20simple%20chart%20and%20summarize%20the%20trendline."
+    },
+    {
+      "use_case": "總結活動對已成交交易的歸因",
+      "prompt": "將活動來源與此資料中的已成交交易進行比對。找出哪個活動帶來了最多的已成交收入。資料：[上傳活動 + 交易匯出]。輸出一個排名清單和一個簡短的活動摘要。",
+      "superPrompt": "將活動來源與此資料中的已成交交易進行比對。找出哪個活動帶來了最多的已成交收入。資料： {{ 欄位一 || 上傳活動 + 交易匯出 }}。輸出一個排名清單和一個簡短的活動摘要。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Match%20campaign%20sources%20to%20closed-won%20deals%20from%20this%20data.%20Identify%20which%20campaign%20drove%20the%20most%20closed%20revenue.%20Data%3A%20%5BUpload%20campaign%20%2B%20deal%20export%5D.%20Output%20a%20ranked%20list%20and%20a%20short%20campaign%20summary."
+    },
+    {
+      "use_case": "產生表現比較圖表",
+      "prompt": "這是按季度劃分的銷售代表表現表格：[貼上資料]。比較表現最佳和最差的銷售代表。顯示帶有趨勢的圖表並指出關鍵差異。以表格 + 見解的形式輸出。",
+      "superPrompt": "這是按季度劃分的銷售代表表現表格： {{ 欄位一 || 貼上資料 }}。比較表現最佳和最差的銷售代表。顯示帶有趨勢的圖表並指出關鍵差異。以表格 + 見解的形式輸出。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Here%E2%80%99s%20a%20table%20of%20rep%20performance%20by%20quarter%3A%20%5Bpaste%20data%5D.%20Compare%20top%20vs%20bottom%20performers.%20Show%20chart%20with%20trends%20and%20call%20out%20key%20differences.%20Output%20as%20table%20%2B%20insights."
+    },
+    {
+      "use_case": "以漏斗視圖視覺化銷售流程",
+      "prompt": "建立一個顯示我們銷售階段的漏斗圖：[插入階段]。使其乾淨易讀，以便用於上線文件。以簡單圖像的形式輸出。",
+      "superPrompt": "建立一個顯示我們銷售階段的漏斗圖： {{ 欄位一 || 插入階段 }}。使其乾淨易讀，以便用於上線文件。以簡單圖像的形式輸出。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20funnel%20graphic%20showing%20our%20sales%20stages%3A%20%5Binsert%20stages%5D.%20Make%20it%20clean%20and%20easy%20to%20read%20for%20onboarding%20docs.%20Output%20as%20simple%20image."
+    },
+    {
+      "use_case": "視覺化 B2B 銷售漏斗",
+      "prompt": "建立一個標準 B2B SaaS 銷售漏斗的圖像，包含以下階段：潛在客戶開發、探索、示範、提案、成交/流失。使用乾淨、現代的圖示和文字標籤。輸出應足夠清晰，以便在投影片或支援文件中使用。",
+      "superPrompt": "建立一個標準 B2B SaaS 銷售漏斗的圖像，包含以下階段：潛在客戶開發、探索、示範、提案、成交/流失。使用乾淨、現代的圖示和文字標籤。輸出應足夠清晰，以便在投影片或支援文件中使用。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20an%20image%20of%20a%20standard%20B2B%20SaaS%20sales%20funnel%20with%20these%20stages%3A%20Prospecting%2C%20Discovery%2C%20Demo%2C%20Proposal%2C%20Closed%20Won%2FLost.%20Use%20clean%2C%20modern%20icons%20and%20text%20labels.%20Output%20should%20be%20clear%20enough%20for%20use%20in%20a%20slide%20or%20enablement%20doc."
+    },
+    {
+      "use_case": "說明關鍵銷售人物誌",
+      "prompt": "為 3 個人物誌建立專業插圖：(1) 一家中型市場公司的財務長，(2) 一家全球性企業的資訊長，以及 (3) 一家物流公司的營運經理。風格應為平面且現代，非常適合用於單頁文件或訓練投影片。",
+      "superPrompt": "為 3 個人物誌建立專業插圖：(1) 一家中型市場公司的財務長，(2) 一家全球性企業的資訊長，以及 (3) 一家物流公司的營運經理。風格應為平面且現代，非常適合用於單頁文件或訓練投影片。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20professional%20illustrations%20for%203%20personas%3A%20%281%29%20CFO%20of%20a%20mid-market%20company%2C%20%282%29%20VP%20of%20IT%20at%20a%20global%20enterprise%2C%20and%20%283%29%20Operations%20Manager%20at%20a%20logistics%20firm.%20Style%20should%20be%20flat%20and%20modern%2C%20ideal%20for%20use%20in%20a%20one-pager%20or%20training%20slide."
+    },
+    {
+      "use_case": "建立區域覆蓋地圖",
+      "prompt": "建立一張簡化的美國地圖，顯示按地區劃分的銷售區域：西部、中部、東部。使用獨特的顏色區域並標記關鍵州。輸出應看起來乾淨，適合銷售啟動會議的簡報。",
+      "superPrompt": "建立一張簡化的美國地圖，顯示按地區劃分的銷售區域：西部、中部、東部。使用獨特的顏色區域並標記關鍵州。輸出應看起來乾淨，適合銷售啟動會議的簡報。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20simplified%20U.S.%20map%20showing%20sales%20territories%20split%20by%20region%3A%20West%2C%20Central%2C%20East.%20Use%20distinctive%20color%20zones%20and%20label%20key%20states.%20Output%20should%20look%20clean%20and%20suitable%20for%20a%20sales%20kickoff%20deck."
+    },
+    {
+      "use_case": "草擬團隊慶祝圖形",
+      "prompt": "設計一個有趣、現代的圖形來慶祝「本月最佳銷售代表」。包括姓名/照片的佔位符和風格化的獎盃或徽章。風格應與內部品牌或電子報的氛圍相符。",
+      "superPrompt": "設計一個有趣、現代的圖形來慶祝「本月最佳銷售代表」。包括姓名/照片的佔位符和風格化的獎盃或徽章。風格應與內部品牌或電子報的氛圍相符。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Design%20a%20fun%2C%20modern%20graphic%20to%20celebrate%20%E2%80%9CTop%20Rep%20of%20the%20Month.%E2%80%9D%20Include%20a%20placeholder%20for%20name%2Fphoto%20and%20stylized%20trophy%20or%20badge.%20Style%20should%20match%20internal%20Slack%20or%20newsletter%20vibe."
+    }
+  ],
+  "scraped_at": "2025-10-05T12:52:26.800Z"
+}

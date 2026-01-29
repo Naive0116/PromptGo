@@ -127,8 +127,17 @@
   "prompt": {
     "role": "你是一个...",
     "task": "你的任务是...",
+    "input_spec": {
+      "required": true,
+      "type": "text | code | data | query | document",
+      "description": "用户将提供什么内容给 AI 处理",
+      "placeholder": "{{用户输入}}"
+    },
     "constraints": ["约束1", "约束2"],
     "output_format": "输出格式说明",
+    "thinking_strategy": "可选：推理策略/思维框架说明",
+    "error_handling": "可选：异常/输入不足时的处理策略",
+    "initialization": "可选：初始化指令/开场约束",
     "examples": []
   },
   "raw_text": "完整的提示词文本",
@@ -730,4 +739,99 @@ SOCRATIC_SYSTEM_PROMPT = """
 
 ---
 
-*文档版本：v1.2 | 最后更新：2026-01-27*
+## 更新日志 - 2026-01-29
+
+#### 已完成功能
+
+| 需求编号 | 功能描述 | 状态 |
+|----------|----------|------|
+| **图标系统升级** | 全站 emoji 替换为 Lucide React 矢量图标（小狗除外） | ✅ 已完成 |
+| **场景/人设/模板配置** | 新增手动选择场景、人设、输出模板功能 | ✅ 已完成 |
+| **冗余度控制** | 新增 verbosity 滑块控制输出详细程度 | ✅ 已完成 |
+| **悬停提示** | 场景/人设/模板按钮添加 tooltip 功能描述 | ✅ 已完成 |
+| **自定义评估按钮** | 完成状态下新增自定义优化要求入口 | ✅ 已完成 |
+| **边框增强** | 所有选项卡片边框可见性增强 | ✅ 已完成 |
+| **后端核心优化** | 技能文件系统 + 记忆注入 + 引用规范 | ✅ 已完成 |
+| **白屏修复** | 修复 current_understanding 类型导致的渲染错误 | ✅ 已完成 |
+| **内联优化输入** | 自定义优化从弹窗改为内联输入框 | ✅ 已完成 |
+| **按钮视觉增强** | 优化按钮添加阴影和更明显的边框 | ✅ 已完成 |
+| **优化建议批注系统** | 优化后显示新旧对比，支持接受/撤销 | ✅ 已完成 |
+| **Prompt 框架 v3.0** | 智能输入识别 + 用户输入区块 + 推理策略/异常处理/初始化占位符 | ✅ 已完成 |
+| **选项显示修复** | 用户确认选择时使用 label 展示与提交（不再显示 value） | ✅ 已完成 |
+| **设置弹窗 UI 修复** | 场景卡片与其他模块同尺寸，滑块刻度文案与值对齐 | ✅ 已完成 |
+
+#### 详细变更
+
+**图标系统升级: Lucide React**
+- 修改文件：`ChatPanel.tsx`, `PromptPreview.tsx`, `PromptSettingsModal.tsx`, `SplitView.tsx`
+- 所有 emoji 替换为 Lucide 矢量图标
+- 保留小狗 emoji 🐕 作为品牌吉祥物
+
+**场景/人设/模板配置系统**
+- 新增文件：`PromptSettingsModal.tsx`
+- 修改文件：`prompt_options.json`, `SplitView.tsx`
+- 6 个场景：Auto / 代码助手 / 写作导师 / 数据分析 / 创意写作 / 客服助手
+- 4 个人设风格：专业高效 / 友好耐心 / 严谨学术 / 创意发散
+- 4 个输出模板：标准 / 结构化 / 极简 / 教学式
+
+**后端核心优化: P0-P3**
+- 新增文件：`skill_loader.py`, `memory_manager.py`, `citation_rules.py`
+- 新增目录：`backend/app/config/skills/`（5个技能文件）
+- 技能文件系统：MUST_DO / MUST_NOT / PREFER 规则
+- 记忆注入框架：用户偏好 / 会话上下文 / 对话高亮
+- 引用规范系统：引用格式 / 版权合规 / 事实核查
+
+**悬停提示功能**
+- 修改文件：`prompt_options.json`, `PromptSettingsModal.tsx`
+- 所有场景/人设/模板添加 `tooltip` 字段
+- 按钮使用 `title` 属性实现原生悬停提示
+
+**Bug 修复**
+- 修改文件：`types/index.ts`, `ChatPanel.tsx`, `SplitView.tsx`
+- `current_understanding` 类型从 `string` 改为 `CurrentUnderstanding | string`
+- 修复对象类型直接渲染导致的白屏问题
+
+**内联优化输入 + 按钮视觉增强**
+- 修改文件：`ChatPanel.tsx`, `index.css`
+- 自定义优化从 `prompt()` 弹窗改为内联 `textarea`
+- 支持 Shift+Enter 换行，Enter 直接发送
+- 优化按钮添加 `shadow-sm` / `shadow-md` 阴影
+- 选项标签添加白色背景和更明显的边框
+
+**优化建议批注系统**
+- 修改文件：`PromptPreview.tsx`, `SplitView.tsx`, `types/index.ts`
+- 新增 `PromptSuggestion` 类型定义
+- 优化后自动显示新旧版本对比通知栏
+- 支持"接受修改"和"撤销修改"两个操作
+- 对比视图可折叠/展开
+- 使用渐变背景和图标区分新旧版本
+
+**Prompt 框架 v3.0（智能输入识别 + 思维原则集成）**
+- 修改文件：`backend/app/services/socratic_engine.py`
+- 智能判断任务是否需要用户输入（需要时生成 `input_spec`）
+- 提示词模板新增占位符区块：`# 用户输入`、`# 推理策略（可选）`、`# 异常处理`、`# 初始化`
+- 苏格拉底追问策略新增“用户会提供什么内容给 AI 处理？”（智能判断是否需要问）
+- 集成思维原则：苏格拉底诘问法 / 第一性原理 / 布鲁姆认知金字塔 / 水平思考法
+
+**选项显示修复（右侧与用户选择一致）**
+- 修改文件：`frontend/src/components/ChatPanel.tsx`
+- 选项选择/提交时使用 `option.label` 进行展示与提交，避免显示 `generate_recipe` 等内部值
+
+**设置弹窗 UI 修复（对齐/居中）**
+- 修改文件：`frontend/src/components/PromptSettingsModal.tsx`
+- 场景选择卡片与人设/模板卡片统一网格与尺寸
+- 滑块刻度文案按真实刻度定位（值为 5 时对齐“标准”）
+
+#### 新增文件
+
+| 文件路径 | 描述 |
+|----------|------|
+| `backend/app/services/memory_manager.py` | 记忆注入框架 |
+| `backend/app/services/citation_rules.py` | 引用规范系统 |
+| `backend/app/services/skill_loader.py` | 技能文件加载器 |
+| `backend/app/config/skills/*.md` | 5个场景技能文件 |
+| `frontend/src/components/PromptSettingsModal.tsx` | 提示词设置弹窗 |
+
+---
+
+*文档版本：v1.4 | 最后更新：2026-01-29*

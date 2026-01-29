@@ -1,0 +1,33 @@
+{
+  "name": "prompt-packs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "prepare": "playwright install chromium",
+    "crawl": "node crawler/crawl-openai-academy.mjs",
+    "clean": "rm -rf ./crawler/out && mkdir -p ./crawler/out",
+    "sync:data": "node scripts/sync-data.mjs",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "all": "npm run crawl && npm run data:sync && npm run dev"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "playwright": "^1.48.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.9.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "gh-pages": "^6.3.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  }
+}

@@ -1,5 +1,7 @@
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
 from sqlalchemy.orm import declarative_base
+from sqlalchemy.pool import NullPool
+from sqlalchemy import text
 
 from ..config import get_settings
 
@@ -8,7 +10,12 @@ settings = get_settings()
 engine = create_async_engine(
     settings.database_url,
     echo=False,
-    future=True
+    future=True,
+    poolclass=NullPool,
+    connect_args={
+        "timeout": 30,
+        "check_same_thread": False,
+    },
 )
 
 async_session = async_sessionmaker(
@@ -34,6 +41,9 @@ async def get_db():
 
 async def init_db():
     async with engine.begin() as conn:
+        await conn.execute(text("PRAGMA journal_mode=WAL"))
+        await conn.execute(text("PRAGMA synchronous=NORMAL"))
+        await conn.execute(text("PRAGMA busy_timeout=30000"))
         await conn.run_sync(Base.metadata.create_all)
         # SQLite 自动迁移：检查并添加缺失的列
         await conn.run_sync(_migrate_add_missing_columns)

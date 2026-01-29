@@ -1,0 +1,65 @@
+{
+  "title": "ChatGPT 給財務",
+  "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-finance",
+  "tags": [
+    "WORK USERS",
+    "PROMPT PACKS"
+  ],
+  "items": [
+    {
+      "use_case": "分析降低成本的機會",
+      "prompt": "從我們最近的預算報告中找出降低成本的機會。使用 [插入成本中心或部門] 的細項來評估。提供一個包含機會、預計節省金額和任何潛在風險的表格。",
+      "superPrompt": "從我們最近的預算報告中找出降低成本的機會。使用 {{ 欄位一 || 插入成本中心或部門 }} 的細項來評估。提供一個包含機會、預計節省金額和任何潛在風險的表格。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Identify%20cost%20reduction%20opportunities%20from%20our%20recent%20budget%20report.%20Use%20the%20breakdown%20from%20%5Binsert%20cost%20center%20or%20department%5D%20to%20evaluate.%20Provide%20a%20table%20with%20opportunities%2C%20projected%20savings%2C%20and%20any%20potential%20risks."
+    },
+    {
+      "use_case": "評估併購目標的契合度",
+      "prompt": "評估一個併購目標的財務和策略契合度。使用此背景資訊：[插入公司簡介或關鍵指標]。輸出應為一個優缺點表格和一個 3 段的風險/回報摘要。",
+      "superPrompt": "評估一個併購目標的財務和策略契合度。使用此背景資訊： {{ 欄位一 || 插入公司簡介或關鍵指標 }}。輸出應為一個優缺點表格和一個 3 段的風險/回報摘要。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Evaluate%20the%20financial%20and%20strategic%20fit%20of%20an%20M%26A%20target.%20Use%20this%20context%3A%20%5Binsert%20company%20profile%20or%20key%20metrics%5D.%20Output%20should%20be%20a%20table%20of%20pros%2Fcons%20and%20a%203-paragraph%20summary%20of%20risk%2Freward."
+    },
+    {
+      "use_case": "找出會計流程的差距",
+      "prompt": "檢視我們目前的會計結算檢查清單並提出改進建議。使用此文件：[插入標準作業程序或任務清單]。輸出應突顯瓶頸並建議流程更新。",
+      "superPrompt": "檢視我們目前的會計結算檢查清單並提出改進建議。使用此文件： {{ 欄位一 || 插入標準作業程序或任務清單 }}。輸出應突顯瓶頸並建議流程更新。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Review%20our%20current%20accounting%20close%20checklist%20and%20suggest%20improvements.%20Use%20this%20documentation%3A%20%5Binsert%20SOP%20or%20task%20list%5D.%20Output%20should%20highlight%20bottlenecks%20and%20recommend%20process%20updates."
+    },
+    {
+      "use_case": "審查供應商付款以進行整合",
+      "prompt": "分析此資料中的供應商付款 [上傳檔案]。按支出找出前 10 大供應商，發現任何重複（例如，相似的供應商名稱），並建議要整合的供應商。輸出一個表格和簡短的成本降低摘要。",
+      "superPrompt": "分析此資料中的供應商付款 {{ 欄位一 || 上傳檔案 }}。按支出找出前 10 大供應商，發現任何重複（例如，相似的供應商名稱），並建議要整合的供應商。輸出一個表格和簡短的成本降低摘要。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Analyze%20vendor%20payments%20in%20this%20data%20%5Bupload%20file%5D.%20Identify%20top%2010%20vendors%20by%20spend%2C%20spot%20any%20duplication%20%28e.g.%2C%20similar%20vendor%20names%29%2C%20and%20recommend%20vendors%20to%20consolidate.%20Output%20a%20table%20and%20short%20cost-reduction%20summary."
+    },
+    {
+      "use_case": "採購策略的成本槓桿",
+      "prompt": "我正在領導一項旨在削減採購成本的財務計畫。研究《財富》500 強公司在不損害供應商關係的情況下用來降低採購支出的策略。提出 3-5 種策略，並附上成本影響範例和引用的來源。",
+      "superPrompt": "我正在領導一項旨在削減採購成本的財務計畫。研究《財富》500 強公司在不損害供應商關係的情況下用來降低採購支出的策略。提出 3-5 種策略，並附上成本影響範例和引用的來源。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%27m%20leading%20a%20finance%20initiative%20to%20cut%20procurement%20costs.%20Research%20strategies%20used%20by%20Fortune%20500%20companies%20to%20reduce%20procurement%20spend%20without%20harming%20supplier%20relationships.%20Present%203%E2%80%935%20tactics%20with%20cost%20impact%20examples%20and%20cited%20sources."
+    },
+    {
+      "use_case": "視覺化收入增長漏斗",
+      "prompt": "建立一個標有以下階段的收入增長漏斗圖像：獲取 → 啟用 → 收入 → 保留 → 擴展。使用適合高階主管財務簡報的乾淨、現代風格。為每個階段加入圖示。",
+      "superPrompt": "建立一個標有以下階段的收入增長漏斗圖像：獲取 → 啟用 → 收入 → 保留 → 擴展。使用適合高階主管財務簡報的乾淨、現代風格。為每個階段加入圖示。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20an%20image%20of%20a%20revenue%20growth%20funnel%20with%20labeled%20stages%3A%20Acquisition%20%E2%86%92%20Activation%20%E2%86%92%20Revenue%20%E2%86%92%20Retention%20%E2%86%92%20Expansion.%20Use%20a%20clean%2C%20modern%20style%20suitable%20for%20an%20executive%20finance%20presentation.%20Include%20icons%20for%20each%20stage."
+    },
+    {
+      "use_case": "說明預算規劃工作流程",
+      "prompt": "建立一個顯示預算規劃週期的水平流程圖：預測 → 審查 → 利害關係人意見 → 核准 → 追蹤 → 調整。使用帶有柔和色彩和標籤的企業風格視覺效果。",
+      "superPrompt": "建立一個顯示預算規劃週期的水平流程圖：預測 → 審查 → 利害關係人意見 → 核准 → 追蹤 → 調整。使用帶有柔和色彩和標籤的企業風格視覺效果。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20horizontal%20process%20flow%20diagram%20showing%20a%20budget%20planning%20cycle%3A%20Forecasting%20%E2%86%92%20Review%20%E2%86%92%20Stakeholder%20Input%20%E2%86%92%20Approval%20%E2%86%92%20Tracking%20%E2%86%92%20Adjustment.%20Use%20corporate-style%20visuals%20with%20subtle%20color%20and%20labels."
+    },
+    {
+      "use_case": "ESG 財務影響視覺化",
+      "prompt": "建立一個視覺化圖像，顯示 ESG 倡議如何影響財務指標。顯示永續性投資與成本節省、風險緩解和投資者興趣之間的關聯。使用帶有箭頭的現代綠色主題設計。",
+      "superPrompt": "建立一個視覺化圖像，顯示 ESG 倡議如何影響財務指標。顯示永續性投資與成本節省、風險緩解和投資者興趣之間的關聯。使用帶有箭頭的現代綠色主題設計。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20visual%20showing%20how%20ESG%20initiatives%20can%20impact%20finance%20metrics.%20Show%20links%20between%20sustainability%20investments%20and%20cost%20savings%2C%20risk%20mitigation%2C%20and%20investor%20interest.%20Use%20a%20modern%2C%20green-themed%20design%20with%20arrows."
+    },
+    {
+      "use_case": "高階主管儀表板概念",
+      "prompt": "產生一個財務高階主管儀表板的概念圖，顯示高階 KPI：收入、毛利率、燒錢率、營運資金和預算與實際情況。使用帶有面板和佔位符數字的乾淨佈局。",
+      "superPrompt": "產生一個財務高階主管儀表板的概念圖，顯示高階 KPI：收入、毛利率、燒錢率、營運資金和預算與實際情況。使用帶有面板和佔位符數字的乾淨佈局。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Generate%20a%20conceptual%20image%20of%20a%20finance%20executive%20dashboard%20showing%20high-level%20KPIs%3A%20Revenue%2C%20Gross%20Margin%2C%20Burn%20Rate%2C%20Runway%2C%20and%20Budget%20vs.%20Actual.%20Use%20a%20clean%20layout%20with%20panels%20and%20placeholder%20numbers."
+    }
+  ],
+  "scraped_at": "2025-10-05T12:53:28.765Z"
+}

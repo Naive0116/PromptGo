@@ -1,0 +1,161 @@
+{
+  "title": "ChatGPT for executives",
+  "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-executives",
+  "tags": [
+    "WORK USERS",
+    "PROMPT PACKS"
+  ],
+  "items": [
+    {
+      "use_case": "Summarize investor trends",
+      "prompt": "I’m preparing for our investor update. Research the latest funding and market trends in [industry]. Focus on valuation benchmarks, risk sentiment, and notable exits. Present in a concise brief with sources.",
+      "superPrompt": "I’m preparing for our investor update. Research the latest funding and market trends in {{ field1 || industry}}. Focus on valuation benchmarks, risk sentiment, and notable exits. Present in a concise brief with sources.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%E2%80%99m%20preparing%20for%20our%20investor%20update.%20Research%20the%20latest%20funding%20and%20market%20trends%20in%20%5Bindustry%5D.%20Focus%20on%20valuation%20benchmarks%2C%20risk%20sentiment%2C%20and%20notable%20exits.%20Present%20in%20a%20concise%20brief%20with%20sources."
+    },
+    {
+      "use_case": "Survey investor sentiment",
+      "prompt": "Research current investor sentiment for companies in the [industry] space. Pull insights from earnings calls, investor letters, and analyst notes. Focus on risk appetite, funding trends, and growth expectations. Provide a 1-page briefing with source links.",
+      "superPrompt": "Research current investor sentiment for companies in the {{ field1 || industry}} space. Pull insights from earnings calls, investor letters, and analyst notes. Focus on risk appetite, funding trends, and growth expectations. Provide a 1-page briefing with source links.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Research%20current%20investor%20sentiment%20for%20companies%20in%20the%20%5Bindustry%5D%20space.%20Pull%20insights%20from%20earnings%20calls%2C%20investor%20letters%2C%20and%20analyst%20notes.%20Focus%20on%20risk%20appetite%2C%20funding%20trends%2C%20and%20growth%20expectations.%20Provide%20a%201-page%20briefing%20with%20source%20links."
+    },
+    {
+      "use_case": "Benchmark executive compensation",
+      "prompt": "Conduct research on executive compensation benchmarks for [title, e.g. CFO] at [company size and industry]. Include total compensation breakdowns, geographic variations, and trends across public/private companies. Summarize in a 1-page brief with data tables and citations.",
+      "superPrompt": "Conduct research on executive compensation benchmarks for {{ field1 || title, e.g. CFO}} at {{ field2 || company size and industry}}. Include total compensation breakdowns, geographic variations, and trends across public/private companies. Summarize in a 1-page brief with data tables and citations.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Conduct%20research%20on%20executive%20compensation%20benchmarks%20for%20%5Btitle%2C%20e.g.%20CFO%5D%20at%20%5Bcompany%20size%20and%20industry%5D.%20Include%20total%20compensation%20breakdowns%2C%20geographic%20variations%2C%20and%20trends%20across%20public%2Fprivate%20companies.%20Summarize%20in%20a%201-page%20brief%20with%20data%20tables%20and%20citations."
+    },
+    {
+      "use_case": "Evaluate M&A opportunities in a sector",
+      "prompt": "I’m evaluating M&amp;A options in the [sector/vertical]. Research recent acquisitions (past 24 months), typical deal sizes, common targets, and integration outcomes. Provide company examples, risks, and strategic rationale. Format as an investor-style briefing.",
+      "superPrompt": "I’m evaluating M&amp;A options in the {{ field1 || sector/vertical}}. Research recent acquisitions (past 24 months), typical deal sizes, common targets, and integration outcomes. Provide company examples, risks, and strategic rationale. Format as an investor-style briefing.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%E2%80%99m%20evaluating%20M%26A%20options%20in%20the%20%5Bsector%2Fvertical%5D.%20Research%20recent%20acquisitions%20(past%2024%20months)%2C%20typical%20deal%20sizes%2C%20common%20targets%2C%20and%20integration%20outcomes.%20Provide%20company%20examples%2C%20risks%2C%20and%20strategic%20rationale.%20Format%20as%20an%20investor-style%20briefing."
+    },
+    {
+      "use_case": "Assess future trends in [your industry]",
+      "prompt": "I’m an executive at [company/industry]. Conduct deep research on 3–5 emerging trends in [industry/topic] over the next 3 years. Include industry-specific examples, expert citations, and potential implications for strategy and talent planning. Present as an executive summary with bullet points and links to sources.",
+      "superPrompt": "I’m an executive at {{ field1 || company/industry}}. Conduct deep research on 3–5 emerging trends in {{ field2 || industry/topic}} over the next 3 years. Include industry-specific examples, expert citations, and potential implications for strategy and talent planning. Present as an executive summary with bullet points and links to sources.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%E2%80%99m%20an%20executive%20at%20%5Bcompany%2Findustry%5D.%20Conduct%20deep%20research%20on%203%E2%80%935%20emerging%20trends%20in%20%5Bindustry%2Ftopic%5D%20over%20the%20next%203%20years.%20Include%20industry-specific%20examples%2C%20expert%20citations%2C%20and%20potential%20implications%20for%20strategy%20and%20talent%20planning.%20Present%20as%20an%20executive%20summary%20with%20bullet%20points%20and%20links%20to%20sources."
+    },
+    {
+      "use_case": "Draft a vision statement",
+      "prompt": "Help me draft a compelling vision statement for our [company/team/initiative]. Our focus areas are: [insert key goals, values, or direction]. Make it inspiring, concise, and easy to communicate across departments.",
+      "superPrompt": "Help me draft a compelling vision statement for our {{ field1 || company/team/initiative}}. Our focus areas are: {{ field2 || insert key goals, values, or direction}}. Make it inspiring, concise, and easy to communicate across departments.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Help%20me%20draft%20a%20compelling%20vision%20statement%20for%20our%20%5Bcompany%2Fteam%2Finitiative%5D.%20Our%20focus%20areas%20are%3A%20%5Binsert%20key%20goals%2C%20values%2C%20or%20direction%5D.%20Make%20it%20inspiring%2C%20concise%2C%20and%20easy%20to%20communicate%20across%20departments."
+    },
+    {
+      "use_case": "Generate town hall talking points",
+      "prompt": "I need talking points for an upcoming company-wide town hall. The theme is [insert theme or announcement]. Make it engaging, clear, and forward-looking. Limit to 5 minutes of content.",
+      "superPrompt": "I need talking points for an upcoming company-wide town hall. The theme is {{ field1 || insert theme or announcement}}. Make it engaging, clear, and forward-looking. Limit to 5 minutes of content.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%20need%20talking%20points%20for%20an%20upcoming%20company-wide%20town%20hall.%20The%20theme%20is%20%5Binsert%20theme%20or%20announcement%5D.%20Make%20it%20engaging%2C%20clear%2C%20and%20forward-looking.%20Limit%20to%205%20minutes%20of%20content."
+    },
+    {
+      "use_case": "Refresh internal comms strategy",
+      "prompt": "Help me design a new internal communications plan for [company or team]. We’re trying to improve alignment, morale, and transparency. Suggest 3 guiding principles and a simple comms calendar.",
+      "superPrompt": "Help me design a new internal communications plan for {{ field1 || company or team}}. We’re trying to improve alignment, morale, and transparency. Suggest 3 guiding principles and a simple comms calendar.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Help%20me%20design%20a%20new%20internal%20communications%20plan%20for%20%5Bcompany%20or%20team%5D.%20We%E2%80%99re%20trying%20to%20improve%20alignment%2C%20morale%2C%20and%20transparency.%20Suggest%203%20guiding%20principles%20and%20a%20simple%20comms%20calendar."
+    },
+    {
+      "use_case": "Plan a reorg comms sequence",
+      "prompt": "I’m planning communications for a reorg. Provide a step-by-step message plan by audience type (execs, managers, all staff). Include tone guidelines and delivery format per message.",
+      "superPrompt": "I’m planning communications for a reorg. Provide a step-by-step message plan by audience type (execs, managers, all staff). Include tone guidelines and delivery format per message.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%E2%80%99m%20planning%20communications%20for%20a%20reorg.%20Provide%20a%20step-by-step%20message%20plan%20by%20audience%20type%20(execs%2C%20managers%2C%20all%20staff).%20Include%20tone%20guidelines%20and%20delivery%20format%20per%20message."
+    },
+    {
+      "use_case": "Draft a succession planning memo",
+      "prompt": "Help me draft a succession planning memo for our [leadership team/board]. Include reasoning, timing, and a transparent outline of next steps for internal comms.",
+      "superPrompt": "Help me draft a succession planning memo for our {{ field1 || leadership team/board}}. Include reasoning, timing, and a transparent outline of next steps for internal comms.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Help%20me%20draft%20a%20succession%20planning%20memo%20for%20our%20%5Bleadership%20team%2Fboard%5D.%20Include%20reasoning%2C%20timing%2C%20and%20a%20transparent%20outline%20of%20next%20steps%20for%20internal%20comms."
+    },
+    {
+      "use_case": "Create a pricing strategy brief",
+      "prompt": "We’re revisiting our pricing strategy for [product/service]. Based on [insert context: goals, customer segments, competitive positioning], suggest 2–3 pricing models and pros/cons of each.",
+      "superPrompt": "We’re revisiting our pricing strategy for {{ field1 || product/service}}. Based on {{ field2 || insert context: goals, customer segments, competitive positioning}}, suggest 2–3 pricing models and pros/cons of each.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=We%E2%80%99re%20revisiting%20our%20pricing%20strategy%20for%20%5Bproduct%2Fservice%5D.%20Based%20on%20%5Binsert%20context%3A%20goals%2C%20customer%20segments%2C%20competitive%20positioning%5D%2C%20suggest%202%E2%80%933%20pricing%20models%20and%20pros%2Fcons%20of%20each."
+    },
+    {
+      "use_case": "Prioritize growth levers",
+      "prompt": "Given our goals [insert business goals], identify 3 high-potential growth levers and estimate effort vs. impact. Include a table with short descriptions and trade-offs.",
+      "superPrompt": "Given our goals {{ field1 || insert business goals}}, identify 3 high-potential growth levers and estimate effort vs. impact. Include a table with short descriptions and trade-offs.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Given%20our%20goals%20%5Binsert%20business%20goals%5D%2C%20identify%203%20high-potential%20growth%20levers%20and%20estimate%20effort%20vs.%20impact.%20Include%20a%20table%20with%20short%20descriptions%20and%20trade-offs."
+    },
+    {
+      "use_case": "Analyze market entry risks",
+      "prompt": "We are considering entering [new market/region]. Based on current economic, legal, and competitive factors, summarize key risks and mitigation strategies in bullet format.",
+      "superPrompt": "We are considering entering {{ field1 || new market/region}}. Based on current economic, legal, and competitive factors, summarize key risks and mitigation strategies in bullet format.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=We%20are%20considering%20entering%20%5Bnew%20market%2Fregion%5D.%20Based%20on%20current%20economic%2C%20legal%2C%20and%20competitive%20factors%2C%20summarize%20key%20risks%20and%20mitigation%20strategies%20in%20bullet%20format."
+    },
+    {
+      "use_case": "Reframe strategic trade-offs",
+      "prompt": "We’re choosing between [Option A] and [Option B] for our next big investment. Compare trade-offs across cost, time, team capacity, and customer impact. Recommend based on goal fit.",
+      "superPrompt": "We’re choosing between {{ field1 || Option A}} and {{ field2 || Option B}} for our next big investment. Compare trade-offs across cost, time, team capacity, and customer impact. Recommend based on goal fit.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=We%E2%80%99re%20choosing%20between%20%5BOption%20A%5D%20and%20%5BOption%20B%5D%20for%20our%20next%20big%20investment.%20Compare%20trade-offs%20across%20cost%2C%20time%2C%20team%20capacity%2C%20and%20customer%20impact.%20Recommend%20based%20on%20goal%20fit."
+    },
+    {
+      "use_case": "Design a 3-year strategy outline",
+      "prompt": "Based on these business priorities [insert high-level goals], help me develop a high-level 3-year strategy. Include major focus areas, risks, and milestones per year.",
+      "superPrompt": "Based on these business priorities {{ field1 || insert high-level goals}}, help me develop a high-level 3-year strategy. Include major focus areas, risks, and milestones per year.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Based%20on%20these%20business%20priorities%20%5Binsert%20high-level%20goals%5D%2C%20help%20me%20develop%20a%20high-level%203-year%20strategy.%20Include%20major%20focus%20areas%2C%20risks%2C%20and%20milestones%20per%20year."
+    },
+    {
+      "use_case": "Identify top and bottom performing segments",
+      "prompt": "This is a dataset of performance across [regions/products/customers]. Identify which segments are over- and under-performing relative to the average. Show the metrics driving this and recommend 2 actions based on the findings.",
+      "superPrompt": "This is a dataset of performance across {{ field1 || regions/products/customers}}. Identify which segments are over- and under-performing relative to the average. Show the metrics driving this and recommend 2 actions based on the findings.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=This%20is%20a%20dataset%20of%20performance%20across%20%5Bregions%2Fproducts%2Fcustomers%5D.%20Identify%20which%20segments%20are%20over-%20and%20under-performing%20relative%20to%20the%20average.%20Show%20the%20metrics%20driving%20this%20and%20recommend%202%20actions%20based%20on%20the%20findings."
+    },
+    {
+      "use_case": "Analyze quarterly business metrics",
+      "prompt": "I’m reviewing performance data for Q[insert quarter]. Analyze this dataset [upload CSV] for key trends in revenue, churn, and customer acquisition. Highlight 3 insights I should share with the board and suggest follow-up questions I should ask.",
+      "superPrompt": "I’m reviewing performance data for Q{{ field1 || insert quarter}}. Analyze this dataset {{ field2 || upload CSV}} for key trends in revenue, churn, and customer acquisition. Highlight 3 insights I should share with the board and suggest follow-up questions I should ask.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%E2%80%99m%20reviewing%20performance%20data%20for%20Q%5Binsert%20quarter%5D.%20Analyze%20this%20dataset%20%5Bupload%20CSV%5D%20for%20key%20trends%20in%20revenue%2C%20churn%2C%20and%20customer%20acquisition.%20Highlight%203%20insights%20I%20should%20share%20with%20the%20board%20and%20suggest%20follow-up%20questions%20I%20should%20ask."
+    },
+    {
+      "use_case": "Analyze customer journey drop-off",
+      "prompt": "I uploaded a funnel dataset showing customer journey stages. Analyze conversion rates between each stage and identify the largest drop-offs. Suggest 2–3 hypotheses and next steps to test or investigate.",
+      "superPrompt": "I uploaded a funnel dataset showing customer journey stages. Analyze conversion rates between each stage and identify the largest drop-offs. Suggest 2–3 hypotheses and next steps to test or investigate.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%20uploaded%20a%20funnel%20dataset%20showing%20customer%20journey%20stages.%20Analyze%20conversion%20rates%20between%20each%20stage%20and%20identify%20the%20largest%20drop-offs.%20Suggest%202%E2%80%933%20hypotheses%20and%20next%20steps%20to%20test%20or%20investigate."
+    },
+    {
+      "use_case": "Forecast next quarter based on historical trends",
+      "prompt": "Based on this historical data [upload], build a simple forecast for [KPI, e.g. revenue] over the next quarter. Use a basic time-series model and explain any assumptions made. Present as a short briefing I can share with my leadership team.",
+      "superPrompt": "Based on this historical data {{ field1 || upload}}, build a simple forecast for {{ field2 || KPI, e.g. revenue}} over the next quarter. Use a basic time-series model and explain any assumptions made. Present as a short briefing I can share with my leadership team.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Based%20on%20this%20historical%20data%20%5Bupload%5D%2C%20build%20a%20simple%20forecast%20for%20%5BKPI%2C%20e.g.%20revenue%5D%20over%20the%20next%20quarter.%20Use%20a%20basic%20time-series%20model%20and%20explain%20any%20assumptions%20made.%20Present%20as%20a%20short%20briefing%20I%20can%20share%20with%20my%20leadership%20team."
+    },
+    {
+      "use_case": "Prioritize strategic investments",
+      "prompt": "I uploaded a dataset of ongoing or proposed initiatives with cost, impact score, and estimated time to ROI. Help me prioritize these initiatives by building a simple scoring model and plotting effort vs. impact. Summarize the top 3 recommendations.",
+      "superPrompt": "I uploaded a dataset of ongoing or proposed initiatives with cost, impact score, and estimated time to ROI. Help me prioritize these initiatives by building a simple scoring model and plotting effort vs. impact. Summarize the top 3 recommendations.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=I%20uploaded%20a%20dataset%20of%20ongoing%20or%20proposed%20initiatives%20with%20cost%2C%20impact%20score%2C%20and%20estimated%20time%20to%20ROI.%20Help%20me%20prioritize%20these%20initiatives%20by%20building%20a%20simple%20scoring%20model%20and%20plotting%20effort%20vs.%20impact.%20Summarize%20the%20top%203%20recommendations."
+    },
+    {
+      "use_case": "Build a competitive landscape grid",
+      "prompt": "Based on the following list of competitors and their differentiators [paste], create a 2x2 matrix plotting them by [x axis] and [y axis]. Label each quadrant and include our position.",
+      "superPrompt": "Based on the following list of competitors and their differentiators {{ field1 || paste}}, create a 2x2 matrix plotting them by {{ field2 || x axis}} and {{ field3 || y axis}}. Label each quadrant and include our position.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Based%20on%20the%20following%20list%20of%20competitors%20and%20their%20differentiators%20%5Bpaste%5D%2C%20create%20a%202x2%20matrix%20plotting%20them%20by%20%5Bx%20axis%5D%20and%20%5By%20axis%5D.%20Label%20each%20quadrant%20and%20include%20our%20position."
+    },
+    {
+      "use_case": "Design a 2x2 market positioning matrix",
+      "prompt": "Create a 2x2 matrix plotting companies in [industry] by [X-axis: e.g. pricing] and [Y-axis: e.g. innovation]. Label each quadrant, add 6–8 companies, and highlight where we fit. Keep it suitable for a board presentation.",
+      "superPrompt": "Create a 2x2 matrix plotting companies in {{ field1 || industry}} by {{ field2 || X-axis: e.g. pricing}} and {{ field3 || Y-axis: e.g. innovation}}. Label each quadrant, add 6–8 companies, and highlight where we fit. Keep it suitable for a board presentation.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%202x2%20matrix%20plotting%20companies%20in%20%5Bindustry%5D%20by%20%5BX-axis%3A%20e.g.%20pricing%5D%20and%20%5BY-axis%3A%20e.g.%20innovation%5D.%20Label%20each%20quadrant%2C%20add%206%E2%80%938%20companies%2C%20and%20highlight%20where%20we%20fit.%20Keep%20it%20suitable%20for%20a%20board%20presentation."
+    },
+    {
+      "use_case": "Show transformation timeline",
+      "prompt": "Create a visual timeline showing a company transformation journey from [year 1] to [year 3]. Include key milestones: strategy shifts, team growth, market expansion. Style: simple, bold, professional.",
+      "superPrompt": "Create a visual timeline showing a company transformation journey from {{ field1 || year 1}} to {{ field2 || year 3}}. Include key milestones: strategy shifts, team growth, market expansion. Style: simple, bold, professional.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20visual%20timeline%20showing%20a%20company%20transformation%20journey%20from%20%5Byear%201%5D%20to%20%5Byear%203%5D.%20Include%20key%20milestones%3A%20strategy%20shifts%2C%20team%20growth%2C%20market%20expansion.%20Style%3A%20simple%2C%20bold%2C%20professional."
+    },
+    {
+      "use_case": "Visualize strategic vision or flywheel",
+      "prompt": "Create a high-level strategic flywheel or vision diagram for a company focused on [industry or goal]. Show how inputs (e.g. customers, data, feedback) loop into outputs (e.g. growth, innovation). Keep it clean, modern, and executive-ready.",
+      "superPrompt": "Create a high-level strategic flywheel or vision diagram for a company focused on {{ field1 || industry or goal}}. Show how inputs (e.g. customers, data, feedback) loop into outputs (e.g. growth, innovation). Keep it clean, modern, and executive-ready.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20high-level%20strategic%20flywheel%20or%20vision%20diagram%20for%20a%20company%20focused%20on%20%5Bindustry%20or%20goal%5D.%20Show%20how%20inputs%20(e.g.%20customers%2C%20data%2C%20feedback)%20loop%20into%20outputs%20(e.g.%20growth%2C%20innovation).%20Keep%20it%20clean%2C%20modern%2C%20and%20executive-ready."
+    },
+    {
+      "use_case": "Illustrate a future product Vision",
+      "prompt": "Create a conceptual image of a future product vision for [industry/product]. Highlight features that reflect innovation and customer benefit. Style should be forward-looking, abstract but clear.",
+      "superPrompt": "Create a conceptual image of a future product vision for {{ field1 || industry/product}}. Highlight features that reflect innovation and customer benefit. Style should be forward-looking, abstract but clear.",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20conceptual%20image%20of%20a%20future%20product%20vision%20for%20%5Bindustry%2Fproduct%5D.%20Highlight%20features%20that%20reflect%20innovation%20and%20customer%20benefit.%20Style%20should%20be%20forward-looking%2C%20abstract%20but%20clear."
+    }
+  ],
+  "scraped_at": "2025-10-05T16:39:11.646Z"
+}

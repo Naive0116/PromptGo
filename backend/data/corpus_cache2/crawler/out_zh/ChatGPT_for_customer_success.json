@@ -1,0 +1,155 @@
+{
+  "title": "ChatGPT 客戶成功案例",
+  "page_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-customer-success",
+  "tags": [
+    "WORK USERS",
+    "PROMPT PACKS"
+  ],
+  "items": [
+    {
+      "use_case": "建立上線計畫範本",
+      "prompt": "為 [客戶類型] 建立一個可重複使用的上線計畫範本。參考典型的時間表、里程碑和利害關係人協調需求。格式化為每週的表格，包含任務負責人和目標。",
+      "superPrompt": "為 {{ 欄位一 || 客戶類型 }} 建立一個可重複使用的上線計畫範本。參考典型的時間表、里程碑和利害關係人協調需求。格式化為每週的表格，包含任務負責人和目標。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20reusable%20onboarding%20plan%20template%20for%20%5Btype%20of%20customer%5D.%20Reference%20typical%20timelines%2C%20milestones%2C%20and%20stakeholder%20alignment%20needs.%20Format%20as%20a%20week-by-week%20table%20with%20task%20owners%20and%20goals."
+    },
+    {
+      "use_case": "總結上線回饋",
+      "prompt": "總結我們在 [區隔] 中最近 10 位客戶的上線回饋。使用這些共享的筆記和調查答案。每個主題輸出一小段：成功之處、阻礙、建議。",
+      "superPrompt": "總結我們在 {{ 欄位一 || 區隔 }} 中最近 10 位客戶的上線回饋。使用這些共享的筆記和調查答案。每個主題輸出一小段：成功之處、阻礙、建議。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Summarize%20onboarding%20feedback%20from%20our%20last%2010%20customers%20in%20%5Bsegment%5D.%20Use%20these%20shared%20notes%20and%20survey%20answers.%20Output%20a%20short%20paragraph%20per%20theme%3A%20wins%2C%20blockers%2C%20suggestions."
+    },
+    {
+      "use_case": "找出高接觸式上線的最佳實踐",
+      "prompt": "研究領先的 B2B 公司如何建構高接觸式上線旅程。專注於 ACV 超過 100 萬美元且採用混合上線模式的公司。包含來源並將輸出建構成帶有參考資料的關鍵策略條列式摘要。",
+      "superPrompt": "研究領先的 B2B 公司如何建構高接觸式上線旅程。專注於 ACV 超過 100 萬美元且採用混合上線模式的公司。包含來源並將輸出建構成帶有參考資料的關鍵策略條列式摘要。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Research%20how%20leading%20B2B%20companies%20structure%20high-touch%20onboarding%20journeys.%20Focus%20on%20companies%20with%20%241M%2B%20ACV%20and%20hybrid%20onboarding%20models.%20Include%20sources%20and%20structure%20the%20output%20as%20a%20bulleted%20summary%20of%20key%20tactics%20with%20references."
+    },
+    {
+      "use_case": "建議主動式劇本",
+      "prompt": "為 [產業/區隔] 中有風險的客戶推薦 3 個主動式接觸劇本。使用最近流失、功能不活躍和低互動的趨勢。輸出應包含：目標、觸發條件、行動呼籲和時機。",
+      "superPrompt": "為 {{ 欄位一 || 產業/區隔 }} 中有風險的客戶推薦 3 個主動式接觸劇本。使用最近流失、功能不活躍和低互動的趨勢。輸出應包含：目標、觸發條件、行動呼籲和時機。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Recommend%203%20proactive%20outreach%20playbooks%20for%20at-risk%20customers%20in%20%5Bindustry%2Fsegment%5D.%20Use%20trends%20from%20recent%20churn%2C%20feature%20inactivity%2C%20and%20low%20engagement.%20Output%20should%20include%3A%20goal%2C%20trigger%2C%20CTA%2C%20and%20timing."
+    },
+    {
+      "use_case": "腦力激盪留存誘因",
+      "prompt": "為 [產業] 中可能降級的帳戶建議創新的留存策略。使用我們觀察到的使用趨勢和續約猶豫。輸出 5 個經過測試和 5 個新穎的想法，並附上優缺點。",
+      "superPrompt": "為 {{ 欄位一 || 產業 }} 中可能降級的帳戶建議創新的留存策略。使用我們觀察到的使用趨勢和續約猶豫。輸出 5 個經過測試和 5 個新穎的想法，並附上優缺點。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Suggest%20creative%20retention%20strategies%20for%20accounts%20likely%20to%20downgrade%20in%20%5Bindustry%5D.%20Use%20trends%20in%20usage%20and%20renewal%20hesitations%20we%E2%80%99ve%20seen.%20Output%205%20tested%20and%205%20novel%20ideas%20with%20pros%2Fcons."
+    },
+    {
+      "use_case": "基準化客戶成功組織結構",
+      "prompt": "為我們這樣在 [產業、規模] 的公司基準化客戶成功組織結構。專注於每個客戶區隔的角色和與收入的比例。以比較表的形式輸出，並附上員工人數比例的註解。",
+      "superPrompt": "為我們這樣在 {{ 欄位一 || 產業、規模 }} 的公司基準化客戶成功組織結構。專注於每個客戶區隔的角色和與收入的比例。以比較表的形式輸出，並附上員工人數比例的註解。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Benchmark%20the%20CS%20org%20structure%20for%20companies%20like%20ours%20in%20%5Bindustry%2C%20size%5D.%20Focus%20on%20roles%20per%20customer%20segment%20and%20ratio%20to%20revenue.%20Output%20as%20a%20comparison%20table%20with%20notes%20on%20headcount%20ratios."
+    },
+    {
+      "use_case": "按產業基準化成功指標",
+      "prompt": "研究 [產業] 領域用於客戶健康評分的前 3 大成功指標。包括客戶滿意度、淨收入留存率、使用頻率或其他新興基準。以表格形式輸出，比較指標、來源和基準值，並附上引文。",
+      "superPrompt": "研究 {{ 欄位一 || 產業 }} 領域用於客戶健康評分的前 3 大成功指標。包括客戶滿意度、淨收入留存率、使用頻率或其他新興基準。以表格形式輸出，比較指標、來源和基準值，並附上引文。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=%5BCS%20Ops%20at%20B2B%20SaaS%20Company.%5D%20Research%20top%203%20success%20metrics%20used%20for%20customer%20health%20scoring%20in%20the%20%5Bindustry%5D%20sector.%20Include%20CSAT%2C%20NRR%2C%20usage%20frequency%2C%20or%20other%20emerging%20benchmarks.%20Output%20as%20a%20table%20comparing%20metric%2C%20source%2C%20and%20benchmark%20value%20with%20citations."
+    },
+    {
+      "use_case": "評估客戶成功工具堆疊",
+      "prompt": "研究早期、成長期和企業級公司的典型客戶成功技術堆疊。包括類別（例如，CRM、成功平台、分析）。輸出一個比較圖表，包含範例和使用說明。",
+      "superPrompt": "研究早期、成長期和企業級公司的典型客戶成功技術堆疊。包括類別（例如，CRM、成功平台、分析）。輸出一個比較圖表，包含範例和使用說明。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=%5BDirector%20of%20CS%20Strategy.%5D%20Research%20typical%20Customer%20Success%20tech%20stacks%20for%20companies%20in%20early-stage%2C%20growth-stage%2C%20and%20enterprise.%20Include%20categories%20(e.g.%2C%20CRM%2C%20Success%20Platform%2C%20Analytics).%20Output%20a%20comparison%20chart%20with%20examples%20and%20usage%20notes."
+    },
+    {
+      "use_case": "競爭對手支援摘要",
+      "prompt": "研究競爭對手在 [產業] 中如何在售後支援企業客戶。包括成功資源、團隊結構和上線格式的範例。以表格形式輸出，比較 3 個競爭對手，並附上每個策略的優缺點。",
+      "superPrompt": "研究競爭對手在 {{ 欄位一 || 產業 }} 中如何在售後支援企業客戶。包括成功資源、團隊結構和上線格式的範例。以表格形式輸出，比較 3 個競爭對手，並附上每個策略的優缺點。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Research%20how%20competitors%20are%20supporting%20enterprise%20customers%20post-sale%20in%20%5Bindustry%5D.%20Include%20examples%20of%20success%20resources%2C%20team%20structure%2C%20and%20onboarding%20formats.%20Output%20as%20a%20table%20comparing%203%20competitors%20with%20pros%2Fcons%20per%20tactic."
+    },
+    {
+      "use_case": "建立客戶成功計畫的競爭比較",
+      "prompt": "研究我們前 3 大競爭對手的客戶成功計畫是什麼樣子。專注於上線、健康追蹤和擴展策略。輸出一個比較矩陣。",
+      "superPrompt": "研究我們前 3 大競爭對手的客戶成功計畫是什麼樣子。專注於上線、健康追蹤和擴展策略。輸出一個比較矩陣。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=[Head%20of%20CS%20Strategy.]%20Research%20what%20customer%20success%20programs%20look%20like%20at%20our%20top%203%20competitors.%20Focus%20on%20onboarding%2C%20health%20tracking%2C%20and%20expansion%20strategies.%20Output%20a%20comparison%20matrix%20with%20columns%3A"
+    },
+    {
+      "use_case": "草擬高階主管電子郵件更新",
+      "prompt": "為 [客戶的高階主管利害關係人] 撰寫每週更新電子郵件。使用本週通話的內部筆記和使用指標：[在此貼上]。輸出應為一封簡短、精煉的電子郵件，包含 3 個要點。",
+      "superPrompt": "為 {{ 欄位一 || 客戶的高階主管利害關係人 }} 撰寫每週更新電子郵件。使用本週通話的內部筆記和使用指標： {{ 欄位二 || 在此貼上 }}。輸出應為一封簡短、精煉的電子郵件，包含 3 個要點。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Write%20a%20weekly%20update%20email%20for%20%5Bexecutive%20stakeholder%20at%20customer%5D.%20Use%20these%20internal%20notes%20from%20this%20week%E2%80%99s%20call%20and%20usage%20metrics%3A%20%5Bpaste%20here%5D.%20Output%20should%20be%20a%20short%2C%20polished%20email%20with%203%20bullets."
+    },
+    {
+      "use_case": "草擬 QBR 談話要點",
+      "prompt": "在我們的 QBR 之前，為 [客戶名稱] 總結最重要的成功、風險和產品使用亮點。使用他們最新的健康分數、使用趨勢和支援票證歷史記錄。格式化為供內部審查的條列式準備文件。",
+      "superPrompt": "在我們的 QBR 之前，為 {{ 欄位一 || 客戶名稱 }} 總結最重要的成功、風險和產品使用亮點。使用他們最新的健康分數、使用趨勢和支援票證歷史記錄。格式化為供內部審查的條列式準備文件。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Summarize%20the%20top%20wins%2C%20risks%2C%20and%20product%20usage%20highlights%20for%20%5BCustomer%20Name%5D%20ahead%20of%20our%20QBR.%20Use%20their%20latest%20health%20score%2C%20usage%20trends%2C%20and%20support%20ticket%20history.%20Format%20as%20a%20bulleted%20prep%20doc%20for%20internal%20review."
+    },
+    {
+      "use_case": "準備續約通話",
+      "prompt": "為 [客戶名稱] 建立續約通話準備檢查清單。包括合約條款、目前使用情況、已知風險和追加銷售潛力。以條列式檢查清單的形式輸出。",
+      "superPrompt": "為 {{ 欄位一 || 客戶名稱 }} 建立續約通話準備檢查清單。包括合約條款、目前使用情況、已知風險和追加銷售潛力。以條列式檢查清單的形式輸出。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20renewal%20call%20prep%20checklist%20for%20%5BCustomer%20Name%5D.%20Include%20contract%20terms%2C%20current%20usage%2C%20known%20risks%2C%20and%20upsell%20potential.%20Output%20as%20a%20bulleted%20checklist."
+    },
+    {
+      "use_case": "建立帳戶計畫摘要",
+      "prompt": "為 [客戶名稱] 草擬一份 1 頁的帳戶計畫。使用我們最近 2 次通話的筆記 + 合約資訊 + 目標：[在此貼上]。輸出應格式化為目標、阻礙、行動和續約。",
+      "superPrompt": "為 {{ 欄位一 || 客戶名稱 }} 草擬一份 1 頁的帳戶計畫。使用我們最近 2 次通話的筆記 + 合約資訊 + 目標： {{ 欄位二 || 在此貼上 }}。輸出應格式化為目標、阻礙、行動和續約。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Draft%20a%201-pager%20account%20plan%20for%20%5BCustomer%20Name%5D.%20Use%20notes%20from%20our%20last%202%20calls%20%2B%20contract%20info%20%2B%20goals%3A%20%5Bpaste%20here%5D.%20Output%20should%20be%20formatted%20as%20goals%2C%20blockers%2C%20actions%2C%20and%20renewals."
+    },
+    {
+      "use_case": "概述續約風險摘要",
+      "prompt": "在我們的內部預測通話之前，為 [客戶名稱] 草擬一份續約風險摘要。包括他們的續約日期、使用趨勢、情緒和合約註解。輸出應為一段摘要 + 1 行建議。",
+      "superPrompt": "在我們的內部預測通話之前，為 {{ 欄位一 || 客戶名稱 }} 草擬一份續約風險摘要。包括他們的續約日期、使用趨勢、情緒和合約註解。輸出應為一段摘要 + 1 行建議。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Draft%20a%20renewal%20risk%20summary%20for%20%5BCustomer%20Name%5D%20ahead%20of%20our%20internal%20forecast%20call.%20Include%20their%20renewal%20date%2C%20usage%20trend%2C%20sentiment%2C%20and%20contract%20notes.%20Output%20should%20be%20a%20paragraph%20summary%20%2B%201-line%20recommendation."
+    },
+    {
+      "use_case": "按區隔概述成功指標",
+      "prompt": "為 [區隔] 客戶概述一份成功指標草案清單。包括採用目標、參與目標和續約基準。格式化為一個 2 欄表格：指標 | 定義。",
+      "superPrompt": "為 {{ 欄位一 || 區隔 }} 客戶概述一份成功指標草案清單。包括採用目標、參與目標和續約基準。格式化為一個 2 欄表格：指標 | 定義。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Outline%20a%20draft%20list%20of%20success%20metrics%20for%20%5Bsegment%5D%20customers.%20Include%20adoption%20goals%2C%20engagement%20targets%2C%20and%20renewal%20benchmarks.%20Format%20as%20a%202-column%20table%3A%20Metric%20%7C%20Definition."
+    },
+    {
+      "use_case": "評估客戶滿意度分數分佈",
+      "prompt": "檢閱第二季的這份客戶滿意度調查資料。計算總體平均值，找出異常分數，並總結回饋主題（如果有的話）。以簡短摘要的形式輸出，包含關鍵統計數據和最重要的正面/負面回饋範例。",
+      "superPrompt": "檢閱第二季的這份客戶滿意度調查資料。計算總體平均值，找出異常分數，並總結回饋主題（如果有的話）。以簡短摘要的形式輸出，包含關鍵統計數據和最重要的正面/負面回饋範例。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Review%20this%20CSAT%20survey%20data%20from%20Q2.%20Calculate%20overall%20average%2C%20identify%20outlier%20scores%2C%20and%20summarize%20feedback%20themes%20if%20available.%20Output%20as%20a%20short%20summary%20with%20key%20stats%20and%20top%20positive%2Fnegative%20feedback%20examples."
+    },
+    {
+      "use_case": "分析支援票證趨勢",
+      "prompt": "檢查上一季的這份支援票證匯出資料。找出前 5 個重複出現的問題，並提供根本原因的簡短摘要。輸出應包含一個排序清單，包含問題、頻率和潛在的客戶成功行動。",
+      "superPrompt": "檢查上一季的這份支援票證匯出資料。找出前 5 個重複出現的問題，並提供根本原因的簡短摘要。輸出應包含一個排序清單，包含問題、頻率和潛在的客戶成功行動。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Examine%20this%20export%20of%20support%20tickets%20from%20the%20last%20quarter.%20Identify%20the%20top%205%20recurring%20issues%20and%20provide%20a%20short%20summary%20of%20root%20causes.%20Output%20should%20include%20a%20ranked%20list%20with%20issue%2C%20frequency%2C%20and%20potential%20CS%20actions."
+    },
+    {
+      "use_case": "發現流失的早期跡象",
+      "prompt": "檢閱過去 90 天的這份客戶使用資料。根據使用量下降、登入頻率或支援互動，找出任何可能面臨流失風險的客戶。將結果總結在一個表格中，欄位包括：客戶名稱 | 風險因素 | 備註。",
+      "superPrompt": "檢閱過去 90 天的這份客戶使用資料。根據使用量下降、登入頻率或支援互動，找出任何可能面臨流失風險的客戶。將結果總結在一個表格中，欄位包括：客戶名稱 | 風險因素 | 備註。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Review%20this%20customer%20usage%20data%20from%20the%20past%2090%20days.%20Identify%20any%20customers%20who%20may%20be%20at%20risk%20of%20churning%20based%20on%20usage%20drop%2C%20login%20frequency%2C%20or%20support%20interactions.%20Summarize%20the%20findings%20in%20a%20table%20with%20columns%3A%20Customer%20Name%20%7C%20Risk%20Factor%20%7C%20Notes."
+    },
+    {
+      "use_case": "標準化客戶健康評分",
+      "prompt": "為 [區隔或地區] 建立一份健康評分標準草案。使用使用率 %、NPS、續約狀態和票證量等輸入。以表格形式輸出，包含評分範圍、權重和顏色指標。",
+      "superPrompt": "為 {{ 欄位一 || 區隔或地區 }} 建立一份健康評分標準草案。使用使用率 %、NPS、續約狀態和票證量等輸入。以表格形式輸出，包含評分範圍、權重和顏色指標。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Build%20a%20draft%20health%20scoring%20rubric%20for%20%5Bsegment%20or%20region%5D.%20Use%20inputs%20like%20usage%20%25%2C%20NPS%2C%20renewal%20status%2C%20and%20ticket%20volume.%20Output%20as%20a%20table%20with%20scoring%20ranges%2C%20weights%2C%20and%20color%20indicators."
+    },
+    {
+      "use_case": "設計客戶健康分數模型",
+      "prompt": "為客戶設計一個顏色編碼的健康分數儀表板視覺模型。包括低、中、高範圍，並建議數值範圍和圖示。風格：儀表板風格、線條簡潔、專業。",
+      "superPrompt": "為客戶設計一個顏色編碼的健康分數儀表板視覺模型。包括低、中、高範圍，並建議數值範圍和圖示。風格：儀表板風格、線條簡潔、專業。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Design%20a%20visual%20mock-up%20of%20a%20color-coded%20health%20score%20gauge%20for%20customers.%20Include%20Low%2C%20Medium%2C%20High%20ranges%20with%20suggested%20numerical%20ranges%20and%20icons.%20Style%3A%20dashboard-style%2C%20clean%20lines%2C%20professional."
+    },
+    {
+      "use_case": "視覺化客戶旅程地圖",
+      "prompt": "將此客戶生命週期階段大綱轉換為視覺化的旅程地圖。使用此處列出的階段和痛點：[貼上文字]。以包含 5 個生命週期階段的標籤圖表形式輸出。",
+      "superPrompt": "將此客戶生命週期階段大綱轉換為視覺化的旅程地圖。使用此處列出的階段和痛點： {{ 欄位一 || 貼上文字 }}。以包含 5 個生命週期階段的標籤圖表形式輸出。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Turn%20this%20outline%20of%20customer%20lifecycle%20stages%20into%20a%20visual%20journey%20map.%20Use%20the%20stages%20and%20pain%20points%20listed%20here%3A%20%5Bpaste%20text%5D.%20Output%20as%20a%20labeled%20diagram%20with%205%20lifecycle%20stages."
+    },
+    {
+      "use_case": "說明升級流程圖",
+      "prompt": "建立一個圖表，說明從 CSM 到支援再到工程的內部升級流程。包括 3 個嚴重性等級和標示的交接點。風格：流程圖格式、最少顏色、適合內部 wiki。",
+      "superPrompt": "建立一個圖表，說明從 CSM 到支援再到工程的內部升級流程。包括 3 個嚴重性等級和標示的交接點。風格：流程圖格式、最少顏色、適合內部 wiki。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20a%20diagram%20that%20illustrates%20the%20internal%20escalation%20process%20from%20CSM%20to%20Support%20to%20Engineering.%20Include%203%20levels%20of%20severity%20and%20labeled%20handoff%20points.%20Style%3A%20flowchart%20format%2C%20minimal%20colors%2C%20ready%20for%20internal%20wiki."
+    },
+    {
+      "use_case": "建立視覺化的客戶成熟度模型",
+      "prompt": "為 SaaS 平台建立一個視覺化的 4 階段客戶成熟度模型圖像。每個階段都應有標題、關鍵行為模式和建議的 CS 接觸點。風格：專業、簡潔、適合投影片。",
+      "superPrompt": "為 SaaS 平台建立一個視覺化的 4 階段客戶成熟度模型圖像。每個階段都應有標題、關鍵行為模式和建議的 CS 接觸點。風格：專業、簡潔、適合投影片。",
+      "chatgpt_url": "https://chatgpt.com/?prompt=Create%20an%20image%20that%20visualizes%20a%204-stage%20customer%20maturity%20model%20for%20a%20SaaS%20platform.%20Each%20stage%20should%20have%20a%20title%2C%20key%20behavior%20pattern%2C%20and%20suggested%20CS%20touchpoint.%20Style%3A%20professional%2C%20clean%2C%20slide-ready."
+    }
+  ],
+  "scraped_at": "2025-10-05T12:52:33.932Z"
+}
